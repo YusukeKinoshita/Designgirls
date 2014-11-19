@@ -1,0 +1,33 @@
+<h1>Listing slides</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Tutorial</th>
+      <th>Body</th>
+      <th>Image</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @slides.each do |slide| %>
+      <tr>
+        <td><%= slide.title %></td>
+        <td><%= slide.tutorial_id %></td>
+        <td><%= slide.body %></td>
+        <td><%= slide.image %></td>
+        <td><%= link_to 'Show', slide %></td>
+        <td><%= link_to 'Edit', edit_slide_path(slide) %></td>
+        <td><%= link_to 'Destroy', slide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Slide', new_slide_path %>
