@@ -1,5 +1,6 @@
 class Tutorial < ActiveRecord::Base
   has_many :slides
+  belong_to :category
   belongs_to :users
 
   validates :title, presence: true
