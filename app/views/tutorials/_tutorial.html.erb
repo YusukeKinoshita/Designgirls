@@ -1,0 +1,22 @@
+<li>
+  <!-- タイトル -->
+  <span class="title"><%= tutorial.title %></span>
+
+　<!--  イメージ画像 -->
+　<span class="image"><%= tutorial.image %></span>
+
+  <!-- 説明文 -->
+  <span class="description"><%= tutorial.description %></span>
+
+
+　<!-- 　作成者情報 -->
+  <%= link_to profile_image_for(tutorial.user) %>
+  <span class="user">
+    <%= link_to tutorial.user.name, tutorial.user %>
+  </span>
+
+　<!-- 　作成日時 -->
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(tutorial.created_at) %> ago.
+  </span>
+</li>

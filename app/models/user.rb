@@ -7,6 +7,11 @@ class User < ActiveRecord::Base
 	has_secure_password
 	validates :password, length: { minimum: 6 }
 
+  has_many :tutorials
+
+
+
+
   	def User.new_remember_token
     	SecureRandom.urlsafe_base64
   	end
@@ -14,6 +19,18 @@ class User < ActiveRecord::Base
   	def User.encrypt(token)
     	Digest::SHA1.hexdigest(token.to_s)
   	end
+
+
+    # ここよくわからん
+    def set_image(file)
+      if !file.nil?
+        file_name = file.original_filename
+        # サーバー側に画像を保存している
+        File.open("public/docs/#{file_name}", 'wb'){|f| f.write(file.read)}
+        # データベースに書き込んでいる（imageカラムに文字列を入れる）
+        self.image = file_name
+      end
+    end
 
   	private
 

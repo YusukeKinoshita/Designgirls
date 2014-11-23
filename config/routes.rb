@@ -1,4 +1,5 @@
 Designgirls::Application.routes.draw do
+  get "about/index"
   root  'about#index'
   match '/about', to:'about#index', via:'get'
   match '/signin',  to: 'sessions#new',         via: 'get'

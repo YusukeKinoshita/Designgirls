@@ -15,5 +15,20 @@
   <%= @tutorial.description %>
 </p>
 
+<p>
+  <strong>Image:</strong>
+  <%= tutorial_image_for @tutorial %>
+</p>
+
+
+
+
 <%= link_to 'Edit', edit_tutorial_path(@tutorial) %> |
 <%= link_to 'Back', tutorials_path %>
+
+
+<%= link_to "Create Slides!", new_slide_path, class: "btn btn-large btn-primary" %>
+
+
+
+
