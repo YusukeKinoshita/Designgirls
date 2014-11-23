@@ -25,6 +25,8 @@ class TutorialsController < ApplicationController
   # POST /tutorials.json
   def create
     @tutorial = Tutorial.new(tutorial_params)
+    file = params[:tutorial][:image]
+    @tutorial.set_image(file)
 
     respond_to do |format|
       if @tutorial.save
@@ -40,6 +42,8 @@ class TutorialsController < ApplicationController
   # PATCH/PUT /tutorials/1
   # PATCH/PUT /tutorials/1.json
   def update
+    file = params[:tutorial][:image]
+    @tutorial.set_image(file)
     respond_to do |format|
       if @tutorial.update(tutorial_params)
         format.html { redirect_to @tutorial, notice: 'Tutorial was successfully updated.' }

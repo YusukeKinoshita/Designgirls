@@ -6,19 +6,17 @@
 </p>
 
 <p>
-  <strong>Tutorial:</strong>
-  <%= @slide.tutorial_id %>
-</p>
-
-<p>
   <strong>Body:</strong>
   <%= @slide.body %>
 </p>
 
 <p>
   <strong>Image:</strong>
-  <%= @slide.image %>
+  <%= slide_image_for @slide %>
 </p>
 
 <%= link_to 'Edit', edit_slide_path(@slide) %> |
 <%= link_to 'Back', slides_path %>
+
+
+

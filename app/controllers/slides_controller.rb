@@ -25,6 +25,8 @@ class SlidesController < ApplicationController
   # POST /slides.json
   def create
     @slide = Slide.new(slide_params)
+    file = params[:slide][:image]
+    @slide.set_image(file)
 
     respond_to do |format|
       if @slide.save
@@ -40,9 +42,12 @@ class SlidesController < ApplicationController
   # PATCH/PUT /slides/1
   # PATCH/PUT /slides/1.json
   def update
+    file = params[:slide][:image]
+    @slide.set_image(file)
     respond_to do |format|
+      # @slide.image = params[:slide][:image].original_filename
       if @slide.update(slide_params)
-        format.html { redirect_to @slide, notice: 'Slide was successfully updated.' }
+        format.html { redirect_to @slide, notice: 'Slide was successfully updated.' } 
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,6 +74,6 @@ class SlidesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def slide_params
-      params.require(:slide).permit(:title, :tutorial_id, :body, :image)
+      params.require(:slide).permit(:title, :tutorial_id, :body)
     end
 end
