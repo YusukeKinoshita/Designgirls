@@ -1,6 +1,4 @@
 Designgirls::Application.routes.draw do
-  resources :categories
-
   get "about/index"
   root  'about#index'
   match '/about', to:'about#index', via:'get'
