@@ -1,10 +1,11 @@
 class Tutorial < ActiveRecord::Base
-  has_many :slides
+  has_many :slides, dependent: :destroy
   belongs_to :category
   belongs_to :users
 
   validates :title, presence: true
   validates :user_id, presence: true
+  validates :category_id, presence: true
   validates :description, presence: true
 
 

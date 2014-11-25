@@ -24,7 +24,7 @@ class SlidesController < ApplicationController
   # POST /slides
   # POST /slides.json
   def create
-    @slide = Slide.new(slide_params)
+    @slide = current_tutorial.slides.built(slide_params)
     file = params[:slide][:image]
     @slide.set_image(file)
 
