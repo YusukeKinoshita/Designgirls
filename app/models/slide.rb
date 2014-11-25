@@ -4,6 +4,7 @@ class Slide < ActiveRecord::Base
   # validates :tutorial_id, presence: true
   validates :body, presence: true
   validates :image, presence: true
+  validates :tutorial_id, presence: true
 
 
 

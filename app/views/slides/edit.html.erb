@@ -2,5 +2,4 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @slide %> |
-<%= link_to 'Back', slides_path %>
+<%= link_to 'Back', category_tutorial_slide_path(category_id: params[:id], tutorial_id: params[:id], id: @slide.id) %>

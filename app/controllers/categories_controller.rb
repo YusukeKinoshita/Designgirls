@@ -10,6 +10,8 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @category = Category.find(params[:id])
+    @tutorials = @category.tutorials.paginate(page: params[:page])
   end
 
   # GET /categories/new
@@ -63,6 +65,9 @@ class CategoriesController < ApplicationController
       format.html { redirect_to categories_url }
       format.json { head :no_content }
     end
+  end
+
+  def tutorials
   end
 
   private
