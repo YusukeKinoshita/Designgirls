@@ -1,22 +1,25 @@
-<li>
-  <!-- タイトル -->
-  <span class="title"><%= tutorial.title %></span>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Image</th>
+      <th>User</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-　<!--  イメージ画像 -->
-　<span class="image"><%= tutorial.image %></span>
-
-  <!-- 説明文 -->
-  <span class="description"><%= tutorial.description %></span>
-
-
-　<!-- 　作成者情報 -->
-  <%= link_to profile_image_for(tutorial.user) %>
-  <span class="user">
-    <%= link_to tutorial.user.name, tutorial.user %>
-  </span>
-
-　<!-- 　作成日時 -->
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(tutorial.created_at) %> ago.
-  </span>
-</li>
+  <tbody>
+    <% @tutorials.each do |tutorial| %>
+      <tr>
+        <td><%= tutorial.title %></td>
+        <td><%= tutorial_image_for tutorial %></td>
+        <td><%= tutorial.user_id %></td>
+        <td><%= tutorial.description %></td>       
+        <td><%= link_to 'Show', category_tutorial_path(category_id: params[:id], id: tutorial.id) %></td>
+        <td><%= link_to 'Edit', edit_category_tutorial_path(category_id: params[:id], id: tutorial.id) %></td>
+        <td><%= link_to 'Destroy', category_tutorial_path(category_id: params[:id], id: tutorial.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>

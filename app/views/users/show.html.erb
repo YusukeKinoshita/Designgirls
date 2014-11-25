@@ -13,7 +13,7 @@
   <div class ="span8">
     <% if @user.tutorials.any? %>
       <h3>Tutorials (<%= @user.tutorials.count %>)</h3>
-      <ol class="microposts">
+      <ol class="tutorials">
         <%= render @tutorials %>
       </ol>
       <%= will_paginate @tutorials %>

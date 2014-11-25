@@ -10,6 +10,8 @@ class TutorialsController < ApplicationController
   # GET /tutorials/1
   # GET /tutorials/1.json
   def show
+    @tutorial = Tutorial.find(params[:id])
+    @slides = @tutorial.slides.paginate(page: params[:page])
   end
 
   # GET /tutorials/new
@@ -24,13 +26,13 @@ class TutorialsController < ApplicationController
   # POST /tutorials
   # POST /tutorials.json
   def create
-    @tutorial = Tutorial.new(tutorial_params)
+    @tutorial = current_category.tutorials.built(tutorial_params)
     file = params[:tutorial][:image]
     @tutorial.set_image(file)
 
     respond_to do |format|
       if @tutorial.save
-        format.html { redirect_to @tutorial, notice: 'Tutorial was successfully created.' }
+        format.html { redirect_to category_tutorial_path(@tutorial), notice: 'Tutorial was successfully created.' }
         format.json { render action: 'show', status: :created, location: @tutorial }
       else
         format.html { render action: 'new' }
@@ -65,6 +67,9 @@ class TutorialsController < ApplicationController
     end
   end
 
+  def slides
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tutorial
@@ -73,6 +78,6 @@ class TutorialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tutorial_params
-      params.require(:tutorial).permit(:title, :user_id, :description)
+      params.require(:tutorial).permit(:title, :user_id, :description, :category_id)
     end
 end

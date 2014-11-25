@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  has_many :tutorials
+  has_many :tutorials, dependent: :destroy
   validates :title, presence: true
   validates :image, presence: true
   validates :description, presence: true

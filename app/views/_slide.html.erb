@@ -1,0 +1,21 @@
+<li>
+  <!-- タイトル -->
+  <span class="title"><%= slide.title %></span>
+
+　<!--  イメージ画像 -->
+　<span class="image"><%= slide.image %></span>
+
+  <!-- 説明文 -->
+  <span class="description"><%= slide.description %></span>
+
+　<!-- 　作成者情報 -->
+  <%= link_to profile_image_for(slide.user) %>
+  <span class="user">
+    <%= link_to slide.user.name, slide.user %>
+  </span>
+
+　<!-- 　作成日時 -->
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(slide.created_at) %> ago.
+  </span>
+</li>

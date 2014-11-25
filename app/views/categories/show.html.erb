@@ -17,3 +17,13 @@
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
+
+<%= link_to "Create New Tutorial!", new_category_tutorial_path(category_id: params[:id]), class: "btn btn-large btn-primary" %>
+
+<% if @category.tutorials.any? %>
+  <h3>Tutorials (<%= @category.tutorials.count %>)</h3>
+  <table>
+    <%= render @tutorials %>
+  </table>
+  <%= will_paginate @tutorials %>
+<% end %>
