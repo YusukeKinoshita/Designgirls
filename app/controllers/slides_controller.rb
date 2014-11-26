@@ -4,7 +4,8 @@ class SlidesController < ApplicationController
   # GET /slides
   # GET /slides.json
   def index
-    @slides = Slide.all
+    @tutorial = Tutorial.find(params[:tutorial_id])
+    @slides = @tutorial.slides.all
   end
 
   # GET /slides/1
@@ -32,7 +33,7 @@ class SlidesController < ApplicationController
 
     respond_to do |format|
       if @slide.save
-        format.html { redirect_to category_tutorial_slides_path(category_id: params[:category_id], tutorial_id: @tutorial.id), notice: 'Slide was successfully created.' }
+        format.html { redirect_to category_tutorial_slides_path(category_id: @category_id, tutorial_id: @tutorial.id), notice: 'Slide was successfully created.' }
         format.json { render action: 'show', status: :created, location: @slide }
       else
         format.html { render action: 'new' }
@@ -49,7 +50,7 @@ class SlidesController < ApplicationController
     respond_to do |format|
       # @slide.image = params[:slide][:image].original_filename
       if @slide.update(slide_params)
-        format.html { redirect_to @slide, notice: 'Slide was successfully updated.' } 
+        format.html { redirect_to category_tutorial_slide_path(category_id: @category_id, tutorial_id: @tutorial.id, slide_id: @slide.id), notice: 'Slide was successfully updated.' } 
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

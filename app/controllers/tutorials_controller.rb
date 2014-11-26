@@ -4,7 +4,8 @@ class TutorialsController < ApplicationController
   # GET /tutorials
   # GET /tutorials.json
   def index
-    @tutorials = Tutorial.all
+    @category = Category.find(params[:category_id])
+    @tutorials = @category.tutorials.all
   end
 
   # GET /tutorials/1
@@ -32,7 +33,7 @@ class TutorialsController < ApplicationController
 
     respond_to do |format|
       if @tutorial.save
-        format.html { redirect_to category_tutorial_path(category_id: @category.id, id: @tutorial.id), notice: 'Tutorial was successfully created.' }
+        format.html { redirect_to category_tutorials_path(category_id: @category.id), notice: 'Tutorial was successfully created.' }
         format.json { render action: 'show', status: :created, location: @tutorial }
       else
         format.html { render action: 'new' }
@@ -48,7 +49,7 @@ class TutorialsController < ApplicationController
     @tutorial.set_image(file)
     respond_to do |format|
       if @tutorial.update(tutorial_params)
-        format.html { redirect_to @tutorial, notice: 'Tutorial was successfully updated.' }
+        format.html { redirect_to category_tutorial_path(category_id: @category.id, tutorial_id: @tutorial.id), notice: 'Tutorial was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
