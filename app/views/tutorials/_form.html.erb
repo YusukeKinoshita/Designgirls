@@ -1,4 +1,4 @@
-<%= form_for(@tutorial, html: { multipart: true}) do |f| %>
+<%= form_for(@tutorial, url: category_tutorials_path(category_id: params[:category_id], id: params[:tutorial_id])) do |f| %>
   <% if @tutorial.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@tutorial.errors.count, "error") %> prohibited this tutorial from being saved:</h2>

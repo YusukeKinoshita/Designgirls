@@ -18,9 +18,9 @@
         <td><%= slide.title %></td>
         <td><%= slide.body %></td>
         <td><%= slide_image_for slide %></td>
-        <td><%= link_to 'Show', slide %></td>
-        <td><%= link_to 'Edit', edit_slide_path(slide) %></td>
-        <td><%= link_to 'Destroy', slide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', category_tutorial_slide_path(category_id: params[:category_id], tutorial_id: params[:tutorial_id], id: slide.id) %></td>
+        <td><%= link_to 'Edit', edit_category_tutorial_slide_path(category_id: params[:category_id], tutorial_id: params[:tutorial_id], id: slide.id) %></td>
+        <td><%= link_to 'Destroy', category_tutorial_slide_path(category_id: params[:category_id], tutorial_id: params[:tutorial_id], id: slide.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Slide', new_slide_path %>
+<%= link_to 'New Slide', new_category_tutorial_slide_path %>

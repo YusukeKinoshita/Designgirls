@@ -1,25 +1,10 @@
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Image</th>
-      <th>User</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @tutorials.each do |tutorial| %>
       <tr>
         <td><%= tutorial.title %></td>
         <td><%= tutorial_image_for tutorial %></td>
         <td><%= tutorial.user_id %></td>
         <td><%= tutorial.description %></td>       
-        <td><%= link_to 'Show', category_tutorial_path(category_id: params[:id], id: tutorial.id) %></td>
-        <td><%= link_to 'Edit', edit_category_tutorial_path(category_id: params[:id], id: tutorial.id) %></td>
-        <td><%= link_to 'Destroy', category_tutorial_path(category_id: params[:id], id: tutorial.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', category_tutorial_path(category_id: params[:id],id: tutorial.id) %></td>
+        <td><%= link_to 'Edit', edit_category_tutorial_path(category_id: params[:id], tutorial_id: tutorial.id) %></td>
+        <td><%= link_to 'Destroy', category_tutorial_path(category_id: params[:id], tutorial_id: tutorial.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
-  </tbody>

@@ -23,7 +23,21 @@
 <% if @category.tutorials.any? %>
   <h3>Tutorials (<%= @category.tutorials.count %>)</h3>
   <table>
+
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Image</th>
+        <th>User</th>
+        <th>Description</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
     <%= render @tutorials %>
+  </tbody>
   </table>
   <%= will_paginate @tutorials %>
 <% end %>

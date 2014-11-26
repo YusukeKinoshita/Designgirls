@@ -10,7 +10,5 @@ Designgirls::Application.routes.draw do
       resources :slides
     end
   end
-  resources :tutorials
-  resources :slides
   resources :sessions, only: [:new, :create, :destroy]
 end

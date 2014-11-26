@@ -21,20 +21,6 @@ ActiveRecord::Schema.define(version: 20141124095221) do
     t.datetime "updated_at"
   end
 
-  create_table "relationships", force: true do |t|
-    t.integer  "category_id"
-    t.integer  "tutorial_id"
-    t.integer  "slide_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "relationships", ["category_id", "tutorial_id"], name: "index_relationships_on_category_id_and_tutorial_id", unique: true
-  add_index "relationships", ["category_id"], name: "index_relationships_on_category_id"
-  add_index "relationships", ["slide_id"], name: "index_relationships_on_slide_id"
-  add_index "relationships", ["tutorial_id", "slide_id"], name: "index_relationships_on_tutorial_id_and_slide_id", unique: true
-  add_index "relationships", ["tutorial_id"], name: "index_relationships_on_tutorial_id"
-
   create_table "slides", force: true do |t|
     t.string   "title"
     t.integer  "tutorial_id"
