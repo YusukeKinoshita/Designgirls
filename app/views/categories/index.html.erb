@@ -18,7 +18,7 @@
         <td><%= category.title %></td>
         <td><%= category_image_for category %></td>
         <td><%= category.description %></td>
-        <td><%= link_to 'Show', category %></td>
+        <td><%= link_to 'Show', category_path(id: category) %></td>
         <td><%= link_to 'Edit', edit_category_path(category) %></td>
         <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

@@ -24,13 +24,15 @@ class SlidesController < ApplicationController
   # POST /slides
   # POST /slides.json
   def create
-    @slide = current_tutorial.slides.built(slide_params)
+    # @slide = current_tutorial.slides.built(slide_params)
+    @tutorial = Tutorial.find(params[:tutorial_id])
+    @slide = @tutorial.slides.build(slide_params)
     file = params[:slide][:image]
     @slide.set_image(file)
 
     respond_to do |format|
       if @slide.save
-        format.html { redirect_to @slide, notice: 'Slide was successfully created.' }
+        format.html { redirect_to category_tutorial_slides_path(category_id: params[:category_id], tutorial_id: @tutorial.id), notice: 'Slide was successfully created.' }
         format.json { render action: 'show', status: :created, location: @slide }
       else
         format.html { render action: 'new' }
@@ -74,6 +76,6 @@ class SlidesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def slide_params
-      params.require(:slide).permit(:title, :tutorial_id, :body)
+      params.require(:slide).permit(:title, :body)
     end
 end

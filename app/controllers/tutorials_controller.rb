@@ -10,7 +10,6 @@ class TutorialsController < ApplicationController
   # GET /tutorials/1
   # GET /tutorials/1.json
   def show
-    @tutorial = Tutorial.find(params[:id])
     @slides = @tutorial.slides.paginate(page: params[:page])
   end
 
@@ -26,13 +25,14 @@ class TutorialsController < ApplicationController
   # POST /tutorials
   # POST /tutorials.json
   def create
-    @tutorial = current_category.tutorials.built(tutorial_params)
+    @category = Category.find(params[:category_id])
+    @tutorial = @category.tutorials.build(tutorial_params)
     file = params[:tutorial][:image]
     @tutorial.set_image(file)
 
     respond_to do |format|
       if @tutorial.save
-        format.html { redirect_to category_tutorial_path(@tutorial), notice: 'Tutorial was successfully created.' }
+        format.html { redirect_to category_tutorial_path(category_id: @category.id, id: @tutorial.id), notice: 'Tutorial was successfully created.' }
         format.json { render action: 'show', status: :created, location: @tutorial }
       else
         format.html { render action: 'new' }
@@ -62,7 +62,7 @@ class TutorialsController < ApplicationController
   def destroy
     @tutorial.destroy
     respond_to do |format|
-      format.html { redirect_to tutorials_url }
+      format.html { redirect_to categories_url }
       format.json { head :no_content }
     end
   end

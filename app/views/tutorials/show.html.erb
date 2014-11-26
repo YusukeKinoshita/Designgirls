@@ -23,11 +23,11 @@
 
 
 
-<%= link_to 'Edit', edit_category_tutorial_path(category_id: params[:id], id: @tutorial.id) %> |
-<%= link_to 'Back', category_path %>
+<%= link_to 'Edit', edit_category_tutorial_path(category_id: params[:category_id], id: @tutorial.id) %> |
+<%= link_to 'Back', category_path(id: params[:category_id]) %>
 
 
-<%= link_to "Create New Slide!", new_category_tutorial_slide_path(category_id: params[:id], tutorial_id: params[:id]) , class: "btn btn-large btn-primary" %>
+<%= link_to "Create New Slide!", new_category_tutorial_slide_path(category_id: params[:category_id], tutorial_id: @tutorial.id) , class: "btn btn-large btn-primary" %>
 
 <% if @tutorial.slides.any? %>
   <h3>Slides (<%= @tutorial.slides.count %>)</h3>

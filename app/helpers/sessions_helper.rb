@@ -28,17 +28,11 @@ module SessionsHelper
     @current_user ||= User.find_by(remember_token: remember_token)
   end
 
-  def current_category
-    @current_category = Category.find(params[:id])
-  end
 
   def current_user?(user)
     user == current_user
   end
 
-  def current_category?(category)
-    category == current_category
-  end
 
   def sign_out
     self.current_user = nil
