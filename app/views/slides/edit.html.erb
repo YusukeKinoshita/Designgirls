@@ -1,5 +1,8 @@
 <h1>Editing slide</h1>
 
-<%= render 'form' %>
+<%= form_for(@slide, url: category_tutorial_slide_path(category_id: params[:category_id], tutorial_id: params[:tutorial_id], id: @slide.id)) do |f| %>
+<%= render 'form', f: f %>
 
-<%= link_to 'Back', category_tutorial_slide_path(category_id: params[:category_id], tutorial_id: params[:tutorial_id], id: @slide.id) %>
+<% end %>
+
+<%= link_to 'Back', category_tutorial_path(category_id: params[:category_id], id: params[:tutorial_id]) %>
