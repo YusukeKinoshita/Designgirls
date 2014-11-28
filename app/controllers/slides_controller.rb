@@ -25,6 +25,7 @@ class SlidesController < ApplicationController
   # POST /slides.json
   def create
     # @slide = current_tutorial.slides.built(slide_params)
+    @category = Category.find(params[:category_id])
     @tutorial = Tutorial.find(params[:tutorial_id])
     @slide = @tutorial.slides.build(slide_params)
     file = params[:slide][:image]
@@ -49,7 +50,7 @@ class SlidesController < ApplicationController
     respond_to do |format|
       # @slide.image = params[:slide][:image].original_filename
       if @slide.update(slide_params)
-        format.html { redirect_to @slide, notice: 'Slide was successfully updated.' } 
+        format.html { redirect_to category_tutorials_path(category_id: params[:category_id], id: params[:id]), notice: 'Slide was successfully updated.' } 
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

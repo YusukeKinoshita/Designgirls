@@ -1,4 +1,4 @@
-<%= form_for(@slide, url: category_tutorial_slides_path(category_id: params[:category_id], tutorial_id: params[:tutorial_id])) do |f| %>
+<%= form_for(@slide, url: category_tutorial_slide_path(category_id: params[:category_id], tutorial_id: params[:tutorial_id])) do |f| %>
   <% if @slide.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@slide.errors.count, "error") %> prohibited this slide from being saved:</h2>
