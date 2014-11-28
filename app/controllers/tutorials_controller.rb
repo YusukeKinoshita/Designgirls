@@ -15,7 +15,9 @@ class TutorialsController < ApplicationController
 
   # GET /tutorials/new
   def new
-    @tutorial = Tutorial.new
+    
+    @category = Category.find(params[:category_id])
+    @tutorial = @category.tutorials.build
   end
 
   # GET /tutorials/1/edit
@@ -44,11 +46,12 @@ class TutorialsController < ApplicationController
   # PATCH/PUT /tutorials/1
   # PATCH/PUT /tutorials/1.json
   def update
+    @category = Category.find(params[:category_id])
     file = params[:tutorial][:image]
     @tutorial.set_image(file)
     respond_to do |format|
       if @tutorial.update(tutorial_params)
-        format.html { redirect_to @tutorial, notice: 'Tutorial was successfully updated.' }
+        format.html { redirect_to category_tutorial_path(category_id: @category.id, id: @tutorial.id), notice: 'Tutorial was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
