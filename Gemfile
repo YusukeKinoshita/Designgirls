@@ -34,6 +34,9 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 
+gem 'omniauth'
+gem 'omniauth-twitter'
+
 group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
