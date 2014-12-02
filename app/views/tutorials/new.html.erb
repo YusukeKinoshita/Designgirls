@@ -1,3 +1,4 @@
+<div class="wrapper">
 <h1>New tutorial</h1>
 
 <%= form_for(@tutorial, url: category_tutorials_path(category_id: params[:category_id])) do |f| %>
@@ -5,3 +6,4 @@
 <% end %>
 
 <%= link_to 'Back', category_tutorials_path(category_id: params[:category_id], id: params[:tutorial_id]) %>
+</div>
