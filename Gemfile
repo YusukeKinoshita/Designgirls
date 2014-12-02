@@ -45,3 +45,10 @@ group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
+
+group :assets do
+    gem 'twitter-bootswatch-rails', '~> 2.3.1.2'
+
+end
+
+gem 'twitter-bootswatch-rails-helpers', '>= 2.3.1'
