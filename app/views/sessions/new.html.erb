@@ -1,20 +1,31 @@
 <h1>Sign in</h1>
 
-<div id="login-img">
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(:session, url: sessions_path) do |f| %>
+<div class="new-wrapper">
+  <div class="form">
+    <div class="white-box">
+      <%= form_for(:session, url: sessions_path) do |f| %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+          <p>ソーシャルアカウントでログイン</p>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+          <div class="facebook-login">
+            <i class="fa fa-facebook">　Facebook</i>
+          </div>
+          <div class="twitter-login">
+            <i class="fa fa-twitter">　Twitter</i>
+          </div>
 
-      <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
-    <% end %>
+          <p>メールアドレスでログイン</p>
 
-    <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+
+          <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+      <% end %>
+
+      <p>まだ登録していない方は <%= link_to "こちら", new_user_path %></p>
+    </div>
   </div>
-</div>
 </div>

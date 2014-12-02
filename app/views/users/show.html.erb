@@ -1,16 +1,18 @@
-<div class="row">
-  <aside class="span4">
-    <section>
+<div class="wrapper">
 
-		<h1>
-		  <%= profile_image_for @user %>
-		  <%= @user.name %>
-		</h1>
-	</section>
+  <!-- ユーザー情報 -->
+  <aside class="user">
+    <section>
+  		<h1>
+  		  <%= profile_image_for @user %>
+  		  <%= @user.name %>
+  		</h1>
+	  </section>
   </aside>
 
-  
-  <div class ="span8">
+
+  <!-- 自分の？チュートリアル一覧 -->
+  <div class ="tutorials">
     <% if @user.tutorials.any? %>
       <h3>Tutorials (<%= @user.tutorials.count %>)</h3>
       <ol class="tutorials">
@@ -19,10 +21,12 @@
       <%= will_paginate @tutorials %>
     <% end %>
   </div>
-</div>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+</div>
 
 
 
