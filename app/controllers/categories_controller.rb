@@ -5,7 +5,6 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
-    @user = User.find(params[:id])
   end
 
   # GET /categories/1
