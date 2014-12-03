@@ -1,0 +1,57 @@
+<!-- category/index.html -->
+
+
+<div class="wrapper">
+  <h1>Welcome to Design Girls!</h1>
+
+  <!-- サイドバー -->
+  <div class="side-bar">
+    <header>
+        <div class="menu-icon">
+            menu
+        </div>
+    </header>
+    <article>
+        hogehogehoge<br>
+        hogehogehoge
+    </article>
+    <footer>
+        
+    </footer>
+    <div class="menu">
+        <ul>
+            <li>Top</li>
+            <li>History</li>
+            <li>Illustration</li>
+        </ul>
+    </div>
+  </div>
+
+  <!-- チュートリアル一覧 -->
+
+  <div class ="tutorials">
+    <div class="new-tutorials">
+      <h2>Newデザイン</h2>
+
+      <% @categories.each do |category| %>
+        <div class="tutorials-list clip">
+              <td><%= category.title %></td>
+              <td><%= category_image_for category, 150 %></td>
+              <td><%= category.description %></td>
+              <td><%= link_to 'Show', category_path(id: category) %></td>
+              <td><%= link_to 'Edit', edit_category_path(category) %></td>
+              <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="clear"></div>
+
+
+    <br>
+
+    <%= link_to '新しいカテゴリーを作る', new_category_path %>
+
+  </div>
+
+</div>
