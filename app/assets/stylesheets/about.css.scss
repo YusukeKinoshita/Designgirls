@@ -15,7 +15,7 @@
 
 
 // TOP画像
-div#index-wrapper {
+div.bg-image {
 	/* 画像ファイルの指定 */
   background-image: url(/assets/top-img.jpg);
    
@@ -33,6 +33,8 @@ div#index-wrapper {
    
   /* 背景画像が読み込まれる前に表示される背景のカラー */
   background-color: #464646;
+  height: 100%;
+  min-height: 400px;
 }
 
 

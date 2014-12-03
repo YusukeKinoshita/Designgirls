@@ -1,31 +1,34 @@
-<h1>Sign in</h1>
+<div class="bg-image-signin">
 
-<div class="new-wrapper">
-  <div class="form">
-    <div class="white-box">
-      <%= form_for(:session, url: sessions_path) do |f| %>
+  <div class="new-wrapper">
+    <h1>Sign in</h1>
+    
+    <div class="form">
+      <div class="white-box">
+        <%= form_for(:session, url: sessions_path) do |f| %>
 
-          <p>ソーシャルアカウントでログイン</p>
+            <p>ソーシャルアカウントでログイン</p>
 
-          <div class="facebook-login">
-            <i class="fa fa-facebook">　Facebook</i>
-          </div>
-          <div class="twitter-login">
-            <i class="fa fa-twitter">　Twitter</i>
-          </div>
+            <div class="facebook-login">
+              <i class="fa fa-facebook">　Facebook</i>
+            </div>
+            <div class="twitter-login">
+              <i class="fa fa-twitter">　Twitter</i>
+            </div>
 
-          <p>メールアドレスでログイン</p>
+            <p>メールアドレスでログイン</p>
 
-          <%= f.label :email %>
-          <%= f.text_field :email %>
+            <%= f.label :email %>
+            <%= f.text_field :email %>
 
-          <%= f.label :password %>
-          <%= f.password_field :password %>
+            <%= f.label :password %>
+            <%= f.password_field :password %>
 
-          <%= f.submit "ログイン", class: "btn btn-large btn-primary" %>
-      <% end %>
+            <%= f.submit "ログイン", class: "btn btn-large btn-primary" %>
+        <% end %>
 
-      <p>まだ登録していない方は <%= link_to "こちら", new_user_path %></p>
+        <p>まだ登録していない方は <%= link_to "こちら", new_user_path %></p>
+      </div>
     </div>
   </div>
 </div>
