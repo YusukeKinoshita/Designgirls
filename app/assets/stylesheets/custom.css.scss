@@ -1,4 +1,4 @@
-@import "bootstrap";
+// @import "bootstrap";
 
 /* mixins, variables, etc. */
 
@@ -45,7 +45,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 0px;
 }
 
 section {
@@ -59,9 +59,11 @@ textarea {
 .center {
   text-align: center;
   h1 {
+    padding-top: 150px;
     margin-bottom: 10px;
   }
 }
+
 
 /* typography */
 
@@ -70,8 +72,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
+  font-size: 4em;
+  // letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -95,9 +97,9 @@ p {
 
 #logo {
   float: left;
-  margin-right: 10px;
+  margin-left: 50px;
   font-size: 1.7em;
-  color: white;
+  color: #fb50a0;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -110,8 +112,13 @@ p {
 }
 
 .navbar-in{
-  background-color: #f9555d;
+  width: 100%;
+  height: 30px;
+  margin: 0 auto;
+  padding: 20px;
+  position: fixed;
 }
+
 
 header form{
   display: inline-block;
@@ -121,7 +128,7 @@ header form{
 /* footer */
 
 footer {
-  margin-top: 45px;
+  margin-top: 0px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
   color: $grayLight;
@@ -300,3 +307,6 @@ aside {
 .reply{
   display: none;
 }
+
+
+
