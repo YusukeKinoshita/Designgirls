@@ -1,40 +1,29 @@
 class User < ActiveRecord::Base
-	before_create :create_remember_token
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
+  # attr_accessible :name, :password, :uid, :provider
 
-	validates :name, presence: true, length: { maximum: 50 }, uniqueness: true
-	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
-	has_secure_password
-	validates :password, length: { minimum: 6 }
+  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    unless user
+      user = User.create({
+        :name => auth.extra.raw_info.name,
+        :provider => auth.provider,
+        :uid => auth.uid,
+        :email => auth.info.email,
+        :password => Devise.friendly_token[0, 20],
+      })
+    end
+    user
+  end
 
-  has_many :tutorials
-
-
-
-
-  	def User.new_remember_token
-    	SecureRandom.urlsafe_base64
-  	end
-
-  	def User.encrypt(token)
-    	Digest::SHA1.hexdigest(token.to_s)
-  	end
-
-
-    # ここよくわからん
-    def set_image(file)
-      if !file.nil?
-        file_name = file.original_filename
-        # サーバー側に画像を保存している
-        File.open("public/docs/#{file_name}", 'wb'){|f| f.write(file.read)}
-        # データベースに書き込んでいる（imageカラムに文字列を入れる）
-        self.image = file_name
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+        user.email = data["email"] if user.email.blank?
       end
     end
-
-  	private
-
-    	def create_remember_token
-    	  	self.remember_token = User.encrypt(User.new_remember_token)
-    	end
+  end
 end

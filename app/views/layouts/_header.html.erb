@@ -36,7 +36,7 @@
                 </li>
                 <li class="divider"></li>
                 <li>
-                  <%= link_to "サインアウト", signout_path, :method => :delete %>
+                  <%= link_to "サインアウト", destroy_user_session_path, :method => :delete %>
                 </li>
               </ul>
             </li>
@@ -45,7 +45,7 @@
           <!-- ログインしてない場合 -->
           <% else %>
             <li>
-              <%= link_to "ログイン", signin_path, :class=> "signin-btn" %>
+              <%= link_to "ログイン", new_user_session_path, :class=> "signin-btn" %>
             </li>
           <% end %>
         </ul>
