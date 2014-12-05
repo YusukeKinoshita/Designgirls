@@ -7,7 +7,16 @@ Designgirls::Application.routes.draw do
   # match '/signin',  to: 'sessions#new',         via: 'get'
   # match '/signout', to: 'sessions#destroy',     via: 'delete'
   match '/mypage', to: 'categories#mypage',     via: 'get'
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_scope :user do
+  get "sign_in", :to => "devise/sessions#new"
+  delete "sign_out", :to => "devise/sessions#destroy"
+end
+  devise_for :users, :controllers => {
+    :sessions      => "users/sessions",
+    :registrations => "users/registrations",
+    :passwords     => "users/passwords",
+    :omniauth_callbacks => "users/omniauth_callbacks" 
+  }
   resources :users
   # resources :tutorials
   # resources :slides
