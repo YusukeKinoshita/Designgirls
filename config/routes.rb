@@ -4,9 +4,10 @@ Designgirls::Application.routes.draw do
   get "about/index"
   root  'about#index'
   match '/about', to:'about#index', via:'get'
-  match '/signin',  to: 'sessions#new',         via: 'get'
-  match '/signout', to: 'sessions#destroy',     via: 'delete'
+  # match '/signin',  to: 'sessions#new',         via: 'get'
+  # match '/signout', to: 'sessions#destroy',     via: 'delete'
   match '/mypage', to: 'categories#mypage',     via: 'get'
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users
   # resources :tutorials
   # resources :slides
