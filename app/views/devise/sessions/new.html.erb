@@ -5,16 +5,12 @@
     
     <div class="form">
       <div class="white-box">
-        <%= form_for(:session, url: sessions_path) do |f| %>
+        <%= form_for(resource, as: resource_name, url: user_session_path) do |f| %>
 
             <p>ソーシャルアカウントでログイン</p>
 
             <div class="facebook-login">
-<<<<<<< HEAD
-              <i class="fa fa-facebook">　Facebook</i>
-=======
               <i class="fa fa-facebook"><%= link_to "　Facebook", user_omniauth_authorize_path(:facebook) %></i>
->>>>>>> f6bb75c31e0792df9b91a7d9c4159eacb3eeaad1
             </div>
             <div class="twitter-login">
               <i class="fa fa-twitter">　Twitter</i>
@@ -23,10 +19,10 @@
             <p>メールアドレスでログイン</p>
 
             <%= f.label :email %>
-            <%= f.text_field :email %>
+            <%= f.text_field :email, autofocus: true %>
 
             <%= f.label :password %>
-            <%= f.password_field :password %>
+            <%= f.password_field :password, autocomplete: "off" %>
 
             <%= f.submit "ログイン", class: "btn btn-large btn-primary" %>
         <% end %>

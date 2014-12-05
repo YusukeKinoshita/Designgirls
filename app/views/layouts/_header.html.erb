@@ -36,7 +36,11 @@
                 </li>
                 <li class="divider"></li>
                 <li>
+<<<<<<< HEAD
                   <%= link_to "サインアウト", signout_path, :method => :delete %>
+=======
+                  <%= link_to "サインアウト", destroy_user_session_path, :method => :delete %>
+>>>>>>> f6bb75c31e0792df9b91a7d9c4159eacb3eeaad1
                 </li>
               </ul>
             </li>
@@ -45,7 +49,11 @@
           <!-- ログインしてない場合 -->
           <% else %>
             <li>
+<<<<<<< HEAD
               <%= link_to "ログイン", signin_path, :class=> "signin-btn" %>
+=======
+              <%= link_to "ログイン", new_user_session_path, :class=> "signin-btn" %>
+>>>>>>> f6bb75c31e0792df9b91a7d9c4159eacb3eeaad1
             </li>
           <% end %>
         </ul>

@@ -34,9 +34,14 @@ gem 'faker', '1.1.2'
 # ページネーション用
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
-
+# 認証機能用
+gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
+gem 'better_errors'
+gem 'binding_of_caller'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
