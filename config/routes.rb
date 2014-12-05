@@ -4,11 +4,7 @@ Designgirls::Application.routes.draw do
   get "about/index"
   root  'about#index'
   match '/about', to:'about#index', via:'get'
-<<<<<<< HEAD
-  match '/signin',  to: 'sessions#new',         via: 'get'
-  match '/signout', to: 'sessions#destroy',     via: 'delete'
-  match '/mypage', to: 'categories#mypage',     via: 'get'
-=======
+
   # match '/signin',  to: 'sessions#new',         via: 'get'
   # match '/signout', to: 'sessions#destroy',     via: 'delete'
   match '/mypage', to: 'categories#mypage',     via: 'get'
@@ -22,14 +18,18 @@ end
     :passwords     => "users/passwords",
     :omniauth_callbacks => "users/omniauth_callbacks" 
   }
->>>>>>> f6bb75c31e0792df9b91a7d9c4159eacb3eeaad1
   resources :users
-  # resources :tutorials
+  # resources :tutori als
   # resources :slides
+  resources :tutorials do
+    resources :slides
+  end
+
   resources :categories do
-    resources :tutorials do
-      resources :slides
+    member do
+      get :tutorials
     end
   end
+
   resources :sessions, only: [:new, :create, :destroy]
-end
+end 

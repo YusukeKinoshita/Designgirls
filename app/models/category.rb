@@ -1,11 +1,11 @@
 class Category < ActiveRecord::Base
-  has_many :tutorials, dependent: :destroy
   validates :title, presence: true
   validates :image, presence: true
   validates :description, presence: true
 
-  has_many :tags, through: :taggings
-  
+  has_many :tags
+  has_many :tutorials, through: :tags, dependent: :destroy
+
 
   def set_image(file)
       if !file.nil?

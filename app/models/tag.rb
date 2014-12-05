@@ -1,4 +1,4 @@
 class Tag < ActiveRecord::Base
-	has_many :taggings
-	has_many :categories, through: :taggings
+	belongs_to :tutorial
+	belongs_to :category
 end
