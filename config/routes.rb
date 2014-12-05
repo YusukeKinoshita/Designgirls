@@ -13,7 +13,7 @@ Designgirls::Application.routes.draw do
   delete "sign_out", :to => "devise/sessions#destroy"
 end
   devise_for :users, :controllers => {
-    :sessions      => "users/sessions",
+    # :sessions      => "users/sessions",
     :registrations => "users/registrations",
     :passwords     => "users/passwords",
     :omniauth_callbacks => "users/omniauth_callbacks" 
