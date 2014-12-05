@@ -70,6 +70,10 @@ class CategoriesController < ApplicationController
   def tutorials
   end
 
+  def mypage
+    @categories = Category.all
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
@@ -78,6 +82,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:title, :image, :description)
+      params.require(:category).permit(:title, :description)
     end
 end

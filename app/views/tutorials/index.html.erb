@@ -1,4 +1,5 @@
-<h1>Listing tutorials</h1>
+<div class="wrapper">
+  <h1>Listing tutorials</h1>
 
 <table>
   <thead>
@@ -20,9 +21,9 @@
         <td><%= tutorial_image_for tutorial %></td>
         <td><%= tutorial.user_id %></td>
         <td><%= tutorial.description %></td>
-        <td><%= link_to 'Show', category_tutorial_path(category_id: params[:category_id], id: params[:tutorial_id]) %></td>
-        <td><%= link_to 'Edit', edit_category_tutorial_path(category_id: params[:category_id], id: params[:tutorial_id]) %></td>
-        <td><%= link_to 'Destroy', category_tutorial_path(category_id: params[:category_id], id: params[:tutorial_id]), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', category_tutorial_path(category_id: params[:category_id], tutorial_id: params[:id]) %></td>
+        <td><%= link_to 'Edit', edit_category_tutorial_path(category_id: params[:category_id], tutorial_id: params[:id]) %></td>
+        <td><%= link_to 'Destroy', category_tutorial_path(category_id: params[:category_id], tutorial_id: params[:id]), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,3 +32,4 @@
 <br>
 
 <%= link_to 'New Tutorial', new_tutorial_path %>
+</div>

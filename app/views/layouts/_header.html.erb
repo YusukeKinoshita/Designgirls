@@ -1,33 +1,55 @@
+<!-- ヘッダーここから -->
 <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="navbar-in">
-        <div class="container">
-          <!-- link_to リンク先　表示名 -->
-          <%= link_to root_path, id: "logo" do %>
-            <i class="fa fa-heart fa-spin"></i>
-            Design Girls
-          <% end %>
-          <nav>
+  <div class="navbar-in">
+
+      <!-- ロゴ -->
+      <%= link_to root_path, id: "logo" do %>
+      <!-- link_to リンク先　表示名 -->
+      <i class="fa fa-heart fa-spin"></i>
+      Design Girls
+      <% end %>
+
+      <!-- ナビバー -->
+      <nav>
         <ul class="nav pull-right">
+
+          <!-- ログインしてる場合 -->
           <% if signed_in? %>
-            <li><%= link_to "Users", users_path %></li>
+            <!-- マイページへ -->
+            <li>
+              <%= link_to "マイページ", users_path %>
+            </li>
+
+            <!-- アカウント設定へ -->
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Account <b class="caret"></b>
+                アカウント設定 <b class="caret"></b>
               </a>
+
+              <!-- ドロップダウンメニュー -->
               <ul class="dropdown-menu">
-                <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                <li>
+                  <%= link_to "プロフィール", current_user %>
+                </li>
+                <li>
+                  <%= link_to "設定変更", edit_user_path(current_user) %>
+                </li>
                 <li class="divider"></li>
                 <li>
-                  <%= link_to "Sign out", signout_path, :method => :delete %>
+                  <%= link_to "サインアウト", signout_path, :method => :delete %>
                 </li>
               </ul>
             </li>
+
+
+          <!-- ログインしてない場合 -->
           <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
+            <li>
+              <%= link_to "ログイン", signin_path, :class=> "signin-btn" %>
+            </li>
           <% end %>
         </ul>
       </nav>
-    </div>
+    
   </div>
 </header>

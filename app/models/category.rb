@@ -4,6 +4,9 @@ class Category < ActiveRecord::Base
   validates :image, presence: true
   validates :description, presence: true
 
+  has_many :tags, through: :taggings
+  
+
   def set_image(file)
       if !file.nil?
         file_name = file.original_filename

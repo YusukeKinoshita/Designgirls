@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<div class="wrapper">
+	<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
@@ -15,8 +16,10 @@
   <%= slide_image_for @slide %>
 </p>
 
-<%= link_to 'Edit', edit_category_tutorial_slide_path(category_id: params[:id], tutorial_id: params[:id], id: @slide.id) %> |
+<%= link_to 'Edit', edit_category_tutorial_slide_path(category_id: params[:category_id], tutorial_id: params[:tutorial_id], id: @slide.id) %> |
 <%= link_to 'Back', category_tutorial_path(category_id: params[:category_id], id: params[:tutorial_id]) %>
+
+</div>
 
 
 

@@ -1,43 +1,43 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @category.title %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Image:</strong>
-  <%= category_image_for @category %>
-</p>
+    <div class="top-img">
+      <div class="titles">
+        <span>
+          <%= @category.title %>
+        </span>
+        <p>
+          <%= @category.description %>
+          Photoshopの基礎をやっていこうとおもいます。
+          Photoshopの基礎をやっていこうとおもいます。
+          Photoshopの基礎をやっていこうとおもいます。
+        </p>
+      </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @category.description %>
-</p>
+      <div class="clear"></div>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+      <div class="titles-img">
+        <p>
+          <%= category_image_for @category %>
+        </p>
+      </div>
+    </div>
 
-<%= link_to "Create New Tutorial!", new_category_tutorial_path(category_id: params[:id]), class: "btn btn-large btn-primary" %>
 
-<% if @category.tutorials.any? %>
-  <h3>Tutorials (<%= @category.tutorials.count %>)</h3>
-  <table>
+ 
+<div class="wrapper">
+  <div class="category-tutorials">
+    <% if @category.tutorials.any? %>
+      <h3>
+        Tutorials (<%= @category.tutorials.count %>)
+      </h3>
 
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Image</th>
-        <th>User</th>
-        <th>Description</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-    <%= render @tutorials %>
-  </tbody>
-  </table>
-  <%= will_paginate @tutorials %>
-<% end %>
+
+      <%= render @tutorials %>
+
+
+      <%= will_paginate @tutorials %>
+    <% end %>
+  </div>
+
+</div>

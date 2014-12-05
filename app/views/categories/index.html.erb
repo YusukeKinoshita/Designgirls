@@ -1,31 +1,40 @@
-<h1>Listing categories</h1>
+<div class="wrapper">
+  <h1>Welcome to Design Girls!</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Image</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
+  <!-- チュートリアル一覧 -->
+  <div class ="tutorials">
+
     <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.title %></td>
-        <td><%= category_image_for category %></td>
-        <td><%= category.description %></td>
-        <td><%= link_to 'Show', category_path(id: category) %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="tutorials-list">
+        <%= link_to category_path(id: category) do %>
+            <div class="category-images">
+              <%= category_image_for category %>
+            </div>
+        
+        <div class="details">
+            <span><%= category.title %></span>
+            <% end %>
+            
+            <div class="progress-bar"></div>
+            <p><%= category.description %></p>
+            
+
+            <div class="edit">
+              <%= link_to '編集', edit_category_path(category) %>
+              <%= link_to '削除', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
 
-<br>
+    <div class="clear"></div>
 
-<%= link_to 'New Category', new_category_path %>
+    <br>
+
+
+    <%= link_to '自分のチュートリアルを作る', new_category_path, class: "btn btn-pink" %>
+
+  </div>
+
+</div>

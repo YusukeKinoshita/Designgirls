@@ -1,10 +1,26 @@
+<div class="tutorials">
+    <div class="tutorials-list">
+        <%= link_to category_tutorial_path(category_id: params[:id],id: tutorial.id) do %>
+            <div class="category-images">
+              <%= tutorial_image_for tutorial %>
+            </div>
+        
+        	<div class="details">
+            <span><%= tutorial.title %></span>
+        <% end %>
+            
+        <div class="progress-bar"></div>
+        <p><%= tutorial.description %></p>
 
-      <tr>
-        <td><%= tutorial.title %></td>
-        <td><%= tutorial_image_for tutorial %></td>
-        <td><%= tutorial.user_id %></td>
-        <td><%= tutorial.description %></td>       
-        <td><%= link_to 'Show', category_tutorial_path(category_id: params[:id],id: tutorial.id) %></td>
-        <td><%= link_to 'Edit', edit_category_tutorial_path(category_id: params[:id], tutorial_id: tutorial.id) %></td>
-        <td><%= link_to 'Destroy', category_tutorial_path(category_id: params[:id], tutorial_id: tutorial.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <% tutorial.user_id %>
+            
+
+            <div class="edit">
+              <%= link_to 'Edit', edit_category_tutorial_path(category_id: params[:id], id: tutorial.id) %>
+              <%= link_to 'Destroy', category_tutorial_path(category_id: params[:id], id: tutorial.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+        </div>
+    </div>
+</div>
+
+
