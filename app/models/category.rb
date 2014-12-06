@@ -1,8 +1,11 @@
 class Category < ActiveRecord::Base
-  has_many :tutorials, dependent: :destroy
   validates :title, presence: true
   validates :image, presence: true
   validates :description, presence: true
+
+  has_many :tags
+  has_many :tutorials, through: :tags, dependent: :destroy
+
 
   def set_image(file)
       if !file.nil?
@@ -12,5 +15,9 @@ class Category < ActiveRecord::Base
         # データベースに書き込んでいる（imageカラムに文字列を入れる）
         self.image = file_name
       end
+  end
+
+  def tag(category)
+    tags.find_by(id: params[:id])
   end
 end

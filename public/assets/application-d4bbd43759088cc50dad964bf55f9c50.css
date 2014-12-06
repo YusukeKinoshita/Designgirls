@@ -1,0 +1,412 @@
+/* mixins, variables, etc. */
+/* line 26, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.search-input {
+  width: 40%;
+  display: inline-block;
+  margin-top: 7px;
+}
+
+/* miscellaneous */
+/* line 34, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* universal */
+/* line 44, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+html {
+  overflow-y: scroll;
+}
+
+/* line 48, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+body {
+  padding-top: 60px;
+}
+
+/* line 52, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+section {
+  overflow: auto;
+}
+
+/* line 56, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+textarea {
+  resize: vertical;
+}
+
+/* line 60, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.center {
+  text-align: center;
+}
+/* line 62, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* typography */
+/* line 69, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+/* line 73, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* line 80, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #eaeaea;
+}
+
+/* line 89, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+/* line 97, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+}
+/* line 107, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+#logo:hover {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 113, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.navbar-in {
+  background-color: #f9555d;
+}
+
+/* line 117, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+header form {
+  display: inline-block;
+  margin: 0;
+}
+
+/* footer */
+/* line 124, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #eaeaea;
+}
+/* line 129, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+footer a {
+  color: #eaeaea;
+}
+/* line 131, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+footer a:hover {
+  color: #eaeaea;
+}
+/* line 135, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+footer small {
+  float: left;
+}
+/* line 138, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+footer ul {
+  float: right;
+  list-style: none;
+}
+/* line 141, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
+
+/* sidebar */
+/* line 152, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+aside section {
+  padding: 10px 0;
+  border-top: 1px solid #eaeaea;
+}
+/* line 155, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+aside section:first-child {
+  border: 0;
+  padding-top: 0;
+}
+/* line 159, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+aside section span {
+  display: block;
+  margin-bottom: 3px;
+  line-height: 1;
+}
+/* line 164, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+aside section h1 {
+  font-size: 1.4em;
+  text-align: left;
+  letter-spacing: -1px;
+  margin-bottom: 3px;
+  margin-top: 0px;
+}
+
+/* line 174, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 179, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.stats {
+  overflow: auto;
+}
+/* line 181, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.stats a {
+  float: left;
+  padding: 0 10px;
+  border-left: 1px solid #eaeaea;
+  color: gray;
+}
+/* line 186, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.stats a:first-child {
+  padding-left: 0;
+  border: 0;
+}
+/* line 190, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.stats a:hover {
+  text-decoration: none;
+  color: #eaeaea;
+}
+/* line 195, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.stats strong {
+  display: block;
+}
+
+/* line 200, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+}
+/* line 203, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.user_avatars .gravatar {
+  margin: 1px 1px;
+}
+
+/* forms */
+/* line 211, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 219, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+input {
+  height: auto !important;
+}
+
+/* line 223, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+#error_explanation {
+  color: #f00;
+}
+/* line 225, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+#error_explanation ul {
+  list-style: none;
+  margin: 0 0 18px 0;
+}
+
+/* users index */
+/* line 238, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.users {
+  list-style: none;
+  margin: 0;
+}
+/* line 241, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.users li {
+  overflow: auto;
+  padding: 10px 0;
+  border-top: 1px solid #eaeaea;
+}
+/* line 245, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.users li:last-child {
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* microposts */
+/* line 253, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.microposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+}
+/* line 257, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.microposts li {
+  padding: 10px 0;
+  border-top: 1px solid #e8e8e8;
+}
+
+/* line 262, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.content {
+  display: block;
+}
+
+/* line 265, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.timestamp {
+  color: #eaeaea;
+}
+
+/* line 268, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 273, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+aside textarea {
+  height: 100px;
+  margin-bottom: 5px;
+}
+
+/* line 279, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.fa-star {
+  cursor: pointer;
+}
+
+/* line 283, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.favorite-star {
+  color: yellow;
+}
+
+/* line 287, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.unfavorite-star {
+  color: gray;
+}
+
+/* line 292, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.follow-wrapper {
+  text-align: right;
+}
+
+/* line 296, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.fa-reply {
+  color: gray;
+  cursor: pointer;
+}
+
+/* line 301, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/custom.css.scss */
+.reply {
+  display: none;
+}
+/* line 1, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/scaffolds.css.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 9, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/scaffolds.css.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 15, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/scaffolds.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 21, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/scaffolds.css.scss */
+a {
+  color: #000;
+}
+/* line 23, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/scaffolds.css.scss */
+a:visited {
+  color: #666;
+}
+/* line 26, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/scaffolds.css.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 33, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/scaffolds.css.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 38, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/scaffolds.css.scss */
+#notice {
+  color: green;
+}
+
+/* line 42, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/scaffolds.css.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 48, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 55, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 65, /Users/eri_razapii/rails_project/designgirls/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+

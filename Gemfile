@@ -40,6 +40,9 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 
+gem 'better_errors'
+gem 'binding_of_caller'
+
 group :doc do
   gem 'sdoc', '0.3.20', require: false
 end

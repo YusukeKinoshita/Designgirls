@@ -1,7 +1,10 @@
 class Tutorial < ActiveRecord::Base
   has_many :slides, dependent: :destroy
   belongs_to :category
-  belongs_to :users
+  belongs_to :user
+
+  has_many :tags
+  has_many :categories, through: :tags
 
   validates :title, presence: true
   validates :user_id, presence: true
@@ -24,5 +27,9 @@ class Tutorial < ActiveRecord::Base
   	# paramsは基本controllerの中でしか使えない
   	# チュートリアルテーブルの中からuser_idを探す
   	@user = User.find_by(id: self.user_id)
+  end
+
+  def tag(category)
+    tags.find_by(category_id: category_id)
   end
 end

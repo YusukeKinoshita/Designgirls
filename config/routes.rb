@@ -4,6 +4,7 @@ Designgirls::Application.routes.draw do
   get "about/index"
   root  'about#index'
   match '/about', to:'about#index', via:'get'
+
   # match '/signin',  to: 'sessions#new',         via: 'get'
   # match '/signout', to: 'sessions#destroy',     via: 'delete'
   match '/mypage', to: 'categories#mypage',     via: 'get'
@@ -12,7 +13,7 @@ Designgirls::Application.routes.draw do
   delete "sign_out", :to => "devise/sessions#destroy"
 end
   devise_for :users, :controllers => {
-    :sessions      => "users/sessions",
+    # :sessions      => "users/sessions",
     :registrations => "users/registrations",
     :passwords     => "users/passwords",
     :omniauth_callbacks => "users/omniauth_callbacks" 

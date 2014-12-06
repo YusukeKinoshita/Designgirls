@@ -5,7 +5,7 @@
     
     <div class="form">
       <div class="white-box">
-        <%= form_for(:session, url: sessions_path) do |f| %>
+        <%= form_for(resource, as: resource_name, url: user_session_path) do |f| %>
 
             <p>ソーシャルアカウントでログイン</p>
 
