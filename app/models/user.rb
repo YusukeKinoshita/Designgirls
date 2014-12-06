@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :tutorials, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :omniauthable, :recoverable,
