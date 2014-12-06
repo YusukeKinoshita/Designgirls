@@ -259,7 +259,9 @@ Devise.setup do |config|
   # API key
   if Rails.env.production?     
     config.omniauth :facebook, "742184019209878", "44094c3627f1337d9d68d003139a9ccc"
+    config.omniauth :twitter,  "jYpPzJj86xUpJyLjL0UI8mjkW", "U4TaeXGYWrHrdtN6OBBYx0K1GwOGDjWh4MpN2CPXxn3ndOghsU"
   else
     config.omniauth :facebook, "742184019209878", "44094c3627f1337d9d68d003139a9ccc"
+    config.omniauth :twitter,  "jYpPzJj86xUpJyLjL0UI8mjkW", "U4TaeXGYWrHrdtN6OBBYx0K1GwOGDjWh4MpN2CPXxn3ndOghsU"
   end
 end
