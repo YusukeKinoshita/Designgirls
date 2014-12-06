@@ -3,8 +3,6 @@ class Tutorial < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
 
-  has_many :tags
-  has_many :categories, through: :tags
 
   validates :title, presence: true
   validates :user_id, presence: true

@@ -19,17 +19,12 @@ end
     :omniauth_callbacks => "users/omniauth_callbacks" 
   }
   resources :users
-  # resources :tutori als
+  # resources :tutorials
   # resources :slides
-  resources :tutorials do
-    resources :slides
-  end
-
   resources :categories do
-    member do
-      get :tutorials
+    resources :tutorials do
+      resources :slides
     end
   end
-
   resources :sessions, only: [:new, :create, :destroy]
-end 
+end
