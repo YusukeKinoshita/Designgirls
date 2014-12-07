@@ -1,43 +1,50 @@
-<div class="create-wrapper">
-  <div class="form"> 
-    　<!--　エラーメッセージ -->
-      <% if @tutorial.errors.any? %>
-        <div id="error_explanation">
-          <h2>
-            <%= pluralize(@tutorial.errors.count, "error") %> prohibited this tutorial from being saved:
-          </h2>
 
-          <ul>
-            <% @tutorial.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
 
-      <div class="white-box">
 
-        <div class="field">
-          <%= f.label :title %><br>
-          <%= f.text_field :title %>
+    <form class="grid-form">
+        <fieldset>
+            <!-- フォームのタイトル -->
+            <legend>履歴書的な</legend>
+            <!-- 1行の記述 data-row-spanでグリッド数を調整 -->
+            <div data-row-span="4">
+                <!-- 1行の区分けを設定 -->
+                <div data-field-span="3">
+                    <label>お名前</label>
+                    <!-- autofocusで初期フォーカス -->    
+                    <input type="text" autofocus>
+                </div>
+                <div data-field-span="1">
+                    <label>性別</label>
+                    <input type="text">
+                </div>
+            </div>
+            <div data-row-span="2">
+            <div data-field-span="1">
+                <label>Field 1</label>
+                <input type="text">
+            </div>
+            <div data-field-span="1">
+                <label>Field 2</label>
+                <input type="text">
+            </div>
         </div>
-        <div class="field">
-          <%= f.label :user_id %><br>
-          <%= f.number_field :user_id %>
-        </div>
-        <div class="field">
-          <%= f.label :description %><br>
-          <%= f.text_field :description %>
-        </div>
-        <div class="field">
-          <%= f.label :image %><br>
-          <%= f.file_field :image %>
-        </div>
-        <div class="actions">
-          <%= f.submit %>
-        </div>
-      </div>
+        </fieldset>
+    </form>
 
-  　</div>
-</div>
 
+
+<form class="grid-form">
+    <fieldset>
+        <legend>Form Section</legend>
+        <div data-row-span="2">
+            <div data-field-span="1">
+                <label>Field 1</label>
+                <input type="text">
+            </div>
+            <div data-field-span="1">
+                <label>Field 2</label>
+                <input type="text">
+            </div>
+        </div>
+    </fieldset>
+</form>

@@ -21,10 +21,10 @@ end
   resources :users
   # resources :tutorials
   # resources :slides
-  resources :categories do
-    resources :tutorials do
-      resources :slides
-    end
+  resources :categories
+
+  resources :tutorials do
+    resources :slides
   end
   resources :sessions, only: [:new, :create, :destroy]
 end
