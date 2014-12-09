@@ -16,8 +16,9 @@ class TutorialsController < ApplicationController
   # GET /tutorials/new
   def new
     
-    @category = Category.find(params[:category_id])
-    @tutorial = @category.tutorials.build
+    # @category = Category.find(params[:category_id])
+    # @tutorial = @category.tutorials.build
+    @tutorial = Tutorial.new
   end
 
   # GET /tutorials/1/edit

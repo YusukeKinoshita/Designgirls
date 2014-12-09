@@ -1,21 +1,31 @@
 
 
-    <form class="grid-form">
-        <fieldset>
-            <!-- フォームのタイトル -->
-            <legend>履歴書的な</legend>
-            <!-- 1行の記述 data-row-spanでグリッド数を調整 -->
-            <div data-row-span="4">
-                <!-- 1行の区分けを設定 -->
-                <div data-field-span="3">
-                    <label>お名前</label>
-                    <!-- autofocusで初期フォーカス -->    
-                    <input type="text" autofocus>
-                </div>
-                <div data-field-span="1">
-                    <label>性別</label>
-                    <input type="text">
-                </div>
+<form class="grid-form">
+    <fieldset>
+        <!-- フォームのタイトル -->
+        <legend>履歴書的な</legend>
+        <!-- 1行の記述 data-row-spanでグリッド数を調整 -->
+        <div data-row-span="4" id="test">
+            <!-- 1行の区分けを設定 -->
+            <div data-field-span="3">
+                <label>お名前</label>
+                <!-- autofocusで初期フォーカス -->    
+                <input type="text" autofocus>
             </div>
-        </fieldset>
-    </form>
+            <div data-field-span="1">
+                <label>性別</label>
+                <input type="text">
+            </div>
+        </div>
+        <div class="plus-btn">追加</div>
+    </fieldset>
+</form>
+
+
+<script>
+    $(function(){
+        $(document).on('click', '.plus-btn', function(){
+            $('#test').append("<%= render('slide_form') %>");
+        });
+    });
+</script>
