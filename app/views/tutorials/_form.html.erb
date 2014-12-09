@@ -1,25 +1,31 @@
 <form class="grid-form">
     <fieldset>
         <!-- フォームのタイトル -->
-        <legend>履歴書的な</legend>
+        <!-- <legend>CREATE NEW TUTORIAL</legend> -->
         <!-- 1行の記述 data-row-spanでグリッド数を調整 -->
         <div data-row-span="4" id="test">
             <!-- 1行の区分けを設定 -->
-            <div data-field-span="3">
+            <div data-field-span="4">
                 <label>タイトル</label>
                 <!-- autofocusで初期フォーカス -->    
                 <input type="text" autofocus>
             </div>
-            <div data-field-span="1">
-                <label>詳細</label>
+            <div data-field-span="2">
+                <label>サムネイル画像</label>
+                <input type="file">
+            </div>
+            <div data-field-span="2">
+                <label>説明</label>
                 <input type="text">
             </div>
         </div>
 
-        <div class="plus-btn">追加</div>
-        <div class="destroy-btn">削除</div>
-        <div class="toleft-btn">←</div>
-        <div class="toright-btn">→</div>
+        <div class="form-buttons">
+            <div class="plus-btn">追加</div>
+            <div class="destroy-btn">削除</div>
+            <div class="toleft-btn">←</div>
+            <div class="toright-btn">→</div>
+        </div>
 
     </fieldset>
 </form>
@@ -28,16 +34,17 @@
 <script>
     $(function(){
         $(document).on('click', '.plus-btn', function(){
-            $('#test').append("<%= render 'slides/form' %>");
-        });
+            $('#test').append("<%= escape_javascript(render('slides/form')) %>");
+        }); 
         $(document).on('click', '.destroy-btn', function(){
-            $('#test').append("<%= render 'slides/form' %>");
+            $('#test').append("<%= escape_javascript(render('slides/form')) %>");
         });
         $(document).on('click', '.toleft-btn', function(){
-            $('#test').append("<%= render 'slides/form' %>");
+            $('#test').append("<%= escape_javascript(render('slides/form')) %>");
         });
         $(document).on('click', '.toright-btn', function(){
-            $('#test').append("<%= render 'slides/form' %>");
+            $('#test').append("<%= escape_javascript(render('slides/form')) %>");
         });
+        
     });
 </script>
