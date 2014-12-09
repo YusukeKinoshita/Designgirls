@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :current_user
   before_action :signed_in_user, only: [:edit, :update]
   before_action :correct_user,   only: [:edit, :update]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
@@ -63,6 +62,13 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end
+  end
+
+  def favorite
+    @title = 'Favorite Products'
+    @product = current_user.products.build
+    @feed_products = current_user.favorite_products.paginate(page: params[:page])
+    render template: 'about/index'
   end
 
   private

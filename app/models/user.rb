@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
   has_many :tutorials, dependent: :destroy
+  has_many :products, dependent: :destroy
+  # お気に入り
+  has_many :favorites
+  has_many :favorite_products, through: :favorites, source: :product
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :omniauthable, :recoverable,
@@ -39,5 +43,17 @@ class User < ActiveRecord::Base
   # twitterではemailを取得できないので、適当に一意のemailを生成
   def self.create_unique_email
     User.create_unique_string + "@example.com"
+  end
+
+  def favorite?(product)
+    favorites.find_by(product_id: product.id)
+  end
+
+  def favorite!(product)
+    favorites.create!(product_id: product.id)
+  end
+
+  def unfavorite!(product)
+    favorites.find_by(product_id: product.id).destroy
   end
 end
