@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 20141207102724) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_id"
+    t.integer  "tutorial_id"
   end
 
   create_table "tutorials", force: true do |t|

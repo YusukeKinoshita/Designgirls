@@ -27,17 +27,21 @@
  
 <div class="wrapper">
   <div class="category-tutorials">
-    <% if @category.tutorials.any? %>
+    <% if @tutorials.any? %>
       <h3>
-        Tutorials (<%= @category.tutorials.count %>)
+        Tutorials (<%= @tutorials.count %>)
       </h3>
 
 
       <%= render @tutorials %>
 
+      
+
 
       <%= will_paginate @tutorials %>
     <% end %>
+
+    <%= link_to '自分のチュートリアルを作る', new_tutorial_path, class: "btn btn-pink" %>
   </div>
 
 </div>
