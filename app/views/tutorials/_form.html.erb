@@ -1,50 +1,43 @@
-
-
-
-    <form class="grid-form">
-        <fieldset>
-            <!-- フォームのタイトル -->
-            <legend>履歴書的な</legend>
-            <!-- 1行の記述 data-row-spanでグリッド数を調整 -->
-            <div data-row-span="4">
-                <!-- 1行の区分けを設定 -->
-                <div data-field-span="3">
-                    <label>お名前</label>
-                    <!-- autofocusで初期フォーカス -->    
-                    <input type="text" autofocus>
-                </div>
-                <div data-field-span="1">
-                    <label>性別</label>
-                    <input type="text">
-                </div>
-            </div>
-            <div data-row-span="2">
-            <div data-field-span="1">
-                <label>Field 1</label>
-                <input type="text">
-            </div>
-            <div data-field-span="1">
-                <label>Field 2</label>
-                <input type="text">
-            </div>
-        </div>
-        </fieldset>
-    </form>
-
-
-
 <form class="grid-form">
     <fieldset>
-        <legend>Form Section</legend>
-        <div data-row-span="2">
-            <div data-field-span="1">
-                <label>Field 1</label>
-                <input type="text">
+        <!-- フォームのタイトル -->
+        <legend>履歴書的な</legend>
+        <!-- 1行の記述 data-row-spanでグリッド数を調整 -->
+        <div data-row-span="4" id="test">
+            <!-- 1行の区分けを設定 -->
+            <div data-field-span="3">
+                <label>タイトル</label>
+                <!-- autofocusで初期フォーカス -->    
+                <input type="text" autofocus>
             </div>
             <div data-field-span="1">
-                <label>Field 2</label>
+                <label>詳細</label>
                 <input type="text">
             </div>
         </div>
+
+        <div class="plus-btn">追加</div>
+        <div class="destroy-btn">削除</div>
+        <div class="toleft-btn">←</div>
+        <div class="toright-btn">→</div>
+
     </fieldset>
 </form>
+
+
+<script>
+    $(function(){
+        $(document).on('click', '.plus-btn', function(){
+            $('#test').append("<%= render 'slides/form' %>");
+        });
+        $(document).on('click', '.destroy-btn', function(){
+            $('#test').append("<%= render 'slides/form' %>");
+        });
+        $(document).on('click', '.toleft-btn', function(){
+            $('#test').append("<%= render 'slides/form' %>");
+        });
+        $(document).on('click', '.toright-btn', function(){
+            $('#test').append("<%= render 'slides/form' %>");
+        });
+    });
+</script>
