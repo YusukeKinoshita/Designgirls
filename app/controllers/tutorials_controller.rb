@@ -28,8 +28,8 @@ class TutorialsController < ApplicationController
   # POST /tutorials
   # POST /tutorials.json
   def create
-    @category = Category.find(params[:category_id])
-    @tutorial = @category.tutorials.build(tutorial_params)
+
+    @tutorial = Tutorial.new(tutorial_params)
     file = params[:tutorial][:image]
     @tutorial.set_image(file)
 

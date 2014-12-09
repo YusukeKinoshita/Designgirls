@@ -1,4 +1,4 @@
-<form class="grid-form">
+<form class="grid-form"　action="/tutorials"　method="post">
     <fieldset>
         <!-- フォームのタイトル -->
         <!-- <legend>CREATE NEW TUTORIAL</legend> -->
@@ -8,15 +8,15 @@
             <div data-field-span="4">
                 <label>タイトル</label>
                 <!-- autofocusで初期フォーカス -->    
-                <input type="text" autofocus>
+                <input type="text" name="tutorial[title]"　autofocus>
             </div>
             <div data-field-span="2">
                 <label>サムネイル画像</label>
-                <input type="file">
+                <input type="file" name="tutorial[image]">
             </div>
             <div data-field-span="2">
                 <label>説明</label>
-                <input type="text">
+                <input type="text" name="tutorial[description]">
             </div>
         </div>
 
@@ -26,6 +26,8 @@
             <div class="toleft-btn">←</div>
             <div class="toright-btn">→</div>
         </div>
+
+        <input type="submit">
 
     </fieldset>
 </form>
@@ -44,7 +46,6 @@
         });
         $(document).on('click', '.toright-btn', function(){
             $('#test').append("<%= escape_javascript(render('slides/form')) %>");
-        });
-        
+        });        
     });
 </script>
