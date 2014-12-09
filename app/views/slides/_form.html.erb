@@ -1,31 +1,22 @@
- <% if @slide.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@slide.errors.count, "error") %> prohibited this slide from being saved:</h2>
-
-      <ul>
-      <% @slide.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%=  f.label :number %><br>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :body %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<form class="grid-form">
+    <fieldset>
+        <!-- 1行の記述 data-row-spanでグリッド数を調整 -->
+        <div data-row-span="4" id="test">
+            <!-- 1行の区分けを設定 -->
+            <div data-field-span="4">
+                <label>タイトル</label>
+                <!-- autofocusで初期フォーカス -->    
+                <input type="text" autofocus>
+            </div>
+            <div data-field-span="2">
+                <label>サムネイル画像</label>
+                <input type="file">
+            </div>
+            <div data-field-span="2">
+                <label>説明</label>
+                <input type="text">
+            </div>
+        </div>
+    </fieldset>
+</form>
 
