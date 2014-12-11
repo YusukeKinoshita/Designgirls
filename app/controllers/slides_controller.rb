@@ -26,7 +26,7 @@ class SlidesController < ApplicationController
   # POST /slides.json
   def create
     # @slide = current_tutorial.slides.built(slide_params)
-    @category = Category.find(params[:category_id])
+    # @category = Category.find(params[:category_id])
     @tutorial = Tutorial.find(params[:tutorial_id])
     @slide = @tutorial.slides.build(slide_params)
     file = params[:slide][:image]
@@ -34,7 +34,7 @@ class SlidesController < ApplicationController
 
     respond_to do |format|
       if @slide.save
-        format.html { redirect_to category_tutorial_slide_path(category_id: @category.id, tutorial_id: @tutorial.id, id: @slide.id), notice: 'Slide was successfully created.' }
+        format.html { redirect_to tutorial_slide_path(tutorial_id: @tutorial.id, id: @slide.id), notice: 'Slide was successfully created.' }
         format.json { render action: 'show', status: :created, location: @slide }
       else
         format.html { render action: 'new' }
@@ -53,7 +53,7 @@ class SlidesController < ApplicationController
     respond_to do |format|
       # @slide.image = params[:slide][:image].original_filename
       if @slide.update(slide_params)
-        format.html { redirect_to category_tutorial_slide_path(category_id: @category.id, tutorial_id: @tutorial.id, id: @slide.id), notice: 'Slide was successfully updated.' } 
+        format.html { redirect_to tutorial_slide_path(tutorial_id: @tutorial.id, id: @slide.id), notice: 'Slide was successfully updated.' } 
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -67,7 +67,7 @@ class SlidesController < ApplicationController
   def destroy
     @slide.destroy
     respond_to do |format|
-      format.html { redirect_to slides_url }
+      format.html { redirect_to tutorial_slides_url }
       format.json { head :no_content }
     end
   end

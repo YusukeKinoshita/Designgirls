@@ -16,8 +16,8 @@
   <%= slide_image_for @slide %>
 </p>
 
-<%= link_to 'Edit', edit_category_tutorial_slide_path(category_id: params[:category_id], tutorial_id: params[:tutorial_id], id: @slide.id) %> |
-<%= link_to 'Back', category_tutorial_path(category_id: params[:category_id], id: params[:tutorial_id]) %>
+<%= link_to 'Edit', edit_tutorial_slide_path(tutorial_id: params[:tutorial_id], id: @slide.id) %> |
+<%= link_to 'Back', tutorial_path(id: params[:tutorial_id]) %>
 
 </div>
 

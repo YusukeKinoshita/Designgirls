@@ -20,12 +20,3 @@
         <div class="plus-btn">追加</div>
     </fieldset>
 </form>
-
-
-<script>
-    $(function(){
-        $(document).on('click', '.plus-btn', function(){
-            $('#test').append("<%= render('slide_form') %>");
-        });
-    });
-</script>
