@@ -4,7 +4,6 @@
 
 
 
-
 .top-img{
 	width: 100%;
 	background-color: #00acd4;
@@ -32,3 +31,46 @@
 	float: left;
 	display: inline-block;
 }
+
+.slide-form {
+	width:25%;
+	float: left;
+}
+
+#test {
+	margin-bottom: 50px;
+	width: 70%;
+	margin: 0 auto;
+	text-align: center;
+	padding-left: 140px;
+}
+
+#test-2 {
+	margin: 10px;
+}
+
+#test .form-title {
+	width: 80%; 
+	display: inline-block;
+	float: left;
+}
+
+#test .form-sumnail {
+	width: 38%;
+	display: inline-block;
+	height: 300px;
+	margin-right: 20px;
+	float: left;
+}
+
+#test .form-discription {
+	width: 38%;
+	display: inline-block;
+	float: left;
+	height: 7em;
+	line-height: 1.5em;
+}
+
+
+
+
