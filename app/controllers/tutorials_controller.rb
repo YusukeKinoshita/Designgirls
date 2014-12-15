@@ -30,7 +30,7 @@ class TutorialsController < ApplicationController
   def create
 
     @tutorial = Tutorial.new(tutorial_params)
-    file = params[:tutorial][:image]
+    file = params[:tutorial][:userfile]
     @tutorial.set_image(file)
 
     respond_to do |format|
@@ -48,11 +48,12 @@ class TutorialsController < ApplicationController
   # PATCH/PUT /tutorials/1.json
   def update
     # @category = Category.find(params[:category_id])
-    file = params[:tutorial][:image]
+    file = params[:tutorial][:userfile]
     @tutorial.set_image(file)
+    # raise
     respond_to do |format|
-      if @tutorial.update(tutorial_params)
-        format.html { redirect_to tutorial_path(id: @tutorial.id), notice: 'Tutorial was successfully updated.' }
+      if @tutorial.update!(tutorial_params)
+        format.html { redirect_to tutorial_path(id: @tutorial.id), notice: 'Tutorial was successfully updated.' } 
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -82,6 +83,6 @@ class TutorialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tutorial_params
-      params.require(:tutorial).permit(:title, :user_id, :description, :category_id)
+      params.require(:tutorial).permit(:title, :user_id, :description, :category_id, slides_attributes: [:id, :title, :body, :image])
     end
 end
