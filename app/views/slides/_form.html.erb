@@ -1,4 +1,5 @@
 <!-- <form class="slide-form" action="/tutorial_slides"　method="post"  enctype="multipart/form-data"> -->
+<%= f.fields_for :slides, slide do |f_slide| %>
     <fieldset>
         <div id="test-2">
             <div class="slide-img">
@@ -11,13 +12,13 @@
             </div>          
             <div class="slide-description">
                 <label>説明</label>
-                 <%= f_slide. text_area :body %> 
+                 <%= f_slide. text_area :body, :size=>"60x10" %> 
             </div>
         </div>
         <!-- <input type="submit"> -->
     </fieldset>
 <!-- </form> -->
-
+<% end %> 
 
 
 

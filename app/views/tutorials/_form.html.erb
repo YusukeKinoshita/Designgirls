@@ -3,9 +3,6 @@
     <%= javascript_include_tag 'tutorials/form' %>
     <%= csrf_meta_tags %>
 </head>
- 
-
-<!-- <form id="create-form"　action="/tutorials/:tutorial_id/slides"　method="post"  enctype="multipart/form-data"> -->
 
 <%= form_for @tutorial do |f| %>
 
@@ -21,31 +18,43 @@
             </div>
             <div class="form-discription">
                 <label>説明</label>
-                <%= f.text_area :description %>
+                <%= f.text_area :description, :size=>"60x10" %>
             </div>
         </div>
+        
+        <div class="radio-button">
+            <label><%= f.radio_button :level, "1" %>初級</label>
+            <label><%= f.radio_button :level, "2" %>中級</label>
+            <label><%= f.radio_button :level, "3" %>上級</label>
+        </div>
+
+        <label></label>
 
         <div class="clear"></div>
 
-<% @tutorial.slides.each do |slide| %>
-    <%= f.fields_for :slides, slide do |f_slide| %>
-        <%= render 'slides/form', f_slide: f_slide %>
-    <% end %> 
+        
 
-<% end %>
+        
+        <div id="slides">
+            <% @tutorial.slides.each do |slide| %>
+                    <%= render 'slides/form', slide: slide, f: f %>
+            <% end %>
+        </div>
 
         <div class="form-buttons">
             <div class="plus-btn">追加</div>
             <div class="destroy-btn">削除</div>
-            <div class="toleft-btn">←</div>
-            <div class="toright-btn">→</div>
+            <!-- <div class="toleft-btn">←</div>
+            <div class="toright-btn">→</div> -->
         </div>
+     
 
         <input type="submit">
 
     </fieldset>
-<!-- </form> -->
 <% end %>
+
+
 
 
 <script>
@@ -73,9 +82,13 @@
           });
 
 
+
+        $(document).on('click', '.plus-btn', function(){
+             $('#slides').append("<%= escape_javascript(render('slides/form', slide: @tutorial.slides.build, f: f)) %>");
+        });
         $(document).on('click', '.destroy-btn', function(){
             $('.slide-form').last().remove();
-        });
+        });   
 
         
     });
