@@ -32,42 +32,41 @@
 	display: inline-block;
 }
 
-.slide-form {
-	width:25%;
-	float: left;
-}
 
-#test {
-	margin-bottom: 50px;
-	width: 70%;
+#create-form {
 	margin: 0 auto;
 	text-align: center;
-	padding-left: 140px;
 }
 
-#test-2 {
-	margin: 10px;
+.fieldset {
+	text-align: center;
 }
+
+
+#test {
+}
+
+
 
 #test .form-title {
 	width: 80%; 
 	display: inline-block;
-	float: left;
+
 }
 
 #test .form-sumnail {
-	width: 38%;
+	width: 35%;
 	display: inline-block;
-	height: 300px;
-	margin-right: 20px;
+	min-height: 300px;
+	padding-left: 100px;
+	margin-right: 10px;
 	float: left;
 }
 
 #test .form-discription {
-	width: 38%;
+	width: 35%;
 	display: inline-block;
-	float: left;
-	height: 7em;
+	// float: left;
 	line-height: 1.5em;
 }
 
