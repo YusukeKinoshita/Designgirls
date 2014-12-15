@@ -40,6 +40,7 @@
 
 .fieldset {
 	text-align: center;
+	padding-left: 100px;
 }
 
 
@@ -55,20 +56,66 @@
 }
 
 #test .form-sumnail {
-	width: 35%;
+	width: 38%;
 	display: inline-block;
-	min-height: 300px;
+	min-height: 200px;
 	padding-left: 100px;
 	margin-right: 10px;
 	float: left;
 }
 
 #test .form-discription {
-	width: 35%;
+	width: 38%;
 	display: inline-block;
 	// float: left;
 	line-height: 1.5em;
 }
+
+.radio-button {
+	margin-left: 100px;
+}
+
+.radio-button label{
+	display: inline-block;
+	width: 100px;
+}
+
+.radio-button input {
+	width: 20%;
+}
+
+
+
+
+
+
+// slides
+
+.slide-form {
+     width:100%;
+     float: left;
+     margin: 0 auto;
+}
+
+#test-2 {
+     margin: 10px;
+}
+
+.slide-img {
+     float: left;
+     width: 50%;
+}
+
+.slide-title {
+     float: left;
+     width: 50%;
+}
+
+.slide-description {
+     float: left;
+     width: 50%;
+}
+
 
 
 
