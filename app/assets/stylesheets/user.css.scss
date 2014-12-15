@@ -1,31 +1,7 @@
-// Place all the styles related to the Users controller here.
+// Place all the styles related to the Tutorials controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
-
-// new.html
-
-// div.new-wrapper {
-//   /* 画像ファイルの指定 */
-//   background-image: url(/assets/login-img.jpg);
-   
-//   /* 画像を常に天地左右の中央に配置 */
-//   background-position: center center;
-   
-//   /* 画像をタイル状に繰り返し表示しない */
-//   background-repeat: no-repeat;
-   
-//   /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
-//   background-attachment: fixed;
-   
-//   /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
-//   background-size: cover;
-   
-//   /* 背景画像が読み込まれる前に表示される背景のカラー */
-//   background-color: #464646;
-// }
 
 .form {
 	width: 30%;
@@ -47,7 +23,7 @@
 .facebook-login {
 	color: #fff;
 	float:left;
-	width: 120px;
+	width: 38%;
 	height: 30px;
 	margin: 10px 5px 40px 5px;
 	padding: 10px;
@@ -61,7 +37,7 @@
 .twitter-login {
 	color: #fff;
 	float:left;
-	width: 120px;
+	width: 38%;
 	height: 30px;
 	padding: 10px;
 	margin: 10px 5px 40px 5px;
@@ -81,7 +57,7 @@
 
 
 
-// show.html
+// show
 
 //中央寄せとpadding
 .wrapper {
@@ -95,10 +71,3 @@
 .user {
 
 }
-
-
-
-
-
-
-

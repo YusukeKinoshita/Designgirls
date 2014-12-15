@@ -1,24 +1,35 @@
+<head>
+    <%= stylesheet_link_tag    'tutorials/form', media: 'all' %>
+    <%= javascript_include_tag 'tutorials/form' %>
+    <%= csrf_meta_tags %>
+</head>
+
+
 <form class="grid-form"　action="/tutorials/:tutorial_id/slides"　method="post"  enctype="multipart/form-data">
+
     <fieldset>
         <!-- フォームのタイトル -->
         <!-- <legend>CREATE NEW TUTORIAL</legend> -->
         <!-- 1行の記述 data-row-spanでグリッド数を調整 -->
-        <div data-row-span="4" id="test">
+        <div id="test">
             <!-- 1行の区分けを設定 -->
-            <div data-field-span="4">
+            <div class="form-title">
                 <label>タイトル</label>
                 <!-- autofocusで初期フォーカス -->    
                 <input type="text" name="tutorial[title]"　autofocus>
             </div>
-            <div data-field-span="2">
+            <div class="form-sumnail">
                 <label>サムネイル画像</label>
-                <input type="file" name="tutorial[image]">
+                <input type="file" name="userfile">
             </div>
-            <div data-field-span="2">
+            <div class="form-discription">
                 <label>説明</label>
-                <input type="text" name="tutorial[description]">
+                <input type="textarea" name="tutorial[description]">
             </div>
         </div>
+
+        <div class="clear"></div>
+
 
         <div class="form-buttons">
             <div class="plus-btn">追加</div>
@@ -35,17 +46,38 @@
 
 <script>
     $(function(){
+        $('input[type=file]').after('<span></span>');
+
+          // アップロードするファイルを選択
+          $('input[type=file]').change(function() {
+            var file = $(this).prop('files')[0];
+
+            // 画像以外は処理を停止
+            if (! file.type.match('image.*')) {
+              $('span').html('');
+              return;
+            }
+            
+            // 画像表示
+            var reader = new FileReader();
+            reader.onload = function() {
+              var img_src = $('<img>').attr('src', reader.result);
+              $('span').html(img_src);
+            }
+            reader.readAsDataURL(file);
+          });
+
         $(document).on('click', '.plus-btn', function(){
             $('#test').append("<%= escape_javascript(render('slides/form')) %>");
         }); 
         $(document).on('click', '.destroy-btn', function(){
-            $('#test').append("<%= escape_javascript(render('slides/form')) %>");
+            $('.slide-form').last().remove();
         });
         $(document).on('click', '.toleft-btn', function(){
-            $('#test').append("<%= escape_javascript(render('slides/form')) %>");
+            $('.slide-form').append("<%= escape_javascript(render('slides/form')) %>");
         });
         $(document).on('click', '.toright-btn', function(){
-            $('#test').append("<%= escape_javascript(render('slides/form')) %>");
+            $('.slide-form').append("<%= escape_javascript(render('slides/form')) %>");
         });        
     });
 </script>

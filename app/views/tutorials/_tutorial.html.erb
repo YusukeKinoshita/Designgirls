@@ -1,6 +1,6 @@
 <div class="tutorials">
     <div class="tutorials-list">
-        <%= link_to category_tutorial_path(category_id: params[:id],id: tutorial.id) do %>
+        <%= link_to tutorial_path(id: tutorial.id) do %>
             <div class="category-images">
               <%= tutorial_image_for tutorial %>
             </div>
@@ -16,8 +16,8 @@
             
 
             <div class="edit">
-              <%= link_to 'Edit', edit_category_tutorial_path(category_id: params[:id], id: tutorial.id) %>
-              <%= link_to 'Destroy', category_tutorial_path(category_id: params[:id], id: tutorial.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to 'Edit', edit_tutorial_path(id: tutorial.id) %>
+              <%= link_to 'Destroy', tutorial_path(id: tutorial.id), method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
         </div>
     </div>
