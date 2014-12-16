@@ -1,0 +1,25 @@
+<div class="wrapper">
+	<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @slide.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @slide.body %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= slide_image_for @slide %>
+</p>
+
+<%= link_to 'Edit', edit_tutorial_slide_path(tutorial_id: params[:tutorial_id], id: @slide.id) %> |
+<%= link_to 'Back', tutorial_path(id: params[:tutorial_id]) %>
+
+</div>
+
+
+

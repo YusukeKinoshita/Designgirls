@@ -1,0 +1,51 @@
+
+  <div class="form">   
+    <%= form_for(@user) do |f| %>
+
+      <%= render 'shared/error_messages' %>
+
+    <div class="white-box">
+      <p>ソーシャルアカウントで登録</p>
+
+      <div class="facebook-login">
+        <i class="fa fa-facebook"><%= link_to "　Facebook", user_omniauth_authorize_path(:facebook) %></i>
+      </div>
+      <div class="twitter-login">
+        <i class="fa fa-twitter"><%= link_to "  Twitter",  user_omniauth_authorize_path(:twitter) %></i>
+      </div>
+
+      <div class="line"></div>
+
+
+      <p>メールアドレスで登録</p>
+
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :image %><br>
+        <%= f.file_field :image %>
+      </div>
+      <div class="field">
+        <%= f.label :email %><br>
+        <%= f.text_field :email %>
+      </div>
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "登録", class: "btn btn-large btn-primary" %>
+      </div>
+         <p>もう登録がお済みの方は <%= link_to "こちら", sign_in_path %></p>
+    </div>
+
+    <% end %>
+
+　</div>

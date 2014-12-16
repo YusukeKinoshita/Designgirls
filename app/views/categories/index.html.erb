@@ -1,0 +1,40 @@
+<div class="wrapper">
+  <h1>Welcome to Design Girls!</h1>
+
+
+  <!-- チュートリアル一覧 -->
+  <div class ="tutorials">
+
+    <% @categories.each do |category| %>
+      <div class="tutorials-list">
+        <%= link_to category_path(id: category) do %>
+            <div class="category-images">
+              <%= category_image_for category %>
+            </div>
+        
+        <div class="details">
+            <span><%= category.title %></span>
+            <% end %>
+            
+            <div class="progress-bar"></div>
+            <p><%= category.description %></p>
+            
+
+            <div class="edit">
+              <%= link_to '編集', edit_category_path(category) %>
+              <%= link_to '削除', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="clear"></div>
+
+    <br>
+
+
+    <%= link_to '自分のチュートリアルを作る', new_tutorial_path, class: "btn btn-pink" %>
+
+  </div>
+
+</div>

@@ -1,0 +1,34 @@
+<div class="bg-image-signin">
+
+  <div class="new-wrapper">
+    <h1>Sign in</h1>
+    
+    <div class="form">
+      <div class="white-box">
+        <%= form_for(resource, as: resource_name, url: user_session_path) do |f| %>
+
+            <p>ソーシャルアカウントでログイン</p>
+
+            <div class="facebook-login">
+              <i class="fa fa-facebook"><%= link_to "  Facebook", user_omniauth_authorize_path(:facebook) %></i>
+            </div>
+            <div class="twitter-login">
+              <i class="fa fa-twitter"><%= link_to "  Twitter",  user_omniauth_authorize_path(:twitter) %></i>
+            </div>
+
+            <p>メールアドレスでログイン</p>
+
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+
+            <%= f.submit "ログイン", class: "btn btn-large btn-primary" %>
+        <% end %>
+
+        <p>まだ登録していない方は <%= link_to "こちら", new_user_path %></p>
+      </div>
+    </div>
+  </div>
+</div>

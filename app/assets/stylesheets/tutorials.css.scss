@@ -1,0 +1,122 @@
+// Place all the styles related to the Tutorials controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.top-img{
+	width: 100%;
+	background-color: #00acd4;
+	min-height: 350px;
+}
+
+
+.titles {
+	padding: 100px;
+	float: left;
+	width: 400px;
+}
+
+.titles-img {	
+	margin: 0 auto;
+	text-align: center;
+	width: 15%;
+}
+
+.category-tutorials {
+	min-height: 500px;
+}
+
+.form-buttons {
+	float: left;
+	display: inline-block;
+}
+
+
+#create-form {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.fieldset {
+	text-align: center;
+	padding-left: 100px;
+}
+
+
+#test {
+}
+
+
+
+#test .form-title {
+	width: 80%; 
+	display: inline-block;
+
+}
+
+#test .form-sumnail {
+	width: 38%;
+	display: inline-block;
+	min-height: 200px;
+	padding-left: 100px;
+	margin-right: 10px;
+	float: left;
+}
+
+#test .form-discription {
+	width: 38%;
+	display: inline-block;
+	// float: left;
+	line-height: 1.5em;
+}
+
+.radio-button {
+	margin-left: 100px;
+}
+
+.radio-button label{
+	display: inline-block;
+	width: 100px;
+}
+
+.radio-button input {
+	width: 20%;
+}
+
+
+
+
+
+
+// slides
+
+.slide-form {
+     width:100%;
+     float: left;
+     margin: 0 auto;
+}
+
+#test-2 {
+     margin: 10px;
+}
+
+.slide-img {
+     float: left;
+     width: 50%;
+}
+
+.slide-title {
+     float: left;
+     width: 50%;
+}
+
+.slide-description {
+     float: left;
+     width: 50%;
+}
+
+
+
+
+

@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <h1>Listing tutorials</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Image</th>
+      <th>User</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tutorials.each do |tutorial| %>
+      <tr>
+        <td><%= tutorial.title %></td>
+        <td><%= tutorial_image_for tutorial %></td>
+        <td><%= tutorial.user_id %></td>
+        <td><%= tutorial.description %></td>
+        <td><%= link_to 'Show', tutorial_path(id: tutorial.id) %></td>
+        <td><%= link_to 'Edit', edit_tutorial_path(id: tutorial.id) %></td>
+        <td><%= link_to 'Destroy', tutorial_path(id: tutorial.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tutorial', new_tutorial_path %>
+</div>

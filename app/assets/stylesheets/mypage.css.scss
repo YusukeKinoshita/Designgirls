@@ -1,0 +1,111 @@
+
+// categories/index
+
+// サイドバー
+// @import "compass/css3";
+
+// * {
+//   margin: 0;
+//   padding: 0;
+//   border: 0;
+// }
+
+// html {
+//     height : 100%;
+// }
+
+// body {
+//   background: #f0f8ff;
+//   font: 30px sans-serif;
+//   height : 100%;
+// }
+
+// div.side-bar{
+//     position :relative;
+//     overflow : hidden;
+//     height : 100%;
+//     header{
+//         background-color : #b0c4de;
+//         width : 100%;
+//         padding-top : 14px;
+//         padding-bottom : 14px;
+//         padding-left : 10px;
+//         z-index : 100;
+//         div.menu-icon{
+//             text-align : center;
+//             font-size : 16px;
+//             background-color : #4682b4;
+//             width : 90px;
+//             padding : 5px;
+//             cursor : pointer;
+//             @include border-radius(5px);
+//         }
+//     }
+    
+//     div.menu {
+//         color : #ffffff;
+//         position : absolute;
+//         background-color : gray;
+//         width : 200px;
+//         height : 400px;
+//         transition : transform;
+//         transition-duration : 0.5s;
+//         transition-timing-function : ease-in;
+//         transform : translate(-200px);
+//         top : 62px;
+        
+//         ul{
+//             li{
+//                 list-style : none;
+//             }
+//         }
+//     }
+// }
+
+
+
+.tutorials {
+	margin: 0 auto;
+}
+
+.tutorials-list {
+	text-align: center;
+	margin: 0 auto;
+	float: left;
+	width: 20%
+}
+
+.tutorials-list .details {
+	margin: 0 auto;
+	width: 150px;
+}
+
+.tutorials-list .details span{
+	font-size: 16px;
+	line-height: 30px;
+}
+
+.tutorials-list .details p{
+	line-height: 20px;
+}
+
+.clip{
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  border-radius: 100%;
+  overflow: hidden;
+  background: url("http://hensachi35.com/photos/2014/02/clipTest.jpg") -110px top;
+}
+
+img.gravatar {
+	width: 150px;
+	height: 150px;
+	margin: 20px 20px 0px 20px;
+	border-radius: 100%;
+	overflow: hidden;
+}
+
+
+
+
