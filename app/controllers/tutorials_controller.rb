@@ -28,7 +28,6 @@ class TutorialsController < ApplicationController
   # POST /tutorials
   # POST /tutorials.json
   def create
-
     @tutorial = Tutorial.new(tutorial_params)
     file = params[:tutorial][:userfile]
     @tutorial.set_image(file)
