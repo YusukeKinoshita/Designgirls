@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141215185453) do
+ActiveRecord::Schema.define(version: 20141217192027) do
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -27,10 +27,6 @@ ActiveRecord::Schema.define(version: 20141215185453) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "favorites", ["product_id"], name: "index_favorites_on_product_id"
-  add_index "favorites", ["user_id", "product_id"], name: "index_favorites_on_user_id_and_product_id", unique: true
-  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id"
 
   create_table "products", force: true do |t|
     t.string   "title"
@@ -49,16 +45,6 @@ ActiveRecord::Schema.define(version: 20141215185453) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "taggings", force: true do |t|
-    t.integer  "tag_id"
-    t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "taggings", ["category_id"], name: "index_taggings_on_category_id"
-  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
 
   create_table "tags", force: true do |t|
     t.string   "name"
@@ -100,6 +86,5 @@ ActiveRecord::Schema.define(version: 20141215185453) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
 
 end

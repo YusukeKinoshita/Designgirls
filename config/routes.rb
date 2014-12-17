@@ -33,5 +33,6 @@ end
     resources :slides
   end
   resources :sessions, only: [:new, :create, :destroy]
+  resources :tags, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
 end
