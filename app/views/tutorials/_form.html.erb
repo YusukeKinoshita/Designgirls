@@ -31,21 +31,6 @@
         <label></label>
 
         <div class="clear"></div>
-
-        
-
-        
-        <div id="slides">
-            <% @tutorial.slides.each do |slide| %>
-                    <%= render 'slides/form', slide: slide, f: f %>
-            <% end %>
-        </div>
-
-        <!-- 追加・削除ボタン -->
-        <div class="form-buttons">
-            <div class="plus-btn">追加</div>
-            <div class="destroy-btn">削除</div>
-        </div>
      
         <input type="submit">
 
@@ -78,16 +63,6 @@
             }
             reader.readAsDataURL(file);
           });
-
-
-
-        $(document).on('click', '.plus-btn', function(){
-             $('#slides').append("<%= escape_javascript(render('slides/form', slide: @tutorial.slides.build, f: f)) %>");
-        });
-        $(document).on('click', '.destroy-btn', function(){
-            $('.slide-form').last().remove();
-        });   
-
         
     });
 </script>
