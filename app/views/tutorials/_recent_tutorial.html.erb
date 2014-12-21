@@ -1,0 +1,15 @@
+<div class="tutorials">
+    <div class="tutorials-list">
+        <%= link_to tutorial_path(tutorial: @current_tutorial) do %>
+            <div class="category-images">
+              <%= tutorial_image_for tutorial %>
+            </div>
+        
+        	<div class="details">
+                <span><%= tutorial.title %></span>
+                <p><%= tutorial.description %></p>
+                <% tutorial.user_id %>
+            </div>
+        <% end %>      
+    </div>
+</div>

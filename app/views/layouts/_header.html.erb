@@ -3,11 +3,11 @@
   <div class="navbar-in">
 
       <!-- ロゴ -->
-      <%= link_to root_path, id: "logo" do %>
-      <!-- link_to リンク先　表示名 -->
-      <i class="fa fa-heart fa-spin"></i>
-      Design Girls
-      <% end %>
+        <%= link_to root_path, id: "logo" do %>
+          <!-- link_to リンク先　表示名 -->
+          <i class="fa fa-heart fa-spin"></i>
+            Design Girls
+        <% end %>
 
       <!-- ナビバー -->
       <nav>
@@ -16,45 +16,61 @@
           <!-- ログインしてる場合 -->
           <% if signed_in? %>
 
-
-
-
-
             <!-- マイページへ -->
             <li>
               <%= link_to "マイページ", users_path %>
             </li>
 
+            <!-- レッスンへ -->
+              <li id="fat-menu" class="dropdown">
+                <div class="menu">       
+                  <ul>           
+                    <li><a href="#">LESSONS</a>
+                      <ul>                   
+                        
+                        <li>
+                          <%= link_to "TUTORIALS", products_path %>
+                        </li>
+                    
+                        <li>
+                          <%= link_to "PORTFOLIOS", products_path  %>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>     
+              </li>
+
             <!-- アカウント設定へ -->
             <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                アカウント設定 <b class="caret"></b>
-              </a>
-
-              <!-- ドロップダウンメニュー -->
-              <ul class="dropdown-menu">
-                <li>
-                  <%= link_to "プロフィール", current_user %>
-                </li>
-                <li>
-                  <%= link_to "設定変更", edit_user_path(current_user) %>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "サインアウト", destroy_user_session_path, :method => :delete %>
-                </li>
-              </ul>
+              <div class="menu">       
+                <ul>           
+                  <li><a href="#">アカウント設定</a>
+                    <ul>                   
+                      <li>
+                        <%= link_to "プロフィール", current_user %>
+                      </li>
+                      <li>
+                        <%= link_to "設定変更", edit_user_path(current_user) %>
+                      </li>                 
+                      <li>
+                        <%= link_to "サインアウト", destroy_user_session_path, :method => :delete %>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>     
             </li>
 
 
-          <!-- ログインしてない場合 -->
-          <% else %>
-            <li>
-              <%= link_to "ログイン", new_user_session_path, :class=> "signin-btn" %>
-            </li>
-          <% end %>
-        </ul>
-      </nav>
+        <!-- ログインしてない場合 -->
+        <% else %>
+          <li>
+            <%= link_to "ログイン", new_user_session_path, :class=> "signin-btn" %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
     
   </div>
 </header>
