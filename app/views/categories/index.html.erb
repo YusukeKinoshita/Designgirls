@@ -1,40 +1,123 @@
 <div class="wrapper">
-  <h1>Welcome to Design Girls!</h1>
+
+  <!-- サブナビ -->
+    <div class="subnav">
+      <div class="subnav-contents">
+        <div id="profile">
+          <%= profile_image_for(current_user, '15') %>
+          <span><%= link_to current_user.name, users_path %></span>
+        </div>
+
+        <ul>
+          <li>
+            <i class="fa fa-heart fa-color"></i>
+            <%= link_to "LESSONS", root_path %>
+          </li> 
+          <li>
+            <i class="fa fa-heart fa-color"></i>
+            <%= link_to "TUTORIALS", tutorials_path %>
+          </li>                 
+          <li>
+            <i class="fa fa-heart fa-color"></i>
+            <%= link_to "PORTFOLIOS", products_path  %>
+          </li>
+        </ul>
+
+        <%= link_to 'チュートリアルを作る', new_tutorial_path, class: "btn btn-pink" %>
+
+        <%= link_to 'ポートフォリオを作る', new_product_path, class: "btn btn-pink" %>
+      </div>
+    </div>
 
 
-  <!-- チュートリアル一覧 -->
-  <div class ="tutorials">
+  <!-- 右メインコンテンツ -->
+    <div class="wrapper-left">
+      <div class="wrapper-recent">
+        <h1>
+          <img src="/assets/welcome_03.jpg" alt="Welcome to Palette!">
+        </h1>
+        <br>
+        <%= render 'tutorials/recent_tutorial', tutorial: @current_tutorial %>
+      </div>
 
-    <% @categories.each do |category| %>
-      <div class="tutorials-list">
-        <%= link_to category_path(id: category) do %>
-            <div class="category-images">
-              <%= category_image_for category %>
-            </div>
+      <!-- チュートリアル一覧 -->
+      <div class="tabs">
+          <ul>
+            <li><%= link_to image_tag('/assets/lessons-tab_07.png'), root_path %></li>
+            <li><%= link_to image_tag('/assets/lessons-tab_09.png'), tutorials_path %></li>
+            <li><%= link_to image_tag('/assets/lessons-tab_11.png'), products_path  %></li>
+          </ul>
+        </div>
+
+
+      <div class ="wrapper-contents">
         
-        <div class="details">
-            <span><%= category.title %></span>
-            <% end %>
-            
-            <div class="progress-bar"></div>
-            <p><%= category.description %></p>
-            
-
-            <div class="edit">
-              <%= link_to '編集', edit_category_path(category) %>
-              <%= link_to '削除', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <div class="white-bg">
+          <!-- レッスン -->
+          <div class="lessons">
+            <div class="details">
+              <h2><img src="/assets/lessons_17.png" alt="Lessons"><h2>
+              <h3>Webデザインの基本を学ぼう</h3>
+              <span>Photoshopの使い方から、HTMLやCSSのコーディングまで！
+                <br>Webデザインの基本を動画とスライドで楽しく学びます
+              </span>
             </div>
+
+            <% @categories.each do |category| %>
+              <div class="tutorials-list">
+                <%= link_to category_path(id: category) do %>
+                    <div class="category-images">
+                      <%= category_image_for category %>
+                    </div>
+                
+                <div class="details">
+                    <span><%= category.title %></span>
+                    <% end %>
+                    
+                    <div class="progress-bar">
+                    </div>
+                    <p><%= category.description %></p>
+                    
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="dotted-line"></div>
+
+          <!-- チュートリアル -->
+          <div class="tutorials">
+            <h2><img src="/assets/lessons_21.png" alt="Tutorials"><h2>
+            <h3>もっと引き出しを増やそう</h3>
+            <span>みんなから投稿された応用チュートリアルでデザインの引き出しを増やそう！
+              <br>自分で作り方を投稿してみよう！
+            </span>           
+          </div> 
+
+          <div class="dotted-line"></div>
+
+          <!-- ポートフォリオ -->
+          <div class="portfolios">
+            <h2><img src="/assets/lessons_25.png" alt="Portfolios"><h2>
+            <h3>あなたの作った作品を投稿してみよう</h3>
+            <span>
+              せっかく作ったのに自分しか見ないんじゃもったいない！<br>
+              みんなで作ったものをシェアしよう！
+            </span>           
+          </div> 
+
+
+
+
+          <div class="clear"></div>
+
+          <div class="buttons">
+            <%= link_to '自分のチュートリアルを作る', new_tutorial_path, class: "btn btn-pink" %>
+            <br>
+            <%= link_to '新しいカテゴリーを作る', new_category_path, class: "btn btn-pink" %>
+          </div>
+
         </div>
       </div>
-    <% end %>
-
-    <div class="clear"></div>
-
-    <br>
-
-
-    <%= link_to '自分のチュートリアルを作る', new_tutorial_path, class: "btn btn-pink" %>
-
-  </div>
-
+    </div>
 </div>

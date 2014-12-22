@@ -5,12 +5,18 @@ class TutorialsController < ApplicationController
   # GET /tutorials.json
   def index
     @tutorials = Tutorial.all
+
+    
   end
 
   # GET /tutorials/1
   # GET /tutorials/1.json
   def show
     @slides = @tutorial.slides.paginate(page: params[:page])
+    
+    @user = current_user
+    @user.progress = @tutorial.id
+    @user.save
   end
 
   # GET /tutorials/new

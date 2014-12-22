@@ -1,47 +1,39 @@
-
-  <p id="notice"><%= notice %></p>
-
-    <div class="top-img">
-      <div class="titles">
-        <span>
-          <%= @category.title %>
-        </span>
-        <p>
-          <%= @category.description %>
-          Photoshopの基礎をやっていこうとおもいます。
-          Photoshopの基礎をやっていこうとおもいます。
-          Photoshopの基礎をやっていこうとおもいます。
-        </p>
-      </div>
-
-      <div class="clear"></div>
-
-      <div class="titles-img">
-        <p>
-          <%= category_image_for @category %>
-        </p>
-      </div>
+<div class="">
+  <div class="top-img">
+    <div class="titles">
+      <h1>
+        <%= @category.title %>
+      </h1>
+      <p>
+        <%= @category.description %>
+        Photoshopの基礎をやっていこうとおもいます。
+        Photoshopの基礎をやっていこうとおもいます。
+        Photoshopの基礎をやっていこうとおもいます。
+      </p>
     </div>
 
+    <div class="clear"></div>
 
- 
-<div class="wrapper">
-  <div class="category-tutorials">
-    <% if @tutorials.any? %>
-      <h3>
-        Tutorials (<%= @tutorials.count %>)
-      </h3>
-
-
-      <%= render @tutorials %>
-
-      
-
-
-      <%= will_paginate @tutorials %>
-    <% end %>
-
-    <%= link_to '自分のチュートリアルを作る', new_tutorial_path, class: "btn btn-pink" %>
+    <div class="titles-img">
+      <p>
+        <%= category_image_for @category %>
+      </p>
+    </div>
   </div>
 
+  <div class="clear"></div>
+   
+  <div class="wrapper">
+    <div class="category-tutorials">
+      
+        <h3>
+          Course Overview
+          <p>コース一覧</p>
+        </h3>
+
+
+
+      <%= link_to '自分のチュートリアルを作る', new_tutorial_path, class: "btn btn-pink" %>
+    </div>
+  </div>
 </div>
