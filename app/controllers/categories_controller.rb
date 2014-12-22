@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
     @current_tutorial = Tutorial.find(current_user.progress)
+    
   end
 
   # GET /categories/1
@@ -13,6 +14,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     # @tutorials = @category.tutorials.paginate(page: params[:page])
+    @tutorials = Tutorial.where(self_flag: 1)
   end
 
   # GET /categories/new
