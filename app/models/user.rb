@@ -56,4 +56,12 @@ class User < ActiveRecord::Base
   def unfavorite!(product)
     favorites.find_by(product_id: product.id).destroy
   end
+
+  def set_image(file)
+    if !file.nil?
+      file_name = file.original_filename
+      File.open("public/docs/#{file_name}", 'wb'){|f| f.write(file.read)}
+      self.image = file_name
+    end
+  end
 end

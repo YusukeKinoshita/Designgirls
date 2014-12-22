@@ -119,6 +119,7 @@ nav {
 .nav li{
   width: 120px;
   float: left;
+  height: 67px;
 }
 
 .navbar-in{
@@ -130,13 +131,27 @@ nav {
   // border-bottom: 2px dotted #fb50a0;
   // background-color: #fecbe3;
   // opacity: 0.9;
-
   background-image: url('/assets/nav-bg.png');
   background-repeat: repeat-x;
-
-
 }
 
+li#nav-mypage {
+  margin-top: -10px;
+  float: left;
+  margin-right: 10px;
+}
+
+li#nav-mypage img {
+  float: left;
+  margin-right: 7px;
+}
+
+li#nav-mypage span a {
+  margin-top: 8px;
+  line-height: 20px;
+  float: left;
+  font-size: 14px;
+}
 
 header form{
   display: inline-block;
@@ -266,10 +281,7 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
+
 
 .stats {
   overflow: auto;
@@ -360,10 +372,7 @@ input {
 .timestamp {
   color: $grayLight;
 }
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
+
 aside {
   textarea {
     height: 100px;

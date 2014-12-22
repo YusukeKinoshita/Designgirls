@@ -6,6 +6,7 @@
 	position: fixed;
 	opacity: 0.9;
 	margin-top: 75px;
+	border-radius: 15px;
 }
 
 .subnav-contents {
@@ -35,4 +36,9 @@
 
 .fa-color {
 	color: #cafae6;
+}
+
+#profile {
+	float: left;
+	width: 100%;
 }

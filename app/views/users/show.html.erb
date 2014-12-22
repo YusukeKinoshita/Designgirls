@@ -12,10 +12,10 @@
 
 
   <!-- 自分の？チュートリアル一覧 -->
-  <div class ="tutorials">
+  <div class ="user-tutorials">
     <% if @user.tutorials.any? %>
       <h3>Tutorials (<%= @user.tutorials.count %>)</h3>
-      <ol class="tutorials">
+      <ol class="">
         <%= render @tutorials %>
       </ol>
       <%= will_paginate @tutorials %>

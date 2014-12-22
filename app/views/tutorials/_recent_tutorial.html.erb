@@ -1,15 +1,37 @@
-<div class="tutorials">
-    <div class="tutorials-list">
-        <%= link_to tutorial_path(tutorial: @current_tutorial) do %>
-            <div class="category-images">
+
+<div class="wrapper">
+    <div class="">
+        <%= link_to tutorial_path(id: tutorial) do %>
+            <div class="recent-tutorials-images">
               <%= tutorial_image_for tutorial %>
             </div>
+        <% end %> 
         
-        	<div class="details">
+        	<div class="recent-tutorials-details">
+                <div id="sample_goal"></div>
+                <br><br>
                 <span><%= tutorial.title %></span>
+
                 <p><%= tutorial.description %></p>
                 <% tutorial.user_id %>
+                <br>
+                
             </div>
-        <% end %>      
+
+            <%= link_to 'はじめる', tutorial_path(id: tutorial), class: "btn btn-pink" %>
+             
     </div>
 </div>
+
+
+
+<script>
+$(document).ready(function(){
+    $('#sample_goal').goalProgress({
+        goalAmount: 100,
+        currentAmount: 20,
+        textBefore: '',
+        textAfter: ' %'
+    });
+});
+</script>

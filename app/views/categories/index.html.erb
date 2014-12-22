@@ -3,8 +3,10 @@
   <!-- サブナビ -->
     <div class="subnav">
       <div class="subnav-contents">
-        <img src="">
-        <span>CURRENT USER</span>
+        <div id="profile">
+          <%= profile_image_for(current_user, '15') %>
+          <span><%= link_to current_user.name, users_path %></span>
+        </div>
 
         <ul>
           <li>
@@ -34,8 +36,8 @@
         <h1>
           <img src="/assets/welcome_03.jpg" alt="Welcome to Palette!">
         </h1>
-
-
+        <br>
+        <%= render 'tutorials/recent_tutorial', tutorial: @current_tutorial %>
       </div>
 
       <!-- チュートリアル一覧 -->
