@@ -32,6 +32,8 @@ end
   resources :tutorials do
     resources :slides
   end
+
+  get 'tutorials/:id/:slide_order', to: 'tutorials#show', as: 'tutorial_video'
   resources :sessions, only: [:new, :create, :destroy]
   resources :tags, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]

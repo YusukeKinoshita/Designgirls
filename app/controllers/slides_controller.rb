@@ -10,6 +10,7 @@ class SlidesController < ApplicationController
   # GET /slides/1
   # GET /slides/1.json
   def show
+    
   end
 
   # GET /slides/new

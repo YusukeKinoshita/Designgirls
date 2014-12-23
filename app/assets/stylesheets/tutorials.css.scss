@@ -66,34 +66,205 @@
 
 
 
+// おためしCSS
 
-// slides
+body {
+  font-family: Helvetica, sans-serif;
+}
+li.self-tutorials {
+  position: relative;
+  overflow: hidden;
+  max-width: 200px;
+  transition: all 0.3s ease-out;
+  width: 100%;
+  float: left;
+  margin: 2% 1%;
+  height: 160px;
+  .text{
+    color: #fff;
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 20;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 80%;
+    padding: 0 10%;
+    margin: 0;
+    transition: all 0.3s ease;
+    h2{
+      font-size: em(28);
+      border-bottom: 3px solid white;
+      margin-bottom: em(10);
+    }
+  }
 
-.slide-form {
-     width:100%;
-     float: left;
-     margin: 0 auto;
+  img.tutorial_img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    display: block;
+    vertical-align: middle;
+    transition: all 0.2s ease;
+  }
+
+ 
+  .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background: #fc0c60;
+  z-index: 10;
+  opacity: 0.4;
+  transition: opacity 0.15s ease-out;
+  backface-visibility: hidden;
+  }
+  &:hover, &:focus {
+    img {
+      transform:scale(1.2);
+    }
+    .overlay {
+      opacity: 0;
+	    filter: alpha(opacity=0);
+    }
+    .text {
+      opacity: 0;
+	    filter: alpha(opacity=0);
+    }
+  }
 }
 
-#test-2 {
-     margin: 10px;
+a {
+  transition: all 0.2s;
 }
 
-.slide-img {
-     float: left;
-     width: 50%;
+
+//ここまで
+
+
+
+//tutorials/show2
+
+
+// パンくずリスト
+
+#crumbs {
+	padding-top: 110px;
 }
 
-.slide-title {
-     float: left;
-     width: 50%;
+#crumbs ul li a {
+	display: block;
+	float: left;
+	height: 20px;
+	background: #64c2ea;
+	text-align: center;
+	padding: 10px 15px 0 10px;
+	position: relative;
+	margin: 0 10px 0 0; 
+	
+	font-size: 14px;
+	text-decoration: none;
+	color: #fff;
+	padding: 10px 15px 0 30px;
 }
 
-.slide-description {
-     float: left;
-     width: 50%;
+#crumbs ul li a:after {
+	content: "";  
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 10px solid #64c2ea;
+	position: absolute; right: -10px; top: 0;
 }
 
+#crumbs ul li a:before {
+	content: "";  
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 10px solid transparent;
+	position: absolute; left: 0; top: 0;
+}
+
+#crumbs ul li:first-child a {
+	border-top-left-radius: 10px; border-bottom-left-radius: 10px;
+}
+#crumbs ul li:first-child a:before {
+	display: none; 
+}
+
+#crumbs ul li:last-child a {
+	padding-right: 80px;
+	border-top-right-radius: 10px; border-bottom-right-radius: 10px;
+}
+#crumbs ul li:last-child a:after {
+	display: none; 
+}
+
+#crumbs ul li a:hover {
+	background: #fa5ba5;
+}
+
+#crumbs ul li a:hover:after {
+	border-left-color: #fa5ba5;
+}
+
+// パンくずリストここまで
+
+.tutorial-titles {
+	padding-top: 20px;
+	width: 100%;
+	float: left;
+	margin-left: 40px;
+}
+
+.tutorial-titles p{
+	float: left;
+}
+
+.tutorial-titles h1{
+	font-size: 16px;
+	float:left;
+	margin-bottom: 2px;
+}
+
+.wrapper-original {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.titles2 {
+	float: left;
+	margin-left: 40px;
+}
+
+.titles2 h1 {
+	font-size: 26px;
+	margin-bottom: 2px;
+}
+
+.contents{
+	min-height: 1000px;
+}
+
+.youtube {
+	float: left;
+	margin: 10px
+}
+
+.youtube-btn a{
+	// float: left;
+	margin: 10px;
+	margin-right: 1px;
+}
+
+.slideshare{
+	float: left;
+	margin: 10px;
+}
 
 
 

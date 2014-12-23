@@ -12,7 +12,7 @@
       </p>
     </div>
 
-    <div class="clear"></div>
+    <!-- <div class="clear"></div> -->
 
     <div class="titles-img">
       <p>
@@ -20,20 +20,48 @@
       </p>
     </div>
   </div>
+  <div id="sample_goal"></div>
 
   <div class="clear"></div>
    
-  <div class="wrapper">
-    <div class="category-tutorials">
-      
-        <h3>
-          Course Overview
-          <p>コース一覧</p>
-        </h3>
+  <div class="course">
+    <!-- 左側 -->
+    <div class="course-left">   
+      <div class="category-tutorials">      
+        <h3>Course Overview    <span>コース一覧</span></h3>
 
+        <%= render @tutorials %>
 
+        <div class="clear"></div>
+          
+        <%= link_to '自分のチュートリアルを作る', new_tutorial_path, class: "btn btn-pink" %>
+      </div>
+    </div>
 
-      <%= link_to '自分のチュートリアルを作る', new_tutorial_path, class: "btn btn-pink" %>
+    <!-- 右側 -->
+    <div class="course-right">
+      <div class="photoshop-dl">
+        <a href="https://creative.adobe.com/ja/products/download/photoshop">
+          <img src="/assets/photoshop体験版.png" alt="体験版ダウンロード">
+        </a>
+        <a href="https://creative.adobe.com/ja/products/download/photoshop" class="btn btn-pink">
+          体験版ダウンロード
+        </a>
+      </div>
     </div>
   </div>
 </div>
+
+
+
+
+<script>
+$(document).ready(function(){
+    $('#sample_goal').goalProgress({
+        goalAmount: 100,
+        currentAmount: 20,
+        textBefore: '',
+        textAfter: ' %'
+    });
+});
+</script>

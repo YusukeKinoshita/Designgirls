@@ -1,21 +1,32 @@
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Image</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <div class="titles2">
+    <h1><%= slide.title %></h1>
+    <p><%= slide.body %></p>
+  </div>
 
-  <tbody>
-      <tr>
-        <td><%= slide.title %></td>
-        <td><%= slide.body %></td>
-        <td><%= slide_image_for slide %></td>
-        <td><%= link_to 'Show', tutorial_slide_path(tutorial_id: params[:id], id: slide.id) %></td>
-        <td><%= link_to 'Edit', edit_tutorial_slide_path(tutorial_id: params[:id], id: slide.id) %></td>
-        <td><%= link_to 'Destroy', tutorial_slide_path(tutorial_id: params[:id], id: slide.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-  </tbody>
+  <div class="edit">
+    <%= link_to 'Show', tutorial_slide_path(tutorial_id: params[:id], id: slide.id) %>
+    <%= link_to 'Edit', edit_tutorial_slide_path(tutorial_id: params[:id], id: slide.id) %>
+    <%= link_to 'Destroy', tutorial_slide_path(tutorial_id: params[:id], id: slide.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+
+  <div class="clear"></div>
+
+
+
+  <div class="contents">
+          <div class="youtube">
+            <%= slide.youtube.html_safe %>  
+
+            <div class="youtube-btn">
+              <%= link_to '前へ', tutorial_video_path(id: slide.tutorial_id, slide_order: slide.order - 1), class: "btn btn-pink" %>
+              <%= link_to '完了', tutorial_path(), class: "btn btn-pink" %>
+              <%= link_to '次へ', tutorial_video_path(id: slide.tutorial_id, slide_order: slide.order + 1), class: "btn btn-pink" %>
+            </div>
+          </div>
+
+          <div class="slideshare">
+            <%= slide.slideshare.html_safe %>
+          </div>
+  </div>
+
+ 

@@ -20,9 +20,9 @@
 	   
 	  /* 背景画像が読み込まれる前に表示される背景のカラー */
 	  background-color: #464646;
-	  height: 100%;
 
 	min-height: 350px;
+	margin-bottom: 80px;
 }
 
 
@@ -40,11 +40,43 @@
 	margin: 0 auto;
 	text-align: center;
 	width: 15%;
+	height: 150px;
+}
+
+
+// コース一覧
+.course {
+	width: 90%;
+	min-height: 500px;
+	margin: 0 auto;
+	margin-top: 70px;
+}
+
+.course-left {
+	width: 80%;
+	min-height: 500px;
+	float: left;
+}
+
+.course-right {
+	width: 20%;
+	min-height: 500px;
+	background-image: url(/assets/sub-bg3.jpg);
+	float: left;
+}
+
+.photoshop-dl {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.course-right img {
+	width: 90%;
+	padding: 10px;
 }
 
 .category-tutorials {
-	min-height: 500px;
-	margin: 0 auto;
+
 }
 
 .category-tutorials h3 {
