@@ -1,25 +1,28 @@
 <div class="">
   <div class="top-img">
-    <div class="titles">
-      <h1>
-        <%= @category.title %>
-      </h1>
-      <p>
-        <%= @category.description %>
-        Photoshopの基礎をやっていこうとおもいます。
-        Photoshopの基礎をやっていこうとおもいます。
-        Photoshopの基礎をやっていこうとおもいます。
-      </p>
-    </div>
+    <div class="white-bg3">
+      <div class="titles">
+        <h1>
+          <%= @category.title %>
+        </h1>
+        <p>
+          <%= @category.description %>
+          Photoshopの基礎をやっていこうとおもいます。
+          Photoshopの基礎をやっていこうとおもいます。
+          Photoshopの基礎をやっていこうとおもいます。
+        </p>
+      </div>
 
-    <!-- <div class="clear"></div> -->
+      <!-- <div class="clear"></div> -->
 
-    <div class="titles-img">
-      <p>
-        <%= category_image_for @category %>
-      </p>
+      <div class="titles-img">
+        <p>
+          <%= category_image_for @category %>
+        </p>
+      </div>
     </div>
   </div>
+
   <div id="sample_goal"></div>
 
   <div class="clear"></div>
@@ -55,6 +58,8 @@
 
 
 
+
+<!-- jQuery プログレスバー -->
 <script>
 $(document).ready(function(){
     $('#sample_goal').goalProgress({

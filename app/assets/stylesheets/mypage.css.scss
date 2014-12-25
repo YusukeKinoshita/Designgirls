@@ -16,13 +16,31 @@
 	margin-left: 18%;
 	text-align: center;
 	width: 82%;
-	padding-top: 130px;
 }
+
+
 
 // recent-tutorilas
 
 .wrapper-recent {
 	min-height: 540px;
+	// background-color: #f6f5f3;
+	// background-image: url("/assets/congruent_pentagon.png");
+	background-image: url("/assets/cupcake.jpg");
+	background-color: #fff;
+	background-color:rgba(255,255,255,0.5);
+
+}
+
+.white-bg2 {
+	width: 100%;
+	background-color: #fff;
+	background-color:rgba(255,255,255,0.35);
+	/*background-color:rgbaを使用すると、現在の要素だけが透明になる。*/
+	//min-height: 400px;
+    margin: 0 auto;
+	
+	padding-top: 100px;
 }
 
 .tutorial_img2 {
@@ -92,6 +110,7 @@ label progress {
 	margin: 0 auto;
 	height: 46px;
 	width: 45%;
+	margin-top: 100px;
 }
 
 .tabs ul li{	
@@ -113,17 +132,17 @@ label progress {
 
 }
 
-.lessons, .tutorials, .portfolios {
+#lessons, #tutorials, #portfolios {
 	min-height: 450px;
 }
 
-.lessons h3, .tutorials h3, .portfolios h3 {
+#lessons h3, #tutorials h3, #portfolios h3 {
 	font-size: 18px;
 	color: #fb50a0;
 	margin-bottom: 20px;
 }
 
-.lessons span, .tutorials span, .portfolios span {
+#lessons span, #tutorials span, #portfolios span {
 	line-height: 20px;
 	text-align: center;
 }
@@ -146,7 +165,7 @@ label progress {
 	text-align: center;
 	margin: 0 auto;
 	float: left;
-	width: 20%
+	width: 25%
 }
 
 .tutorials-list .details {
@@ -178,6 +197,42 @@ img.gravatar {
 	margin: 20px 20px 0px 20px;
 	border-radius: 100%;
 	overflow: hidden;
+}
+
+
+
+
+
+// 
+#nav2 {
+	margin-top: 100px;
+	margin-left: -50px;
+}
+
+ul li.b1 a { background: #ffe983; }
+ul li.b2 a { background: #71cbf2; }
+ul li.b3 a { background: #71fcc2; }
+ul li.b4 a { background: #fb50a0; }
+ul#nav2 li {
+    margin-bottom: 10px;
+}
+ul#nav2 li a {
+    font-weight: bold;
+    display: block;
+    margin-left: -70px;
+    width: 200px;
+    padding: 5px 20px 5px 0;
+    color: #fff;
+    text-align: right;
+    -webkit-border-top-right-radius: 30px;
+    -webkit-border-bottom-right-radius: 30px;
+    -moz-border-radius-topright: 30px;
+    -moz-border-radius-bottomright: 30px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+}
+ul#nav2 li a:hover {
+    margin-left: 0px;
 }
 
 

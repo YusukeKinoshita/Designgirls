@@ -1,11 +1,16 @@
 <div class="wrapper">
-<h1>Portfolios</h1>
+　<div class="top-img">
+    <div class="white-bg3">
+		<div class="titles">
+			<h1>Portfolios</h1>
+			<p>チュートリアルで作ったものを投稿しよう</p>
+		</div>
+	</div>
+  </div>
 
-<table>
-  <%= render @products %>
-</table>
+  <%= link_to '自分のポートフォリオを作る', new_product_path, class: "btn btn-pink" %>
 
-<br>
-
-<%= link_to '自分のポートフォリオを作る', new_product_path, class: "btn btn-pink" %>
+  <div class="listing-tutorials">
+   <%= render @products %>
+  </div>
 </div>

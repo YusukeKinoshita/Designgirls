@@ -1,12 +1,15 @@
 .subnav {
 	width: 18%;
-	background-image: url("/assets/背景.png");
+	//background-image: url("/assets/背景.png");
 	min-height: 600px;
 	float:left;
 	position: fixed;
 	opacity: 0.9;
-	margin-top: 75px;
-	border-radius: 15px;
+	margin-top: 80px;
+	// border-radius: 15px;
+
+	background-color: #fff;
+	box-shadow: 2px 2px 2px lightgray;
 }
 
 .subnav-contents {
@@ -19,8 +22,8 @@
 }
 
 .subnav-contents span {
-	line-height: 100px;
-	font-size: 18px;
+	line-height: 80px;
+	font-size: 15px;
 }
 
 .subnav-contents ul{
