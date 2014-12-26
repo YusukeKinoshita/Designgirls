@@ -1,9 +1,3 @@
-<head>
-    <%= stylesheet_link_tag    'tutorials/form', media: 'all' %>
-    <%= javascript_include_tag 'tutorials/form' %>
-    <%= csrf_meta_tags %>
-</head>
-
 <%= form_for @tutorial do |f| %>
 
     <fieldset class="fieldset">
@@ -40,13 +34,13 @@
 
         <!-- 追加・削除ボタン -->
         <div class="form-buttons">
-            <div class="plus-btn">
-                <%= link_to_add_fields "追加", f, :slides %>
-            </div>
-            
+            <div class="btn-pink">
+                <%= link_to_add_fields "新しいスライドを追加", f, :slides %>
+            </div>           
         </div>
+        <!-- ここまで -->
      
-        <input type="submit">
+        <input type="submit" value="完成", class="btn btn-pink">
 
     </fieldset>
 <% end %>

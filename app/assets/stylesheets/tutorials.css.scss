@@ -6,8 +6,7 @@
 
 
 .form-buttons {
-	float: left;
-	display: inline-block;
+
 }
 
 
@@ -18,7 +17,6 @@
 
 .fieldset {
 	text-align: center;
-	padding-left: 100px;
 }
 
 
@@ -30,7 +28,6 @@
 #test .form-title {
 	width: 80%; 
 	display: inline-block;
-
 }
 
 #test .form-sumnail {
@@ -50,12 +47,13 @@
 }
 
 .radio-button {
-	margin-left: 100px;
+	margin-left: 70px;
+	margin-bottom: 30px;
 }
 
 .radio-button label{
 	display: inline-block;
-	width: 100px;
+	width: 70px;
 }
 
 .radio-button input {
@@ -263,5 +261,34 @@
 	float: left;
 	margin: 5px;
 }
+
+
+
+
+// tutorials/new
+.wrapper2 {
+	text-align: center;
+	background-image: url(/assets/congruent_pentagon.png);
+}
+
+.form-new {
+	padding-top: 100px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.form-title2 {
+	margin-bottom: 50px;
+}
+
+.form-contents {
+
+}
+
+
+//edit
+
+
+
 
 

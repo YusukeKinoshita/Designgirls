@@ -1,7 +1,6 @@
 <%= link_to tutorial_path(id: tutorial.id) do %>
     <ul>
       <li class="self-tutorials">
-        <!-- <a href="#"> -->
           <div class="text">      
             <h2><%= tutorial.title %></h2>
             <p><%= tutorial.description %></p>
@@ -9,7 +8,6 @@
           <div class="overlay"></div>
           <%= tutorial_image_for tutorial, class: "tutorial_img" 
           %>
-        <!-- </a> -->
       </li>
     </ul>
 <% end %>

@@ -136,6 +136,15 @@ label progress {
 	min-height: 450px;
 }
 
+#tutorials {
+	margin-left: -15px;
+	margin-bottom: 40px;
+}
+
+#portfolios {
+	margin-bottom: 40px;
+}
+
 #lessons h3, #tutorials h3, #portfolios h3 {
 	font-size: 18px;
 	color: #fb50a0;
@@ -148,7 +157,7 @@ label progress {
 }
 
 .details {
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 
 .dotted-line {
@@ -180,6 +189,11 @@ label progress {
 
 .tutorials-list .details p{
 	line-height: 20px;
+}
+
+.listing-portfolios ul{
+	width: 25%;
+	float: left;
 }
 
 .clip{
