@@ -1,8 +1,7 @@
-<!-- <form class="slide-form" action="/tutorial_slides"　method="post"  enctype="multipart/form-data"> -->
 <div class="slide-form fields">
-    <div class="destroy-btn">
-                <%= link_to_remove_fields "削除", f %>
-            </div>
+    <div class="btn-pink">
+        <%= link_to_remove_fields "追加したスライドを削除", f %>
+    </div>
     <%= f.hidden_field :tutorial_id %>
         <fieldset>
             <div id="test-2">
@@ -19,7 +18,5 @@
                      <%= f.text_area :body, :size=>"60x10" %> 
                 </div>
             </div>
-            <!-- <input type="submit"> -->
         </fieldset>
-    <!-- </form> -->
 </div>

@@ -15,11 +15,9 @@
             <%= link_to "LESSONS", root_path %>
           </li> 
           <li class="b3">
-
             <%= link_to "TUTORIALS", tutorials_path %>
           </li>                 
           <li class="b4">
-
             <%= link_to "PORTFOLIOS", products_path %>
           </li>
         </ul>
@@ -76,46 +74,54 @@
                       <%= category_image_for category %>
                     </div>
                 
-                <div class="details">
-                    <span><%= category.title %></span>
-                    <% end %>
-                    
-                    <div class="progress-bar">
+                    <div class="details">
+                      <span><%= category.title %></span>
+                <% end %>
+                  
+                      <div class="progress-bar">
+                      </div>
+                      <p><%= category.description %></p>
+
+                      <td><%= link_to 'Edit', edit_category_path(category) %></td>
+                      <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                     </div>
-                    <p><%= category.description %></p>
-                    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-                    <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                    
-                </div>
               </div>
             <% end %>
           </div>
-
           <div class="dotted-line"></div>
 
           <!-- チュートリアル -->
           <div id="tutorials">
-            <h2><img src="/assets/lessons_21.png" alt="Tutorials"><h2>
-            <h3>もっと引き出しを増やそう</h3>
-            <span>みんなから投稿された応用チュートリアルでデザインの引き出しを増やそう！
-              <br>自分で作り方を投稿してみよう！
-            </span>           
-          </div> 
-
+            <div class="details">
+              <h2><img src="/assets/lessons_21.png" alt="Tutorials"><h2>
+              <h3>もっと引き出しを増やそう</h3>
+              <span>みんなから投稿された応用チュートリアルでデザインの引き出しを増やそう！
+                <br>自分で作り方を投稿してみよう！
+              </span>
+            </div>
+            <%= render @tutorials %>
+            <%= link_to "もっと見る", tutorials_path, class: "btn btn-pink" %>
+          </div>              
           <div class="dotted-line"></div>
 
           <!-- ポートフォリオ -->
           <div id="portfolios">
-            <h2><img src="/assets/lessons_25.png" alt="Portfolios"><h2>
-            <h3>あなたの作った作品を投稿してみよう</h3>
-            <span>
-              せっかく作ったのに自分しか見ないんじゃもったいない！<br>
-              みんなで作ったものをシェアしよう！
-            </span>           
+            <div class="details">
+              <h2><img src="/assets/lessons_25.png" alt="Portfolios"><h2>
+              <h3>あなたの作った作品を投稿してみよう</h3>
+              <span>
+                せっかく作ったのに自分しか見ないんじゃもったいない！<br>
+                みんなで作ったものをシェアしよう！
+              </span>
+            </div>
+            <div class="listing-portfolios">
+              <%= render @products %>
+            </div>
+            <div class="clear"></div>
+            <%= link_to "もっと見る", products_path, class: "btn btn-pink" %>
           </div> 
-
-
-
+          <div class="dotted-line"></div>
+            
 
           <div class="clear"></div>
 

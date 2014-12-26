@@ -6,7 +6,8 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
     @current_tutorial = Tutorial.find(current_user.progress)
-    
+    @tutorials = Tutorial.all
+    @products = Product.all
   end
 
   # GET /categories/1

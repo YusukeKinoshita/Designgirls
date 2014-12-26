@@ -128,11 +128,9 @@ nav {
   margin: 0 auto;
   padding: 20px;
   position: fixed;
-  // border-bottom: 2px dotted #fb50a0;
-  // background-color: #fecbe3;
-  // opacity: 0.9;
   background-image: url('/assets/nav-bg.png');
   background-repeat: repeat-x;
+  z-index: 100;
 }
 
 li#nav-mypage {

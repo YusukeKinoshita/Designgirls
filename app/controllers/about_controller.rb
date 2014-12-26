@@ -6,7 +6,10 @@ class AboutController < ApplicationController
   		@current_tutorial = Tutorial.find(current_user.progress)
 
   		@slide = @current_tutorial.slides.find_by(order: params[:slide_order])
+  		@tutorials = Tutorial.limit(4)
+  		@products = Product.limit(4)
   		render 'categories/index'
   	end
   end
 end
+
