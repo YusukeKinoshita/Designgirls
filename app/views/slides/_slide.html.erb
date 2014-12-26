@@ -18,9 +18,9 @@
             <%= slide.youtube.html_safe %>  
 
             <div class="youtube-btn">
-              <%= link_to '前へ', tutorial_video_path(id: slide.tutorial_id, slide_order: slide.order - 1), class: "btn btn-pink" %>
-              <%= link_to '完了', tutorial_path(), class: "btn btn-pink" %>
-              <%= link_to '次へ', tutorial_video_path(id: slide.tutorial_id, slide_order: slide.order + 1), class: "btn btn-pink" %>
+              <%= link_to '前へ', tutorial_video_path(id: slide.tutorial_id, slide_order: slide.order - 1), class: "btn btn-pink2" %>
+              <%= link_to '完了', tutorial_video_path(id: slide.tutorial_id, slide_order: slide.order), remote: true, id: 'video_link', class: "btn btn-pink2" %>
+              <%= link_to '次へ', tutorial_video_path(id: slide.tutorial_id, slide_order: slide.order + 1), class: "btn btn-pink2" %>
             </div>
           </div>
 

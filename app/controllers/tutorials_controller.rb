@@ -84,6 +84,10 @@ class TutorialsController < ApplicationController
   def slides
   end
 
+  def done
+    render json: @hoge, status: 200
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tutorial
