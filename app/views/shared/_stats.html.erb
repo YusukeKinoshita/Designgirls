@@ -6,4 +6,10 @@
     </strong>
     favorites
   </a>
+  <a href="<%= like_user_path(@user) %>">
+    <strong id="likes" class="stat">
+      <%= @user.like_tutorials.count %>
+    </strong>
+    favorites
+  </a>
 </div>

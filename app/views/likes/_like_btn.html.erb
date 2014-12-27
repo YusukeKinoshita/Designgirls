@@ -1,0 +1,5 @@
+<% if current_user.like?(tutorial) %>
+    <%= render 'likes/destroy', tutorial: tutorial %>
+<% else %>
+    <%= render 'likes/create', tutorial: tutorial %>
+<% end %>
