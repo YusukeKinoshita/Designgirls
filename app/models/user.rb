@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :favorite_products, through: :favorites, source: :product
   has_many :likes
   has_many :like_tutorials, through: :likes, source: :tutorial
+  has_many :completes
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :omniauthable, :recoverable,
@@ -70,6 +71,20 @@ class User < ActiveRecord::Base
   def unlike!(tutorial)
     likes.find_by(tutorial_id: tutorial.id).destroy
   end
+
+
+  def complete?(slide)
+    completes.find_by(slide_id: slide.id)
+  end
+
+  def complete!(slide)
+    completes.create!(slide_id: slide.id)
+  end
+
+  def uncomplete!(slide)
+    completes.find_by(slide_id: slide.id).destroy
+  end
+
 
   def set_image(file)
     if !file.nil?

@@ -17,7 +17,7 @@ Designgirls::Application.routes.draw do
   }
   resources :users do
     member do
-      get :favorite, :like
+      get :favorite, :like, :complete
     end
   end
   resources :products do
@@ -29,6 +29,10 @@ Designgirls::Application.routes.draw do
   # resources :slides
   resources :categories
 
+
+  get 'lessons/:id(/:slide_order)', to: 'tutorials#show', defaults: {slide_order: 1}, as: 'tutorial_video'
+
+
   resources :tutorials do
     resources :slides
     member do
@@ -36,12 +40,12 @@ Designgirls::Application.routes.draw do
     end
   end
 
-  get 'tutorials/:id(/:slide_order)', to: 'tutorials#show', defaults: {slide_order: 1}, as: 'tutorial_video'
 
-  
+
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :tags, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
   resources :likes, only: [:create, :destroy]
+  resources :completes, only: [:create, :destroy]
 end

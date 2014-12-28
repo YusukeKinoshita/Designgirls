@@ -72,7 +72,7 @@
 // パンくずリスト
 
 #crumbs {
-	padding-top: 110px;
+	padding-top: 80px;
 }
 
 #crumbs ul li a {
@@ -144,9 +144,10 @@
 }
 
 .tutorial-titles h1{
-	font-size: 16px;
+	font-size: 14px;
 	float:left;
-	margin-bottom: 2px;
+	margin-bottom: 10px;
+	color: #00acd4;
 }
 
 .wrapper-original {
@@ -156,16 +157,18 @@
 
 .titles2 {
 	float: left;
-	margin-left: 40px;
+	margin-left: 60px;
+	margin-bottom: 10px;
 }
 
 .titles2 h1 {
-	font-size: 26px;
-	margin-bottom: 2px;
+	font-size: 20px;
+	margin-bottom: 7px;
+	margin-left: -130px;
 }
 
 .contents{
-	min-height: 1000px;
+	min-height: 520px;
 }
 
 .youtube {
