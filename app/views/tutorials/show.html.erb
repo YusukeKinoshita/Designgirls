@@ -34,8 +34,8 @@
   <% if @tutorial.slides.any? %>
     <h3>Slides (<%= @tutorial.slides.count %>)</h3>
     <table>
-      <%= render @slides %>
+      <%= render @tutorial.slides %>
     </table>
-    <%= will_paginate @slides %>
+    
   <% end %>
 </div>
