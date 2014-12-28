@@ -14,20 +14,13 @@
 
 
   <div class="contents">
-          <div class="youtube">
-            <%= slide.youtube.html_safe %>  
+    <div class="youtube">
+          <%= render 'slides/video', slide: slide %>  
+    </div>
 
-            <div class="youtube-btn">
-
-              <%= link_to '前へ', tutorial_video_path(id: slide.tutorial_id, slide_order: slide.order - 1), class: "btn btn-pink2" %>
-              <%= render 'completes/complete_btn', slide: slide %>
-              <%= link_to '次へ', tutorial_video_path(id: slide.tutorial_id, slide_order: slide.order + 1), class: "btn btn-pink2" %>
-            </div>
-          </div>
-
-          <div class="slideshare">
-            <%= slide.slideshare.html_safe %>
-          </div>
+    <div class="slideshare">
+      <%= slide.slideshare.html_safe %>
+    </div>
   </div>
 
  
