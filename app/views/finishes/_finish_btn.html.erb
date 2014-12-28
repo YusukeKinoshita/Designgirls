@@ -1,0 +1,5 @@
+<% if current_user.finish?(userslide) %>
+    <%= render 'finishes/destroy', userslide: userslide %>
+<% else %>
+    <%= render 'finishes/create', userslide: userslide %>
+<% end %>

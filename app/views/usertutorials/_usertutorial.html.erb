@@ -1,0 +1,16 @@
+<%= link_to usertutorial_path(id: usertutorial.id) do %>
+<div class="box">
+  <ul>
+    <li class="self-tutorials">
+        <div class="text">      
+          <h2><%= usertutorial.title %></h2>
+        </div>
+        <div class="overlay"></div>
+       <%= usertutorial_image_for usertutorial, class: "tutorial_img" 
+        %>
+    </li>
+  </ul>
+<% end %>
+  <div class="clear"></div>
+  <p><%= usertutorial.description %></p>
+</div>

@@ -1,0 +1,40 @@
+<!-- ユーザーが作るチュートリアル -->
+<div class="wrapper">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @usertutorial.title %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= @usertutorial.user_id %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @usertutorial.description %>
+  </p>
+
+  <p>
+    <strong>Image:</strong>
+    <%= usertutorial_image_for @usertutorial %>
+  </p>
+
+
+
+
+  <%= link_to 'Edit', edit_usertutorial_path(id: @usertutorial.id) %> |
+  <%= link_to 'Back', usertutorials_path %>
+
+
+  <%= link_to "Create New Slide!", new_usertutorial_userslide_path(usertutorial_id: @usertutorial.id) , class: "btn btn-large btn-primary" %>
+
+  <% if @usertutorial.userslides.any? %>
+    <h3>Slides (<%= @usertutorial.userslides.count %>)</h3>
+    <table>
+      <%= render @usertutorial.userslides %>
+    </table>
+  <% end %>
+</div>

@@ -15,7 +15,7 @@
             <%= link_to "LESSONS", root_path %>
           </li> 
           <li class="b3">
-            <%= link_to "TUTORIALS", tutorials_path %>
+            <%= link_to "TUTORIALS", usertutorials_path %>
           </li>                 
           <li class="b4">
             <%= link_to "PORTFOLIOS", products_path %>
@@ -23,7 +23,7 @@
         </ul>
 
 
-        <%= link_to 'チュートリアルを作る', new_tutorial_path, class: "btn btn-pink" %>
+        <%= link_to 'チュートリアルを作る', new_usertutorial_path, class: "btn btn-pink" %>
 
         <%= link_to 'ポートフォリオを作る', new_product_path, class: "btn btn-pink" %>
       </div>
@@ -99,9 +99,9 @@
                 <br>自分で作り方を投稿してみよう！
               </p>
             </div>
-            <%= render @tutorials %>
+            <%= render @usertutorials %>
             <div class="clear"></div>
-            <%= link_to "もっと見る", tutorials_path, class: "btn btn-pink" %>
+            <%= link_to "もっと見る", usertutorials_path, class: "btn btn-pink" %>
           </div>              
           <div class="dotted-line"></div>
 
@@ -127,7 +127,7 @@
           <div class="clear"></div>
 
           <div class="buttons">
-            <%= link_to '自分のチュートリアルを作る', new_tutorial_path, class: "btn btn-pink" %>
+            <%= link_to '自分のチュートリアルを作る', new_usertutorial_path, class: "btn btn-pink" %>
             <br>
             <%= link_to '新しいカテゴリーを作る', new_category_path, class: "btn btn-pink" %>
           </div>

@@ -1,0 +1,7 @@
+<%= userslide.youtube.html_safe %>  
+
+<div class="youtube-btn">
+  <%= link_to '前へ', userslides_change_path(id: userslide.usertutorial_id, userslide_order: userslide.order - 1), class: "btn btn-pink2", remote: true %>
+  <%= render 'finishes/finish_btn', userslide: userslide %>
+  <%= link_to '次へ', userslides_change_path(id: userslide.usertutorial_id, userslide_order: userslide.order + 1), class: "btn btn-pink2", remote: true %>
+</div>

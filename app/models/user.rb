@@ -5,8 +5,9 @@ class User < ActiveRecord::Base
   has_many :favorites
   has_many :favorite_products, through: :favorites, source: :product
   has_many :likes
-  has_many :like_tutorials, through: :likes, source: :tutorial
+  has_many :like_usertutorials, through: :likes, source: :usertutorial
   has_many :completes
+  has_many :finishes
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :omniauthable, :recoverable,
@@ -60,18 +61,17 @@ class User < ActiveRecord::Base
     favorites.find_by(product_id: product.id).destroy
   end
 
-  def like?(tutorial)
-    likes.find_by(tutorial_id: tutorial.id)
+  def like?(usertutorial)
+    likes.find_by(usertutorial_id: usertutorial.id)
   end
 
-  def like!(tutorial)
-    likes.create!(tutorial_id: tutorial.id)
+  def like!(usertutorial)
+    likes.create!(usertutorial_id: usertutorial.id)
   end
 
-  def unlike!(tutorial)
-    likes.find_by(tutorial_id: tutorial.id).destroy
+  def unlike!(usertutorial)
+    likes.find_by(usertutorial_id: usertutorial.id).destroy
   end
-
 
   def complete?(slide)
     completes.find_by(slide_id: slide.id)
@@ -85,6 +85,17 @@ class User < ActiveRecord::Base
     completes.find_by(slide_id: slide.id).destroy
   end
 
+  def finish?(userslide)
+    finishes.find_by(userslide_id: userslide.id)
+  end
+
+  def finish!(userslide)
+    finishes.create!(userslide_id: userslide.id)
+  end
+
+  def unfinish!(userslide)
+    finishes.find_by(userslide_id: userslide.id).destroy
+  end
 
   def set_image(file)
     if !file.nil?

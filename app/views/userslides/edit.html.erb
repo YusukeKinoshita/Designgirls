@@ -1,0 +1,8 @@
+<h1>Editing slide</h1>
+
+<%= form_for(@userslide, url: usertutorial_userslide_path(usertutorial_id: params[:usertutorial_id], id: @userslide.id), html: {multipart: true}) do |f| %>
+<%= render 'form', f: f %>
+
+<% end %>
+
+<%= link_to 'Back', usertutorial_path(id: params[:usertutorial_id]) %>

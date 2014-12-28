@@ -1,0 +1,60 @@
+<%= form_for @usertutorial do |f| %>
+
+    <fieldset class="fieldset">
+        <div id="test">
+            <div class="form-title">
+                <label>タイトル</label>  
+                <%= f.text_field :title %>
+            </div>
+            <div class="form-sumnail">
+                <label>サムネイル画像</label>
+                <%= f.file_field :userfile %>
+            </div>
+            <div class="form-discription">
+                <label>説明</label>
+                <%= f.text_area :description, :size=>"60x10" %>
+            </div>
+        </div>
+        
+        <div class="radio-button">
+            <label><%= f.radio_button :level, "1" %>初級</label>
+            <label><%= f.radio_button :level, "2" %>中級</label>
+            <label><%= f.radio_button :level, "3" %>上級</label>
+        </div>
+
+       <!--  <div class="clear"></div> -->
+     
+        <input type="submit" value="次へ進む", class="btn btn-pink">
+
+    </fieldset>
+<% end %>
+
+
+
+
+<script>
+    $(function(){
+
+          // アップロードするファイルを選択
+          $(document).on('change', 'input[type=file]',function() {
+            $('input[type=file]').last().after('<span class="image-holder"></span>');
+            var file = $(this).prop('files')[0];
+
+            // 画像以外は処理を停止
+            if (! file.type.match('image.*')) {
+              $('span').html('');
+              return;
+            }
+            
+            // 画像表示
+            var reader = new FileReader();
+            reader.onload = function() {
+              var img_src = $('<img>').attr('src', reader.result).attr('height', '200px');
+              
+              $('.image-holder').last().html(img_src);
+            }
+            reader.readAsDataURL(file);
+          });
+        
+    });
+</script>
