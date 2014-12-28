@@ -1,3 +1,4 @@
+<%= link_to usertutorial_path(id: usertutorial.id) do %>
 <div class="box">
   <ul>
     <li class="self-tutorials">
@@ -9,6 +10,7 @@
         %>
     </li>
   </ul>
+<% end %>
   <div class="clear"></div>
   <p><%= usertutorial.description %></p>
 </div>
