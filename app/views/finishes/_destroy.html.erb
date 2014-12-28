@@ -1,0 +1,7 @@
+<span id="complete-btn">
+	<%= link_to finish_path(current_user.finishes.find_by(userslide_id: userslide.id)), remote: true, method: :delete, class: "btn btn-pink2" do %>
+	  完了済み
+	<% end %>
+</span>
+
+

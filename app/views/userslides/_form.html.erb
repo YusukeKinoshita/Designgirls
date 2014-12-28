@@ -1,0 +1,21 @@
+<div class="slide-form fields">
+        <fieldset>
+            <div id="test-2">
+                <div class="slide-img">
+                    <label>画像</label>
+                    <%= f.file_field :image %>
+                </div>
+                <div class="slide-title">
+                    <label>タイトル</label> 
+                    <%= f.text_field :title %>
+                </div>          
+                <div class="slide-description">
+                    <label>説明</label>
+                     <%= f.text_area :body, :size=>"60x10" %> 
+                </div>
+            </div>
+        </fieldset>
+</div>
+
+
+

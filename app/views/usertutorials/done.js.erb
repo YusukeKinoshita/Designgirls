@@ -1,0 +1,4 @@
+$ ->
+  $('#video_link').on('ajax:success', (event, data, status)->
+    $(@).text('done!!')
+  )

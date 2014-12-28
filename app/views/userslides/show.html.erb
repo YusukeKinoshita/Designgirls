@@ -1,0 +1,25 @@
+<div class="wrapper">
+	<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @userslide.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @userslide.body %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= userslide_image_for @userslide %>
+</p>
+
+<%= link_to 'Edit', edit_usertutorial_userslide_path(usertutorial_id: params[:usertutorial_id], id: @userslide.id) %> |
+<%= link_to 'Back', usertutorial_path(id: params[:usertutorial_id]) %>
+
+</div>
+
+
+

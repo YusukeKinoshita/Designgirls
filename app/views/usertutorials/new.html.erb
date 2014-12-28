@@ -1,0 +1,16 @@
+<div class="wrapper2">
+	<div class="form-new">
+		<div class="form-title2">
+			<h1>自分でレッスンを作る</h1>
+			<p>まずはレッスンのタイトル・サムネイル画像・説明を入れましょう。</p>
+		</div>
+		
+		<div class="form-contents">
+			<%= form_for(@usertutorial, url: usertutorials_path, html: {multipart: true}) do |f| %>
+				<%= render 'form', f: f %>
+			<% end %>
+		</div>
+
+		<%= link_to 'Back', usertutorials_path(id: params[:usertutorial_id]) %>
+	</div>
+</div>
