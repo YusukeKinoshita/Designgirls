@@ -71,6 +71,13 @@ class UsersController < ApplicationController
     render template: 'about/index'
   end
 
+  def like
+    @title = 'Like Tutorials'
+    @tutorial = current_user.tutorials.build
+    @feed_tutorials = current_user.like_tutorials.paginate(page: params[:page])
+    render template: 'about/index'
+  end
+
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params

@@ -8,7 +8,7 @@ Designgirls::Application.routes.draw do
   devise_scope :user do
   get "sign_in", :to => "devise/sessions#new"
   delete "sign_out", :to => "devise/sessions#destroy"
-end
+  end
   devise_for :users, :controllers => {
     # :sessions      => "users/sessions",
     :registrations => "users/registrations",
@@ -17,7 +17,7 @@ end
   }
   resources :users do
     member do
-      get :favorite
+      get :favorite, :like
     end
   end
   resources :products do
@@ -31,6 +31,9 @@ end
 
   resources :tutorials do
     resources :slides
+    member do
+      get :like
+    end
   end
 
   get 'tutorials/:id(/:slide_order)', to: 'tutorials#show', defaults: {slide_order: 1}, as: 'tutorial_video'
@@ -40,4 +43,5 @@ end
   resources :sessions, only: [:new, :create, :destroy]
   resources :tags, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
+  resources :likes, only: [:create, :destroy]
 end

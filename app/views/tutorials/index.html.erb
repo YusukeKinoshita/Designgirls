@@ -28,8 +28,12 @@
             <div class="edit">
               <li><i class="fa fa-edit"></i><%= link_to '編集', edit_tutorial_path(id: tutorial.id) %></li>
               <li><i class="fa fa-trash"></i><%= link_to '削除', tutorial_path(id: tutorial.id), method: :delete, data: { confirm: 'Are you sure?' } %></li>
-              <li><i class="fa fa-heart">いいね</i></li>
-            </div>           
+
+              <li><%= render 'likes/like_btn', tutorial: tutorial %></li>
+            </div>
+              
+
+
           </ul>
         <% end %>
   </div>
