@@ -25,13 +25,12 @@ Designgirls::Application.routes.draw do
       get :favorite
     end
   end
-  # resources :tutorials
-  # resources :slides
+
   resources :categories
 
 
   get 'lessons/:id(/:slide_order)', to: 'tutorials#show', defaults: {slide_order: 1}, as: 'tutorial_video'
-
+  get 'lessons/:id/change/:slide_order', to: 'slides#change', as: 'slides_change'
 
   resources :tutorials do
     resources :slides
