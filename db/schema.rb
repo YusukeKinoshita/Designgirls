@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141228051851) do
+ActiveRecord::Schema.define(version: 20141228113438) do
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -62,6 +62,22 @@ ActiveRecord::Schema.define(version: 20141228051851) do
     t.datetime "updated_at"
   end
 
+  create_table "questions", force: true do |t|
+    t.integer  "tutorial_id"
+    t.string   "question"
+    t.integer  "order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "selects", force: true do |t|
+    t.integer  "question_id"
+    t.integer  "answer"
+    t.integer  "order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "slides", force: true do |t|
     t.string   "title"
     t.integer  "tutorial_id"
@@ -72,6 +88,9 @@ ActiveRecord::Schema.define(version: 20141228051851) do
     t.string   "youtube"
     t.string   "slideshare"
     t.integer  "order"
+    t.string   "question1"
+    t.string   "question2"
+    t.string   "question3"
   end
 
   create_table "tags", force: true do |t|
