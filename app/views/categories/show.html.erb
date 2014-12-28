@@ -7,9 +7,6 @@
         </h1>
         <p>
           <%= @category.description %>
-          Photoshopの基礎をやっていこうとおもいます。
-          Photoshopの基礎をやっていこうとおもいます。
-          Photoshopの基礎をやっていこうとおもいます。
         </p>
       </div>
 
@@ -41,16 +38,47 @@
       </div>
     </div>
 
+
+
     <!-- 右側 -->
     <div class="course-right">
-      <div class="photoshop-dl">
-        <a href="https://creative.adobe.com/ja/products/download/photoshop">
-          <img src="/assets/photoshop体験版.png" alt="体験版ダウンロード">
+      <div class="software-dl">
+        <a href="<%= @category.url %>">
+          <img src="<%= @category.soft_image %>" alt="体験版ダウンロード">
         </a>
-        <a href="https://creative.adobe.com/ja/products/download/photoshop" class="btn btn-pink">
+        <a href="<%= @category.url %>" class="btn btn-pink">
           体験版ダウンロード
         </a>
       </div>
+
+      <ul>
+        <li>
+          <a href="/categories/1">
+          <i class="fa fa-arrow-circle-o-right"></i>
+          <span>Photoshop入門</span>
+          </a>
+        </li>
+        <li>
+          <a href="/categories/2">
+          <i class="fa fa-arrow-circle-o-right"></i>
+          <span>Illustrator入門</span>
+          </a>
+        </li>
+        <li>
+          <a href="/categories/3">
+          <i class="fa fa-arrow-circle-o-right"></i>
+          <span>Dreamweaver入門</span>
+          </a>
+        </li>
+        <li>
+          <a href="/categories/4">
+          <i class="fa fa-arrow-circle-o-right"></i>
+          <span>Fireworks入門</span>
+          </a>
+        </li>
+      </ul>
+
+
     </div>
   </div>
 </div>

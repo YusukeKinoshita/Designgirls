@@ -9,18 +9,15 @@ class TutorialsController < ApplicationController
 
   # GET /tutorials/1
   # GET /tutorials/1.json
-  def show
-    @slide = @tutorial.slides.find_by(order: params[:slide_order])
-    
+  def show 
     @user = current_user
     @user.progress = @tutorial.id
     @user.save
 
     if @tutorial.self_flag == 1
+      @slide = @tutorial.slides.find_by(order: params[:slide_order])
       render 'tutorials/show2'
     end
-
-
   end
 
   # GET /tutorials/new

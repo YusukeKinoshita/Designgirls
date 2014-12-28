@@ -136,6 +136,10 @@ label progress {
 	min-height: 450px;
 }
 
+#lessons {
+	min-height: 550px;
+}
+
 #tutorials {
 	margin-left: -15px;
 	margin-bottom: 40px;
@@ -151,7 +155,7 @@ label progress {
 	margin-bottom: 20px;
 }
 
-#lessons span, #tutorials span, #portfolios span {
+#lessons p, #tutorials p, #portfolios p {
 	line-height: 20px;
 	text-align: center;
 }
@@ -182,13 +186,18 @@ label progress {
 	width: 150px;
 }
 
-.tutorials-list .details span{
+.tutorials-list .details img{
+	margin-bottom: 20px;
+}
+
+.details a span{
 	font-size: 16px;
-	line-height: 30px;
+	margin-bottom: 20px;
+	line-height: 40px;
 }
 
 .tutorials-list .details p{
-	line-height: 20px;
+	line-height: 23px;
 }
 
 .listing-portfolios ul{
@@ -208,7 +217,7 @@ label progress {
 img.gravatar {
 	width: 150px;
 	height: 150px;
-	margin: 20px 20px 0px 20px;
+	margin: 20px 20px 5px 20px;
 	border-radius: 100%;
 	overflow: hidden;
 }

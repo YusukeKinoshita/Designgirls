@@ -1,4 +1,4 @@
-<ul>
+  <ul>
   <%= link_to product_path(id: product.id) do %>
 
     <div class="overlay"></div>
@@ -10,9 +10,11 @@
 
 
   <div class="edit">
+
     <li><i class="fa fa-edit"></i><%= link_to 'Edit', edit_product_path(product) %></li>
-    <li><i class="fa fa-trash"></i><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <li><i class="fa fa-trash"></i><%= link_to 'Destroy', product, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></li>
     <li><%= render 'favorites/favorite_btn', product: product %></li>
+
   </div>
 </ul>
 

@@ -29,14 +29,16 @@ Designgirls::Application.routes.draw do
   # resources :slides
   resources :categories
 
-  get 'tutorials/:id(/:slide_order)', to: 'tutorials#show', defaults: {slide_order: 1}, as: 'tutorial_video'
-
   resources :tutorials do
     resources :slides
     member do
       get :like
     end
   end
+
+  get 'tutorials/:id(/:slide_order)', to: 'tutorials#show', defaults: {slide_order: 1}, as: 'tutorial_video'
+
+  
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :tags, only: [:create, :destroy]
