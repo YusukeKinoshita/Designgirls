@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   # お気に入り
   has_many :favorites
   has_many :favorite_products, through: :favorites, source: :product
+  has_many :likes
+  has_many :like_tutorials, through: :likes, source: :tutorial
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :omniauthable, :recoverable,
@@ -55,6 +57,18 @@ class User < ActiveRecord::Base
 
   def unfavorite!(product)
     favorites.find_by(product_id: product.id).destroy
+  end
+
+  def like?(tutorial)
+    likes.find_by(tutorial_id: tutorial.id)
+  end
+
+  def like!(tutorial)
+    likes.create!(tutorial_id: tutorial.id)
+  end
+
+  def unlike!(tutorial)
+    likes.find_by(tutorial_id: tutorial.id).destroy
   end
 
   def set_image(file)
