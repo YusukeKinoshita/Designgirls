@@ -69,11 +69,11 @@
 .course-right {
 	width: 20%;
 	min-height: 500px;
-	background-image: url(/assets/sub-bg3.jpg);
+	background-image: url(/assets/gplaypattern.png);
 	float: left;
 }
 
-.photoshop-dl {
+.software-dl {
 	margin: 0 auto;
 	text-align: center;
 }
@@ -83,9 +83,16 @@
 	padding: 10px;
 }
 
-.category-tutorials {
-
+.course-right ul {
+  padding: 20px;
 }
+
+.course-right ul li {
+  font-size: 16px;
+  padding: 10px;
+}
+
+
 
 .category-tutorials h3 {
 	font-size: 22px;
@@ -113,10 +120,10 @@ li.self-tutorials {
   margin: 2% 1%;
   height: 160px;
   .text{
-    color: #fff;
+    color: #5b4133;
     margin: 0;
     position: absolute;
-    top: 30%;
+    top: 80%;
     text-align: center;
     text-transform: uppercase;
     z-index: 20;
@@ -131,6 +138,7 @@ li.self-tutorials {
       font-size: em(28);
       border-bottom: 3px solid white;
       margin-bottom: em(10);
+      color: #fff;
     }
   }
 
@@ -150,7 +158,10 @@ li.self-tutorials {
   left: 0;
   width: 200px;
   height: 100%;
-  // background: #fff;
+  //background: #fff;
+  // background: -moz-linear-gradient(top, white 10%, white 80%, white 100%);
+   background: -webkit-linear-gradient(top, transparent, white 70%,  black 100%);
+  // background: linear-gradient(top, white, black);
   z-index: 10;
   opacity: 0.4;
   transition: opacity 0.15s ease-out;
@@ -177,4 +188,19 @@ a {
 
 
 //ここまで
+
+
+.box {
+  float: left;
+  width: 21.5%;
+  box-shadow: 0px 1px 3px #C7C7C7;
+  margin-right: 20px;
+  min-height: 270px;
+  overflow: hidden;
+}
+
+.box p {
+  width: 90%;
+  padding: 14px;
+}
 

@@ -62,9 +62,9 @@
             <div class="details">
               <h2><img src="/assets/lessons_17.png" alt="Lessons"><h2>
               <h3>Webデザインの基本を学ぼう</h3>
-              <span>Photoshopの使い方から、HTMLやCSSのコーディングまで！
+              <p>Photoshopの使い方から、HTMLやCSSのコーディングまで！
                 <br>Webデザインの基本を動画とスライドで楽しく学びます
-              </span>
+              </p>
             </div>
 
             <% @categories.each do |category| %>
@@ -80,7 +80,7 @@
                   
                       <div class="progress-bar">
                       </div>
-                      <p><%= category.description %></p>
+                      <p><%= category.short_description %></p>
 
                       <td><%= link_to 'Edit', edit_category_path(category) %></td>
                       <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -95,9 +95,9 @@
             <div class="details">
               <h2><img src="/assets/lessons_21.png" alt="Tutorials"><h2>
               <h3>もっと引き出しを増やそう</h3>
-              <span>みんなから投稿された応用チュートリアルでデザインの引き出しを増やそう！
+              <p>みんなから投稿された応用チュートリアルでデザインの引き出しを増やそう！
                 <br>自分で作り方を投稿してみよう！
-              </span>
+              </p>
             </div>
             <%= render @tutorials %>
             <%= link_to "もっと見る", tutorials_path, class: "btn btn-pink" %>

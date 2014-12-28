@@ -249,17 +249,26 @@
 .listing-tutorials {
 	width: 80%;
 	margin: 0 auto;
-	min-height: 600px;
+	min-height: 650px;
 }
 
 .listing-tutorials ul {
 	float: left;
-	margin: 50px 20px 20px 20px;
+	margin: 50px 0px 20px 0px;
+	width: 200px;
 }
 
-.listing-tutorials .edit li{
+.listing-tutorials ul li {
+	line-height: 20px;
+}
+
+.edit {
+	margin: 5px 0 5px 30px;
+}
+
+.edit li{
 	float: left;
-	margin: 5px;
+	padding: 10px 5px 10px 5px;
 }
 
 
