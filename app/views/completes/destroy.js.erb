@@ -1,2 +1,1 @@
-$('#slide_<%= @slide.id %>').html('<%= escape_javascript(render("completes/complete_btn", slide: @slide)) %>');
-$('#completes').text('<%= current_user.completes.count %>');
+$('#complete-btn').html('<%= escape_javascript(render("completes/complete_btn", slide: @slide)) %>');

@@ -1,3 +1,5 @@
-<%= link_to tutorial_video_path(id: slide.tutorial_id, slide_order: slide.order), remote: true, id: 'video_link', method: :post, class: "btn btn-pink2" do %>
-完了
-<% end %>
+<span id="complete-btn">
+	<%= link_to completes_path(slide_id: slide.id), remote: true, id: 'video_link', method: :post, class: "btn btn-pink2" do %>
+	完了
+	<% end %>
+</span>

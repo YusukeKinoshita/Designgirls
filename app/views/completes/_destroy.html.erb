@@ -1,5 +1,7 @@
-<%= link_to tutorial_video_path(id: slide.tutorial_id, slide_order: slide.order), remote: true, method: :destroy, id: 'video_link', class: "btn btn-pink2" do %>
-  完了済み
-<% end %>
+<span id="complete-btn">
+	<%= link_to complete_path(current_user.completes.find_by(slide_id: slide.id)), remote: true, method: :delete, class: "btn btn-pink2" do %>
+	  完了済み
+	<% end %>
+</span>
 
 

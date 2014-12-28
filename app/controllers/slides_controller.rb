@@ -13,6 +13,10 @@ class SlidesController < ApplicationController
     
   end
 
+  def change
+    @slide = Slide.find(params[:id])
+  end
+
   # GET /slides/new
   def new
     @tutorial = Tutorial.find(params[:tutorial_id])
