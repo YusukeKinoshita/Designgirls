@@ -1,3 +1,5 @@
-<%= link_to likes_path(usertutorial_id: usertutorial.id), remote: true, method: :post, class: 'like-link' do %>
-  <i class="fa fa-heart">いいね</i>
-<% end %>
+<span id="like-btn">
+	<%= link_to likes_path(usertutorial_id: usertutorial.id), remote: true, method: :post, class: 'like-link' do %>
+  	<i class="fa fa-heart">いいね</i>
+	<% end %>
+</span>

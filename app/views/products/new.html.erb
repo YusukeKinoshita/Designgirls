@@ -1,5 +1,16 @@
-<h1>New product</h1>
+<div class="wrapper2">
+	<div class="form-new">
+		<div class="form-title2">
+			<h1>自分のポートフォリオを投稿する</h1>
+			<p>ポートフォリオのタイトル・サムネイル画像・説明を入れましょう。</p>
+		</div>
+		
+		<div class="form-contents">
+			<%= form_for(@product, url: products_path, html: {multipart: true}) do |f| %>
+				<%= render 'form', f: f %>
+			<% end %>
+		</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', products_path %>
+		<%= link_to 'Back', products_path(id: params[:product_id]) %>
+	</div>
+</div>
