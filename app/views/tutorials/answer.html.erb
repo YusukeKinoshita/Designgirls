@@ -13,8 +13,8 @@
             </div>
 
             <div class="questions">
-                <% @tutorial.questions.each_with_index do |question, index| %>
-                <% if @correct_answers[index]==1 %>
+                <% @tutorial.questions.each_with_index do |question, q_index| %>
+                <% if @correct_answers[q_index]==1 %>
                     <p class="true">正解</p>
                 <% else %>
                     <p class="false">不正解</p>
@@ -36,15 +36,17 @@
                   </div>
                 <% end %>           
             </div>
-
-           <!--  <div class="clear"></div> -->
-
         </fieldset>
         </div>
     </div>
 <!-- </div> -->
 <% end %>
 
+<div class="clear"></div>
 
-<%= link_to '次のレッスンへ', slides_change_path(id: slide.tutorial_id, slide_order: slide.order + 1), class: "btn btn-pink2", remote: true %>
-<%= link_to 'レッスン一覧へ戻る', slides_change_path(id: slide.tutorial_id, slide_order: slide.order + 1), class: "btn btn-pink2", remote: true %>
+
+<div class="buttons">
+<%= link_to '次のレッスンへ', tutorial_video_path(id: @tutorial.id + 1), class: "btn btn-pink2" %>
+<%= link_to 'レッスン一覧へ', category_path(), class: "btn btn-pink2" %>
+</div>
+
