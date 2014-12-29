@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="top-img">
+  <div id="top-img">
     <div class="white-bg3">
         <div class="titles">
           <h1>Tutorials</h1>
@@ -21,9 +21,10 @@
               <div class="overlay"></div>
               <li><%= usertutorial_image_for usertutorial %></li>
               <li><h3><%= usertutorial.title %></h3></li>
+            <% end %>
               <li><%= usertutorial.user_id %></li>
               <li><%= usertutorial.description %></li>
-            <% end %>
+            
 
             <div class="edit">
               <li><i class="fa fa-edit"></i><%= link_to '編集', edit_usertutorial_path(id: usertutorial.id) %></li>
@@ -39,5 +40,15 @@
   </div>
 </div>
 
+
+
+
+<script type="text/javascript">
+(function() {
+var bg = ["/assets/cofee.jpg", "/assets/108H.jpg", "/assets/61H.jpg", "/assets/cofee.jpg", "/assets/beach.jpg", "/assets/woman.jpg"];
+var r = Math.floor(Math.random() * bg.length);
+document.getElementById("top-img").style.backgroundImage = "url(" + bg[r] + ")"; 
+})()
+</script>
 
 

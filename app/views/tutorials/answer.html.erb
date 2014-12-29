@@ -15,20 +15,21 @@
             <div class="questions">
                 <% @tutorial.questions.each_with_index do |question, index| %>
                 <% if @correct_answers[index]==1 %>
-                <p class="true">正解</p>
+                    <p class="true">正解</p>
                 <% else %>
-                <p class="false">不正解</p>
+                    <p class="false">不正解</p>
                 <% end %>
+
                   <div class="question"> 
                     <div class="question-title">
-                        <h3>Question<%= index + 1 %></h3>
+                        <h3>Question<%= q_index + 1 %></h3>
                         <p><%= question.question %></p>
                     </div>
                     <div class="clear"></div>
                     <ul>
                         <% question.selects.each_with_index do |select, index| %>
                         <li>
-                            <label><%= f.radio_button "content#{index+1}", index+1 %><%= select.content %></label>
+                            <label><%= f.radio_button "content#{q_index}", index+1 %><%= select.content %></label>
                         </li>
                         <% end %>
                     </ul>
@@ -43,3 +44,7 @@
     </div>
 <!-- </div> -->
 <% end %>
+
+
+<%= link_to '次のレッスンへ', slides_change_path(id: slide.tutorial_id, slide_order: slide.order + 1), class: "btn btn-pink2", remote: true %>
+<%= link_to 'レッスン一覧へ戻る', slides_change_path(id: slide.tutorial_id, slide_order: slide.order + 1), class: "btn btn-pink2", remote: true %>

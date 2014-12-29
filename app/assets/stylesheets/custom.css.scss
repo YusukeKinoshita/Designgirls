@@ -98,15 +98,27 @@ p {
 #logo {
   float: left;
   margin-left: 50px;
-  font-size: 1.9em;
+  padding-top: 4px;
+  // font-weight: bold;
+  width: 207px;
+  height: 145px;
+  background-image: url(/assets/tag.png);
+  margin-top: -100px;
+  &:hover {
+    margin-top: -90px;
+  }
+
+}
+
+#logo h1 {
+  font-size: 22px;
   color: #fb50a0;
   font-family: 'Fredericka the Great', cursive;
   letter-spacing: 3px;
   text-transform: uppercase;
-  padding-top: 4px;
-  // font-weight: bold;
   line-height: 1;
-  &:hover {
+  padding-top: 80px;
+    &:hover {
     color: white;
     text-decoration: none;
   }
@@ -139,28 +151,22 @@ nav {
   background-image: url('/assets/header.png');
   background-repeat: repeat-x;
   z-index: 100;
-<<<<<<< HEAD
 }
 
 li#nav-mypage {
-  margin-top: -10px;
+  margin-top: 0px;
   float: left;
   margin-right: 10px;
+  // background-image: url(/assets/tape.png);
+  // width: 200px;
+  // height: 65px;
 }
 
-=======
-}
-
-li#nav-mypage {
-  margin-top: -10px;
-  float: left;
-  margin-right: 10px;
-}
-
->>>>>>> 54d087a07ee2651ad0ffa5c382a71cc0d57b7055
 li#nav-mypage img {
   float: left;
-  margin-right: 7px;
+}
+
+img.profile {
 }
 
 li#nav-mypage span a {
@@ -176,6 +182,15 @@ header form{
 }
 
 // ドロップダウンメニュー
+.menu {
+  background-image: url(/assets/tapelittle3.png);
+  width: 107px;
+  height: 38px;
+  &:hover {
+    margin-top: -5px;
+  }
+}
+
 .menu ul{
   margin-right: 10px;
   padding:0;
@@ -188,13 +203,13 @@ header form{
   font-size:14px;
   float: left;
   position: relative;
-  width: 120px;/*親メニューの幅*/
+  width: 107px;/*親メニューの幅*/
   height: 67px;/*親メニューの高さ*/
   line-height: 67px;
   // background:#FF818D;/*親メニューの背景色*/
   // color: #4D4D4D;/*親メニューの文字色*/
   text-align:center;
-  margin-top: -20px;
+  margin-top: -10px;
 }
 
 .menu ul li a {
@@ -213,14 +228,14 @@ header form{
 .menu ul li ul {
   position: absolute;
   top: 67px;/*親メニューの高さと同じにする*/
-  width: 120px;
+  width: 107px;
   z-index: 100;
 }
 
 .menu ul li ul li {
   visibility: hidden;
   overflow: hidden;
-  width: 120px;/*サブメニューの幅*/
+  width: 107px;/*サブメニューの幅*/
   height: 0;
   background:#FFDAD7;/*サブメニューの背景色*/
 }
