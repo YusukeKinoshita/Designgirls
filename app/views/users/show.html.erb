@@ -1,30 +1,45 @@
 <div class="wrapper">
 
   <!-- ユーザー情報 -->
-  <aside class="user">
+  <div class="user">
     <section>
   		<h1>
   		  <%= profile_image_for @user %>
   		  <%= @user.name %>
   		</h1>
 	  </section>
-  </aside>
-
+  </div>
 
   <!-- 自分の？チュートリアル一覧 -->
   <div class ="user-tutorials">
-    <% if @user.tutorials.any? %>
-      <h3>Tutorials (<%= @user.tutorials.count %>)</h3>
+    <% if @user.usertutorials.any? %>
+      <h3>Tutorials (<%= @user.usertutorials.count %>)</h3>
       <ol class="">
-        <%= render @tutorials %>
+        <%= render @usertutorials %>
       </ol>
-      <%= will_paginate @tutorials %>
     <% end %>
   </div>
 
+  <div class ="like-usertutorials">
+    <% if @user.like_usertutorials.any? %>
+      <h3>Likes (<%= @user.like_usertutorials.count %>)</h3>
+      <ol class="">
+        <%= render @user.like_usertutorials %>
+      </ol>
+    <% end %>
+  </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <div class ="favorite-products">
+    <% if @user.favorite_products.any? %>
+      <h3>Likes (<%= @user.favorite_products.count %>)</h3>
+      <ol class="">
+        <%= render @user.favorite_products %>
+      </ol>
+    <% end %>
+  </div>  
+
+<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to 'Back', root_path %>
 
 </div>
 
