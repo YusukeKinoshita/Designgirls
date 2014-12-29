@@ -1,5 +1,5 @@
 class TutorialsController < ApplicationController
-  before_action :set_tutorial, only: [:show, :edit, :update, :destroy]
+  before_action :set_tutorial, only: [:show, :edit, :update, :destroy, :question, :answer]
 
   # GET /tutorials
   # GET /tutorials.json
@@ -77,6 +77,29 @@ class TutorialsController < ApplicationController
   end
 
   def slides
+  end
+
+  def question
+  end
+
+  def answer
+    # answers == [1, 3, 4, 2, 1]
+    answers = params[:answer] 
+    # correct_answers = [1, 0, 1, 0, 0]
+    @correct_answers = []
+    answers.each_with_index do |answer, index| 
+      # indexには何周目のループかが入ってる
+      # 該当する質問を取り出す
+      question = @tutorial.questions.find_by(order: index + 1)
+      # is_correctにはtrueかfalse
+      is_correct = question.selects.find_by(order: answer).answer == 1
+      if is_correct
+        @correct_answers.push(1)
+      else
+        @correct_answers.push(0)
+      end
+    end
+
   end
 
   def done

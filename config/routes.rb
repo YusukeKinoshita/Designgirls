@@ -37,7 +37,8 @@ Designgirls::Application.routes.draw do
   resources :tutorials do
     resources :slides
     member do
-      get :like
+      get :like, :question
+      post :answer
     end
   end
 

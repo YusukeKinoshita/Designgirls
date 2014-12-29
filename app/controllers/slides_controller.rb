@@ -14,6 +14,7 @@ class SlidesController < ApplicationController
   end
 
   def change
+    @tutorial = Tutorial.find(params[:id])
     # @slide = Slide.find(params[:id])
     @slide = Slide.find_by(tutorial_id: params[:id], order: params[:slide_order])
   end

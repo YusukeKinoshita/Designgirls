@@ -1,4 +1,3 @@
-
 <div class="wrapper">
     <div class="">
         <%= link_to tutorial_path(id: tutorial) do %>
@@ -14,12 +13,10 @@
 
                 <p><%= tutorial.description %></p>
                 <% tutorial.user_id %>
-                <br>
-                
+                <br>               
             </div>
 
-            <%= link_to 'はじめる', tutorial_path(id: tutorial), class: "btn btn-pink" %>
-             
+            <%= link_to 'はじめる', tutorial_video_path(id: tutorial), class: "btn btn-pink" %>            
     </div>
 </div>
 
