@@ -1,2 +1,2 @@
-$('#product_<%= @product.id %>').html('<%= escape_javascript(render("favorites/favorite_btn", product: @product)) %>')
-$('#favorites').text('<%= current_user.favorites.count %>');
+
+$('#favorite-btn').html('<%= escape_javascript(render("favorites/favorite_btn", product: @product)) %>')

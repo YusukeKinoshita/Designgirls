@@ -50,9 +50,11 @@ ActiveRecord::Schema.define(version: 20141229075920) do
     t.datetime "updated_at"
   end
 
+
   add_index "finishes", ["user_id", "userslide_id"], name: "index_finishes_on_user_id_and_userslide_id", unique: true
   add_index "finishes", ["user_id"], name: "index_finishes_on_user_id"
   add_index "finishes", ["userslide_id"], name: "index_finishes_on_userslide_id"
+
 
   create_table "likes", force: true do |t|
     t.integer  "user_id"
@@ -62,9 +64,11 @@ ActiveRecord::Schema.define(version: 20141229075920) do
     t.integer  "usertutorial_id"
   end
 
+
   add_index "likes", ["tutorial_id"], name: "index_likes_on_tutorial_id"
   add_index "likes", ["user_id", "tutorial_id"], name: "index_likes_on_user_id_and_tutorial_id", unique: true
   add_index "likes", ["user_id"], name: "index_likes_on_user_id"
+
 
   create_table "products", force: true do |t|
     t.string   "title"

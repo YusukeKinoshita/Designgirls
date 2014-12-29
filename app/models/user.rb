@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :tutorials, dependent: :destroy
+  has_many :usertutorials, dependent: :destroy
   has_many :products, dependent: :destroy
   # お気に入り
   has_many :favorites

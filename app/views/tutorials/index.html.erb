@@ -30,12 +30,14 @@
               <li><i class="fa fa-trash"></i><%= link_to '削除', tutorial_path(id: tutorial.id), method: :delete, data: { confirm: 'Are you sure?' } %></li>
 
               <li><%= render 'likes/like_btn', tutorial: tutorial %></li>
+
             </div>
               
           </ul>
         <% end %>
   </div>
 </div>
+
 
 
 
@@ -47,6 +49,5 @@ var r = Math.floor(Math.random() * bg.length);
 document.getElementById("top-img").style.backgroundImage = "url(" + bg[r] + ")"; 
 })()
 </script>
-
 
 

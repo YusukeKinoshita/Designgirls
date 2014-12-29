@@ -119,6 +119,7 @@ label progress {
 	height: 46px;
 	width: 45%;
 	margin-top: 100px;
+<<<<<<< HEAD
 }
 
 .tabs ul li{	
@@ -148,6 +149,37 @@ label progress {
 	min-height: 550px;
 }
 
+=======
+}
+
+.tabs ul li{	
+	float: left;	
+	width: 160px;
+}
+
+.white-bg {
+	margin-top: 100px;
+	width: 80%;
+	background-color: #fff;
+	background-color:rgba(255,255,255,0.5);
+	/*background-color:rgbaを使用すると、現在の要素だけが透明になる。*/
+	padding: 50px 20px 50px 20px;
+	min-height: 800px;
+    margin: 0 auto;
+	
+	padding-top: 50px;
+
+}
+
+#lessons, #tutorials, #portfolios {
+	min-height: 450px;
+}
+
+#lessons {
+	min-height: 550px;
+}
+
+>>>>>>> 54d087a07ee2651ad0ffa5c382a71cc0d57b7055
 #tutorials {
 	margin-left: -15px;
 	margin-bottom: 40px;
@@ -238,7 +270,10 @@ img.gravatar {
 #nav2 {
 	margin-top: 100px;
 	margin-left: -50px;
+<<<<<<< HEAD
 	margin-bottom: 60px;
+=======
+>>>>>>> 54d087a07ee2651ad0ffa5c382a71cc0d57b7055
 }
 
 ul li.b1 a { background: #ffe983; }

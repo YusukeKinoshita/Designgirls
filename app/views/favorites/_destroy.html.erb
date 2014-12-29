@@ -1,5 +1,6 @@
-<%= link_to favorite_path(current_user.favorites.find_by(product_id: product.id)), remote: true, method: :delete, class: 'favorite-link' do %>
 
-  <i class="fa fa-heart　favorite-heart">いいねずみ</i>
-
-<% end %>
+<span id="favorite-btn">
+	<%= link_to favorite_path(current_user.favorites.find_by(product_id: product.id)), remote: true, method: :delete, class: 'favorite-link' do %>
+	  <i class="fa fa-heart　favorite-heart">いいねずみ</i>
+	<% end %>
+</span>

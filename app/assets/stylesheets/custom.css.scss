@@ -139,6 +139,7 @@ nav {
   background-image: url('/assets/header.png');
   background-repeat: repeat-x;
   z-index: 100;
+<<<<<<< HEAD
 }
 
 li#nav-mypage {
@@ -147,6 +148,16 @@ li#nav-mypage {
   margin-right: 10px;
 }
 
+=======
+}
+
+li#nav-mypage {
+  margin-top: -10px;
+  float: left;
+  margin-right: 10px;
+}
+
+>>>>>>> 54d087a07ee2651ad0ffa5c382a71cc0d57b7055
 li#nav-mypage img {
   float: left;
   margin-right: 7px;
