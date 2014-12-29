@@ -1,2 +1,1 @@
-$('#tutorial_<%= @tutorial.id %>').html('<%= escape_javascript(render("likes/like_btn", tutorial: @tutorial)) %>');
-$('#likes').text('<%= current_user.likes.count %>');
+$('#like-btn').html('<%= escape_javascript(render("likes/like_btn", usertutorial: @usertutorial)) %>');

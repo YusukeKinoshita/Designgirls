@@ -1,6 +1,14 @@
-<h1>Editing product</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+<div class="wrapper2">
+	<div class="form-new">
+		<div class="form-title2">
+			<h1>ポートフォリオを編集する</h1>
+			<p>ポートフォリオのタイトル・サムネイル画像・説明を修正しましょう。</p>
+		</div>
+		
+		<div class="form-contents">
+				<%= render 'form' %>
+		</div>
+		<%= link_to 'Show', @product %>
+		<%= link_to 'Back', products_path(id: params[:product_id]) %>
+	</div>
+</div>
