@@ -1,13 +1,15 @@
-  <ul>
+
+<div class="products">
+<ul>
   <%= link_to product_path(id: product.id) do %>
 
-    <div class="overlay">
+    <div class="overlay"></div>
     <li><%= image_tag(product.image_url) if product.image.present? %></li>
     <li><h3><%= product.title %></h3></li>
   <% end %>
     <li><%= product.user_id %></li>
     <li><%= product.description %></li>
-    </div>
+
 
   <div class="edit">
 
@@ -17,4 +19,7 @@
 
   </div>
 </ul>
+
+</div>
+
 

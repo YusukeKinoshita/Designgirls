@@ -139,6 +139,7 @@ nav {
   background-image: url('/assets/header.png');
   background-repeat: repeat-x;
   z-index: 100;
+<<<<<<< HEAD
 }
 
 li#nav-mypage {
@@ -147,6 +148,16 @@ li#nav-mypage {
   margin-right: 10px;
 }
 
+=======
+}
+
+li#nav-mypage {
+  margin-top: -10px;
+  float: left;
+  margin-right: 10px;
+}
+
+>>>>>>> 54d087a07ee2651ad0ffa5c382a71cc0d57b7055
 li#nav-mypage img {
   float: left;
   margin-right: 7px;
@@ -181,14 +192,13 @@ header form{
   height: 67px;/*親メニューの高さ*/
   line-height: 67px;
   // background:#FF818D;/*親メニューの背景色*/
-  color: #4D4D4D;/*親メニューの文字色*/
+  // color: #4D4D4D;/*親メニューの文字色*/
   text-align:center;
-  font-weight:bold;
   margin-top: -20px;
 }
 
 .menu ul li a {
-  color: #4D4D4D;
+  // color: #4D4D4D;
   display: block;
   text-decoration: none;
   padding-top: 20px;
@@ -413,5 +423,11 @@ aside {
   display: none;
 }
 
+
+
+.product_image {
+  width: 150px;
+  height: 150px;
+}
 
 

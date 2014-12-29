@@ -12,6 +12,7 @@
 
   <!-- 自分の？チュートリアル一覧 -->
   <div class ="user-tutorials">
+
     <% if @user.usertutorials.any? %>
       <h3>Tutorials (<%= @user.usertutorials.count %>)</h3>
       <ol class="">
@@ -25,6 +26,7 @@
       <h3>Likes (<%= @user.like_usertutorials.count %>)</h3>
       <ol class="">
         <%= render @user.like_usertutorials %>
+
       </ol>
     <% end %>
   </div>
