@@ -1,12 +1,12 @@
 class LikesController < ApplicationController
 
   def create
-    @tutorial = Tutorial.find(params[:tutorial_id])
-    current_user.like!(@tutorial)
+    @usertutorial = Usertutorial.find(params[:usertutorial_id])
+    current_user.like!(@usertutorial)
   end
 
   def destroy
-    @tutorial = Like.find(params[:id]).tutorial
-    current_user.unlike!(@tutorial)
+    @usertutorial = Like.find(params[:id]).usertutorial
+    current_user.unlike!(@usertutorial)
   end
 end

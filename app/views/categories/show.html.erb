@@ -1,5 +1,5 @@
 <div class="">
-  <div class="top-img">
+  <div id="top-img">
     <div class="white-bg3">
       <div class="titles">
         <h1>
@@ -97,4 +97,15 @@ $(document).ready(function(){
         textAfter: ' %'
     });
 });
+</script>
+
+
+
+
+<script type="text/javascript">
+(function() {
+var bg = ["/assets/cofee.jpg", "/assets/108H.jpg", "/assets/61H.jpg", "/assets/cofee.jpg", "/assets/beach.jpg", "/assets/woman.jpg"];
+var r = Math.floor(Math.random() * bg.length);
+document.getElementById("top-img").style.backgroundImage = "url(" + bg[r] + ")"; 
+})()
 </script>

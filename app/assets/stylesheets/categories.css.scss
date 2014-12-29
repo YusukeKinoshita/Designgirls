@@ -3,9 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.top-img{
+#top-img{
 	width: 100%;
-	background-image: url(/assets/cofee.jpg);
+	//background-image: url();
 	/* 画像を常に天地左右の中央に配置 */
 	  background-position: center center;
 	   
@@ -55,7 +55,7 @@
 // コース一覧
 .course {
 	width: 90%;
-	min-height: 500px;
+	min-height: 800px;
 	margin: 0 auto;
 	margin-top: 70px;
 }
@@ -98,6 +98,11 @@
 	font-size: 22px;
 }
 
+.category-tutorials a.btn {
+  margin-top: 50px;
+}
+
+
 
 
 
@@ -108,7 +113,7 @@
 // おためしCSS
 
 body {
-  font-family: Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif; 
 }
 li.self-tutorials {
   position: relative;

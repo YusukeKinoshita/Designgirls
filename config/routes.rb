@@ -28,23 +28,31 @@ Designgirls::Application.routes.draw do
 
   resources :categories
 
-
   get 'lessons/:id(/:slide_order)', to: 'tutorials#show', defaults: {slide_order: 1}, as: 'tutorial_video'
   get 'lessons/:id/change/:slide_order', to: 'slides#change', as: 'slides_change'
+
+  get 'userlessons/:id(/:userslide_order)', to: 'usertutorials#show', defaults: {userslide_order: 1}, as: 'usertutorial_video'
+  get 'userlessons/:id/change/:userslide_order', to: 'userslides#change', as: 'userslides_change'
 
   resources :tutorials do
     resources :slides
     member do
-      get :like
+      get :like, :question
+      post :answer
     end
   end
 
-
-
+  resources :usertutorials do
+    resources :userslides
+    member do
+      get :like
+    end
+  end
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :tags, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
   resources :likes, only: [:create, :destroy]
   resources :completes, only: [:create, :destroy]
+  resources :finishes, only: [:create, :destroy]
 end

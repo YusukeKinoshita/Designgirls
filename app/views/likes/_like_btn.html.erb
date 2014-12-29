@@ -1,5 +1,5 @@
-<% if current_user.like?(tutorial) %>
-    <%= render 'likes/destroy', tutorial: tutorial %>
+<% if current_user.like?(usertutorial) %>
+    <%= render 'likes/destroy', usertutorial: usertutorial %>
 <% else %>
-    <%= render 'likes/create', tutorial: tutorial %>
+    <%= render 'likes/create', usertutorial: usertutorial %>
 <% end %>

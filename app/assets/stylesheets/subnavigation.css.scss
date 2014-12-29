@@ -6,6 +6,7 @@
 	position: fixed;
 	opacity: 0.9;
 	margin-top: 80px;
+
 	// border-radius: 15px;
 
 	background-color: #fff;
@@ -19,6 +20,7 @@
 .subnav-contents span ul li {
 	line-height: 30px;
 	font-size: 18px;
+	font-family: 'IM Fell DW Pica SC', serif;
 }
 
 .subnav-contents span {
@@ -35,6 +37,8 @@
 	padding-bottom: 20px;
 	font-size: 14px;
 	text-align: left;
+	font-family: 'Quicksand', sans-serif;
+	// font-family: 'IM Fell DW Pica SC', serif;
 }
 
 .fa-color {

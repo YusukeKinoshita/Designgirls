@@ -98,17 +98,23 @@ p {
 #logo {
   float: left;
   margin-left: 50px;
-  font-size: 1.7em;
+  font-size: 1.9em;
   color: #fb50a0;
+  font-family: 'Fredericka the Great', cursive;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  letter-spacing: -1px;
   padding-top: 4px;
-  font-weight: bold;
+  // font-weight: bold;
   line-height: 1;
   &:hover {
     color: white;
     text-decoration: none;
   }
+}
+
+img.logo {
+  width: 40%;
+  margin-top: -150px;
 }
 
 nav {
@@ -127,8 +133,10 @@ nav {
   height: 45px;
   margin: 0 auto;
   padding: 20px;
+  margin-top: -1px;
   position: fixed;
-  background-image: url('/assets/nav-bg.png');
+   //background-image: url('/assets/nav-bg.png');
+  background-image: url('/assets/header.png');
   background-repeat: repeat-x;
   z-index: 100;
 }
@@ -184,6 +192,7 @@ header form{
   display: block;
   text-decoration: none;
   padding-top: 20px;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .menu ul li:hover, .menu ul li a:hover {

@@ -2,12 +2,10 @@ class Tutorial < ActiveRecord::Base
   has_many :slides, dependent: :destroy
   belongs_to :category
   belongs_to :user
-  # お気に入り
-  has_many :likes
-  has_many :liking_users, through: :likes, source: :user
 
   has_many :tags
   has_many :categories, through: :tags
+  has_many :questions
 
   validates :title, presence: true
   # validates :user_id, presence: true

@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class="top-img">
+    <div class="white-bg3">
+        <div class="titles">
+          <h1>Tutorials</h1>
+          <p>
+            他の人が投稿したチュートリアルを見て、<br>
+            もっとデザインの幅を広げてみよう！
+          </p>
+        </div>
+    </div>
+  </div>
+
+  <%= link_to 'New Tutorial', new_usertutorial_path, class: "btn btn-pink" %>
+
+
+  <div class="listing-tutorials">
+        <% @usertutorials.each do |usertutorial| %>
+          <ul>
+            <%= link_to usertutorial_path(id: usertutorial.id) do %>
+              <div class="overlay"></div>
+              <li><%= usertutorial_image_for usertutorial %></li>
+              <li><h3><%= usertutorial.title %></h3></li>
+              <li><%= usertutorial.user_id %></li>
+              <li><%= usertutorial.description %></li>
+            <% end %>
+
+            <div class="edit">
+              <li><i class="fa fa-edit"></i><%= link_to '編集', edit_usertutorial_path(id: usertutorial.id) %></li>
+              <li><i class="fa fa-trash"></i><%= link_to '削除', usertutorial_path(id: usertutorial.id), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+
+              <li><%= render 'likes/like_btn', usertutorial: usertutorial %></li>
+            </div>
+              
+
+
+          </ul>
+        <% end %>
+  </div>
+</div>
+
+
+
