@@ -1,3 +1,211 @@
 // Place all the styles related to the Categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#top-img{
+	width: 100%;
+	//background-image: url();
+	/* 画像を常に天地左右の中央に配置 */
+	  background-position: center center;
+	   
+	  /* 画像をタイル状に繰り返し表示しない */
+	  background-repeat: no-repeat;
+	   
+	  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+	  background-attachment: fixed;
+	   
+	  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	  background-size: cover;
+	   
+	  /* 背景画像が読み込まれる前に表示される背景のカラー */
+	  background-color: #464646;
+
+
+	min-height: 350px;
+	margin-bottom: 80px;
+}
+
+.white-bg3 {
+	width: 100%;
+	background-color: #fff;
+	background-color:rgba(255,255,255,0.35);
+	min-height: 350px;
+}
+
+
+.titles {
+	padding: 120px 100px 20px 100px;
+	float: left;
+	width: 400px;
+}
+
+.titles h1 {
+	font-size: 30px;
+}
+
+.titles-img p{	
+	margin: 0 auto;
+	text-align: center;
+	width: 15%;
+	height: 150px;
+}
+
+
+// コース一覧
+.course {
+	width: 90%;
+	min-height: 800px;
+	margin: 0 auto;
+	margin-top: 70px;
+}
+
+.course-left {
+	width: 80%;
+	min-height: 500px;
+	float: left;
+}
+
+.course-right {
+	width: 20%;
+	min-height: 500px;
+	background-image: url(/assets/gplaypattern.png);
+	float: left;
+}
+
+.software-dl {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.course-right img {
+	width: 90%;
+	padding: 10px;
+}
+
+.course-right ul {
+  padding: 20px;
+}
+
+.course-right ul li {
+  font-size: 16px;
+  padding: 10px;
+}
+
+
+
+.category-tutorials h3 {
+	font-size: 22px;
+}
+
+.category-tutorials a.btn {
+  margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+// おためしCSS
+
+body {
+  font-family: Helvetica, sans-serif; 
+}
+li.self-tutorials {
+  position: relative;
+  overflow: hidden;
+  max-width: 200px;
+  transition: all 0.3s ease-out;
+  width: 100%;
+  float: left;
+  margin: 2% 1%;
+  height: 160px;
+  .text{
+    color: #5b4133;
+    margin: 0;
+    position: absolute;
+    top: 80%;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 20;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 80%;
+    padding: 0 10%;
+    margin: 0;
+    transition: all 0.3s ease;
+    h2{
+      font-size: em(28);
+      border-bottom: 3px solid white;
+      margin-bottom: em(10);
+      color: #fff;
+    }
+  }
+
+  img.tutorial_img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    display: block;
+    vertical-align: middle;
+    transition: all 0.2s ease;
+  }
+
+ 
+  .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  //background: #fff;
+  // background: -moz-linear-gradient(top, white 10%, white 80%, white 100%);
+   background: -webkit-linear-gradient(top, transparent, white 70%,  black 100%);
+  // background: linear-gradient(top, white, black);
+  z-index: 10;
+  opacity: 0.4;
+  transition: opacity 0.15s ease-out;
+  backface-visibility: hidden;
+  }
+  &:hover, &:focus {
+    img {
+      transform:scale(1.2);
+    }
+    .overlay {
+      opacity: 0;
+	    filter: alpha(opacity=0);
+    }
+    .text {
+      opacity: 0;
+	    filter: alpha(opacity=0);
+    }
+  }
+}
+
+a {
+  transition: all 0.2s;
+}
+
+
+//ここまで
+
+
+.box {
+  float: left;
+  width: 21.5%;
+  box-shadow: 0px 1px 3px #C7C7C7;
+  margin-right: 20px;
+  min-height: 270px;
+  overflow: hidden;
+}
+
+.box p {
+  width: 90%;
+  padding: 14px;
+}
+

@@ -1,40 +1,41 @@
+<!-- ユーザーが作るチュートリアル -->
 <div class="wrapper">
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @tutorial.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @tutorial.title %>
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @tutorial.user_id %>
-</p>
+  <p>
+    <strong>User:</strong>
+    <%= @tutorial.user_id %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @tutorial.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @tutorial.description %>
+  </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= tutorial_image_for @tutorial %>
-</p>
-
-
+  <p>
+    <strong>Image:</strong>
+    <%= tutorial_image_for @tutorial %>
+  </p>
 
 
-<%= link_to 'Edit', edit_tutorial_path(id: @tutorial.id) %> |
-<%= link_to 'Back', tutorials_path %>
 
 
-<%= link_to "Create New Slide!", new_tutorial_slide_path(tutorial_id: @tutorial.id) , class: "btn btn-large btn-primary" %>
+  <%= link_to 'Edit', edit_tutorial_path(id: @tutorial.id) %> |
+  <%= link_to 'Back', tutorials_path %>
 
-<% if @tutorial.slides.any? %>
-  <h3>Slides (<%= @tutorial.slides.count %>)</h3>
-  <table>
-    <%= render @slides %>
-  </table>
-  <%= will_paginate @slides %>
-<% end %>
+
+  <%= link_to "Create New Slide!", new_tutorial_slide_path(tutorial_id: @tutorial.id) , class: "btn btn-large btn-primary" %>
+
+  <% if @tutorial.slides.any? %>
+    <h3>Slides (<%= @tutorial.slides.count %>)</h3>
+    <table>
+      <%= render @tutorial.slides %>
+    </table>
+    
+  <% end %>
 </div>

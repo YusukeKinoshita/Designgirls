@@ -5,13 +5,17 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
+    @current_tutorial = Tutorial.find(current_user.progress)
+    @usertutorials = Usertutorial.all
+    @products = Product.all
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
     @category = Category.find(params[:id])
-    @tutorials = @category.tutorials.paginate(page: params[:page])
+    # @tutorials = @category.tutorials.paginate(page: params[:page])
+    @tutorials = Tutorial.where(self_flag: 1)
   end
 
   # GET /categories/new

@@ -1,4 +1,4 @@
-class Tag < ActiveRecord::Base
-	belongs_to :tutorial
-	belongs_to :category
-end
+# class Tag < ActiveRecord::Base
+# 	belongs_to :tutorial, presence: true
+# 	belongs_to :category, presence: true
+# end

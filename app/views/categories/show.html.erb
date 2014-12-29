@@ -1,20 +1,16 @@
-
-  <p id="notice"><%= notice %></p>
-
-    <div class="top-img">
+<div class="">
+  <div id="top-img">
+    <div class="white-bg3">
       <div class="titles">
-        <span>
+        <h1>
           <%= @category.title %>
-        </span>
+        </h1>
         <p>
           <%= @category.description %>
-          Photoshopの基礎をやっていこうとおもいます。
-          Photoshopの基礎をやっていこうとおもいます。
-          Photoshopの基礎をやっていこうとおもいます。
         </p>
       </div>
 
-      <div class="clear"></div>
+      <!-- <div class="clear"></div> -->
 
       <div class="titles-img">
         <p>
@@ -22,26 +18,94 @@
         </p>
       </div>
     </div>
-
-
- 
-<div class="wrapper">
-  <div class="category-tutorials">
-    <% if @tutorials.any? %>
-      <h3>
-        Tutorials (<%= @tutorials.count %>)
-      </h3>
-
-
-      <%= render @tutorials %>
-
-      
-
-
-      <%= will_paginate @tutorials %>
-    <% end %>
-
-    <%= link_to '自分のチュートリアルを作る', new_tutorial_path, class: "btn btn-pink" %>
   </div>
 
+  <div id="sample_goal"></div>
+
+  <div class="clear"></div>
+   
+  <div class="course">
+    <!-- 左側 -->
+    <div class="course-left">   
+      <div class="category-tutorials">      
+        <h3>Course Overview    <span>コース一覧</span></h3>
+
+        <%= render @category.tutorials %>
+
+        <div class="clear"></div>
+          
+        <%= link_to '自分のチュートリアルを作る', new_tutorial_path, class: "btn btn-pink" %>
+      </div>
+    </div>
+
+
+
+    <!-- 右側 -->
+    <div class="course-right">
+      <div class="software-dl">
+        <a href="<%= @category.url %>">
+          <img src="<%= @category.soft_image %>" alt="体験版ダウンロード">
+        </a>
+        <a href="<%= @category.url %>" class="btn btn-pink">
+          体験版ダウンロード
+        </a>
+      </div>
+
+      <ul>
+        <li>
+          <a href="/categories/1">
+          <i class="fa fa-arrow-circle-o-right"></i>
+          <span>Photoshop入門</span>
+          </a>
+        </li>
+        <li>
+          <a href="/categories/2">
+          <i class="fa fa-arrow-circle-o-right"></i>
+          <span>Illustrator入門</span>
+          </a>
+        </li>
+        <li>
+          <a href="/categories/3">
+          <i class="fa fa-arrow-circle-o-right"></i>
+          <span>Dreamweaver入門</span>
+          </a>
+        </li>
+        <li>
+          <a href="/categories/4">
+          <i class="fa fa-arrow-circle-o-right"></i>
+          <span>Fireworks入門</span>
+          </a>
+        </li>
+      </ul>
+
+
+    </div>
+  </div>
 </div>
+
+
+
+
+
+<!-- jQuery プログレスバー -->
+<script>
+$(document).ready(function(){
+    $('#sample_goal').goalProgress({
+        goalAmount: 100,
+        currentAmount: 20,
+        textBefore: '',
+        textAfter: ' %'
+    });
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+(function() {
+var bg = ["/assets/cofee.jpg", "/assets/108H.jpg", "/assets/61H.jpg", "/assets/cofee.jpg", "/assets/beach.jpg", "/assets/woman.jpg"];
+var r = Math.floor(Math.random() * bg.length);
+document.getElementById("top-img").style.backgroundImage = "url(" + bg[r] + ")"; 
+})()
+</script>

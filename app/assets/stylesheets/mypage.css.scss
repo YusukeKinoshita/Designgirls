@@ -1,78 +1,192 @@
 
-// categories/index
+//category / index
+.profile {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+}
 
-// サイドバー
-// @import "compass/css3";
+.wrapper{
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+}
 
-// * {
-//   margin: 0;
-//   padding: 0;
-//   border: 0;
-// }
-
-// html {
-//     height : 100%;
-// }
-
-// body {
-//   background: #f0f8ff;
-//   font: 30px sans-serif;
-//   height : 100%;
-// }
-
-// div.side-bar{
-//     position :relative;
-//     overflow : hidden;
-//     height : 100%;
-//     header{
-//         background-color : #b0c4de;
-//         width : 100%;
-//         padding-top : 14px;
-//         padding-bottom : 14px;
-//         padding-left : 10px;
-//         z-index : 100;
-//         div.menu-icon{
-//             text-align : center;
-//             font-size : 16px;
-//             background-color : #4682b4;
-//             width : 90px;
-//             padding : 5px;
-//             cursor : pointer;
-//             @include border-radius(5px);
-//         }
-//     }
-    
-//     div.menu {
-//         color : #ffffff;
-//         position : absolute;
-//         background-color : gray;
-//         width : 200px;
-//         height : 400px;
-//         transition : transform;
-//         transition-duration : 0.5s;
-//         transition-timing-function : ease-in;
-//         transform : translate(-200px);
-//         top : 62px;
-        
-//         ul{
-//             li{
-//                 list-style : none;
-//             }
-//         }
-//     }
-// }
+.wrapper-left {
+	margin-left: 18%;
+	text-align: center;
+	width: 82%;
+}
 
 
 
-.tutorials {
+// recent-tutorilas
+
+.wrapper-recent {
+	min-height: 540px;
+	// background-color: #f6f5f3;
+	// background-image: url("/assets/congruent_pentagon.png");
+	background-image: url("/assets/cupcake.jpg");
+	background-color: #fff;
+	background-color:rgba(255,255,255,0.5);
+
+}
+
+.white-bg2 {
+	width: 100%;
+	background-color: #fff;
+	background-color:rgba(255,255,255,0.35);
+	/*background-color:rgbaを使用すると、現在の要素だけが透明になる。*/
+	//min-height: 400px;
+    margin: 0 auto;
+	
+	padding-top: 100px;
+}
+
+.white-bg2 h1 {
+	color: #fb50a0;
+	font-size: 36px;
+	letter-spacing: 5px;
+	font-family: 'Fredericka the Great', cursive;
+
+}
+
+.tutorial_img2 {
+	border-radius: 100%;
+	width: 180px;
+	height: 180px;
+  }
+
+
+.recent-tutorials-details {
+	margin: 15px;
+}
+
+.recent-tutorials-details span {
+	font-size: 18px;
+	color: #ff4486;
+	line-height: 35px;
+}
+
+label{
+	padding-left: 60px;
+}
+
+label progress {
+	width: 20%;
+}
+
+#sample_goal {
+	width: 20%;
 	margin: 0 auto;
 }
+
+
+
+
+
+
+
+
+//
+
+.wrapper-contents {
+	/* 画像ファイルの指定 */
+  background-image: url(/assets/main-bg.png);
+   
+  /* 画像を常に天地左右の中央に配置 */
+  background-position: center center;
+   
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+   
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  background-attachment: fixed;
+   
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
+   
+  /* 背景画像が読み込まれる前に表示される背景のカラー */
+  background-color: #464646;
+  height: 100%;
+  min-height: 1000px;
+
+  margin: 0 auto;
+}
+
+.tabs {
+	margin: 0 auto;
+	height: 46px;
+	width: 45%;
+	margin-top: 100px;
+}
+
+.tabs ul li{	
+	float: left;	
+	width: 160px;
+}
+
+.white-bg {
+	margin-top: 100px;
+	width: 80%;
+	background-color: #fff;
+	background-color:rgba(255,255,255,0.5);
+	/*background-color:rgbaを使用すると、現在の要素だけが透明になる。*/
+	padding: 50px 20px 50px 20px;
+	min-height: 800px;
+    margin: 0 auto;
+	
+	padding-top: 50px;
+
+}
+
+#lessons, #tutorials, #portfolios {
+	min-height: 450px;
+}
+
+#lessons {
+	min-height: 550px;
+}
+
+#tutorials {
+	margin-left: -15px;
+	margin-bottom: 40px;
+}
+
+#portfolios {
+	margin-bottom: 40px;
+}
+
+#lessons h3, #tutorials h3, #portfolios h3 {
+	font-size: 18px;
+	color: #fb50a0;
+	margin-bottom: 20px;
+}
+
+#lessons p, #tutorials p, #portfolios p {
+	line-height: 20px;
+	text-align: center;
+}
+
+.details {
+	margin-bottom: 30px;
+}
+
+.dotted-line {
+	border: 3px dotted #f6adba;
+	width: 50%;
+	margin: 0 auto;
+	margin-bottom: 30px;
+}
+
+
+
 
 .tutorials-list {
 	text-align: center;
 	margin: 0 auto;
 	float: left;
-	width: 20%
+	width: 25%
 }
 
 .tutorials-list .details {
@@ -80,13 +194,23 @@
 	width: 150px;
 }
 
-.tutorials-list .details span{
+.tutorials-list .details img{
+	margin-bottom: 20px;
+}
+
+.details a span{
 	font-size: 16px;
-	line-height: 30px;
+	margin-bottom: 20px;
+	line-height: 40px;
 }
 
 .tutorials-list .details p{
-	line-height: 20px;
+	line-height: 23px;
+}
+
+.listing-portfolios ul{
+	width: 25%;
+	float: left;
 }
 
 .clip{
@@ -101,11 +225,46 @@
 img.gravatar {
 	width: 150px;
 	height: 150px;
-	margin: 20px 20px 0px 20px;
+	margin: 20px 20px 5px 20px;
 	border-radius: 100%;
 	overflow: hidden;
 }
 
 
+
+
+
+// 
+#nav2 {
+	margin-top: 100px;
+	margin-left: -50px;
+	margin-bottom: 60px;
+}
+
+ul li.b1 a { background: #ffe983; }
+ul li.b2 a { background: #71cbf2; }
+ul li.b3 a { background: #71fcc2; }
+ul li.b4 a { background: #fb50a0; }
+ul#nav2 li {
+    margin-bottom: 10px;
+}
+ul#nav2 li a {
+    font-weight: bold;
+    display: block;
+    margin-left: -70px;
+    width: 200px;
+    padding: 5px 20px 5px 0;
+    color: #fff;
+    text-align: right;
+    -webkit-border-top-right-radius: 30px;
+    -webkit-border-bottom-right-radius: 30px;
+    -moz-border-radius-topright: 30px;
+    -moz-border-radius-bottomright: 30px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+}
+ul#nav2 li a:hover {
+    margin-left: 0px;
+}
 
 

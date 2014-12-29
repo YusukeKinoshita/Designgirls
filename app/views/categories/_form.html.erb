@@ -1,22 +1,31 @@
+<%= form_for(@category) do |f| %>
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% @category.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 
-<form class="grid-form">
-    <fieldset>
-        <!-- フォームのタイトル -->
-        <legend>履歴書的な</legend>
-        <!-- 1行の記述 data-row-spanでグリッド数を調整 -->
-        <div data-row-span="4" id="test">
-            <!-- 1行の区分けを設定 -->
-            <div data-field-span="3">
-                <label>お名前</label>
-                <!-- autofocusで初期フォーカス -->    
-                <input type="text" autofocus>
-            </div>
-            <div data-field-span="1">
-                <label>性別</label>
-                <input type="text">
-            </div>
-        </div>
-        <div class="plus-btn">追加</div>
-    </fieldset>
-</form>

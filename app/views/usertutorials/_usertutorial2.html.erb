@@ -1,0 +1,24 @@
+<div class="tutorials">
+    <div class="tutorials-list">
+        <%= link_to usertutorial_path(id: usertutorial.id) do %>
+            <div class="category-images">
+              <%= usertutorial_image_for usertutorial %>
+            </div>
+        
+        	<div class="details">
+            <span><%= usertutorial.title %></span>
+        <% end %>
+            
+        <div class="progress-bar"></div>
+        <p><%= usertutorial.description %></p>
+
+        <% usertutorial.user_id %>
+            
+
+            <div class="edit">
+              <%= link_to 'Edit', edit_usertutorial_path(id: usertutorial.id) %>
+              <%= link_to 'Destroy', usertutorial_path(id: usertutorial.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+        </div>
+    </div>
+</div>

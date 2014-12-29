@@ -1,9 +1,3 @@
-<head>
-    <%= stylesheet_link_tag    'tutorials/form', media: 'all' %>
-    <%= javascript_include_tag 'tutorials/form' %>
-    <%= csrf_meta_tags %>
-</head>
-
 <%= form_for @tutorial do |f| %>
 
     <fieldset class="fieldset">
@@ -28,26 +22,9 @@
             <label><%= f.radio_button :level, "3" %>上級</label>
         </div>
 
-        <label></label>
-
-        <div class="clear"></div>
-
-        
-
-        
-        <div id="slides">
-            <% @tutorial.slides.each do |slide| %>
-                    <%= render 'slides/form', slide: slide, f: f %>
-            <% end %>
-        </div>
-
-        <!-- 追加・削除ボタン -->
-        <div class="form-buttons">
-            <div class="plus-btn">追加</div>
-            <div class="destroy-btn">削除</div>
-        </div>
+       <!--  <div class="clear"></div> -->
      
-        <input type="submit">
+        <input type="submit" value="次へ進む", class="btn btn-pink">
 
     </fieldset>
 <% end %>
@@ -78,16 +55,6 @@
             }
             reader.readAsDataURL(file);
           });
-
-
-
-        $(document).on('click', '.plus-btn', function(){
-             $('#slides').append("<%= escape_javascript(render('slides/form', slide: @tutorial.slides.build, f: f)) %>");
-        });
-        $(document).on('click', '.destroy-btn', function(){
-            $('.slide-form').last().remove();
-        });   
-
         
     });
 </script>

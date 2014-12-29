@@ -1,42 +1,46 @@
-<div class="create-wrapper">
-  <div class="form"> 
-    　<!--　エラーメッセージ -->
-      <% if @tutorial.errors.any? %>
-        <div id="error_explanation">
-          <h2>
-            <%= pluralize(@tutorial.errors.count, "error") %> prohibited this tutorial from being saved:
-          </h2>
+<%= form_for @tutorial do |f| %>
 
-          <ul>
-            <% @tutorial.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
+    <fieldset class="fieldset">
+        <div id="test">
+            <div class="form-title">
+                <label>タイトル</label>  
+                <%= f.text_field :title %>
+            </div>
+            <div class="form-sumnail">
+                <label>サムネイル画像</label>
+                <%= f.file_field :userfile %>
+            </div>
+            <div class="form-discription">
+                <label>説明</label>
+                <%= f.text_area :description, :size=>"60x10" %>
+            </div>
+        </div>
+        
+        <div class="radio-button">
+            <label><%= f.radio_button :level, "1" %>初級</label>
+            <label><%= f.radio_button :level, "2" %>中級</label>
+            <label><%= f.radio_button :level, "3" %>上級</label>
+        </div>
+
+        <label></label>
+
+        <div class="clear"></div>
+
+        <div id="slides">
+            <%= f.fields_for :slides, @tutorial.slides do |f_slide| %>
+                    <%= render 'fields_slide', {:f => f_slide} %>
             <% end %>
-          </ul>
         </div>
-      <% end %>
 
-      <div class="white-box">
+        <!-- 追加・削除ボタン -->
+        <div class="form-buttons">
+            <div class="btn-pink">
+                <%= link_to_add_fields "新しいスライドを追加", f, :slides %>
+            </div>           
+        </div>
+        <!-- ここまで -->
+     
+        <input type="submit" value="完成", class="btn btn-pink">
 
-        <div class="field">
-          <%= f.label :title %><br>
-          <%= f.text_field :title %>
-        </div>
-        <div class="field">
-          <%= f.label :user_id %><br>
-          <%= f.number_field :user_id %>
-        </div>
-        <div class="field">
-          <%= f.label :description %><br>
-          <%= f.text_field :description %>
-        </div>
-        <div class="field">
-          <%= f.label :image %><br>
-          <%= f.file_field :image %>
-        </div>
-        <div class="actions">
-          <%= f.submit %>
-        </div>
-      </div>
-
-  　</div>
-</div>
+    </fieldset>
+<% end %>

@@ -5,6 +5,7 @@ class Slide < ActiveRecord::Base
   validates :body, presence: true
   # validates :image, presence: true
   validates :tutorial_id, presence: true
+  has_many :completes
 
   def image=(file)
       if !file.nil?

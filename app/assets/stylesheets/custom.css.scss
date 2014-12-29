@@ -98,12 +98,13 @@ p {
 #logo {
   float: left;
   margin-left: 50px;
-  font-size: 1.7em;
+  font-size: 1.9em;
   color: #fb50a0;
+  font-family: 'Fredericka the Great', cursive;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  letter-spacing: -1px;
   padding-top: 4px;
-  font-weight: bold;
+  // font-weight: bold;
   line-height: 1;
   &:hover {
     color: white;
@@ -111,22 +112,128 @@ p {
   }
 }
 
-.navbar-in{
-  width: 100%;
-  height: 25px;
-  margin: 0 auto;
-  padding: 20px;
-  position: fixed;
-  border-bottom: 2px dotted #fb50a0;
-  background-color: #fecbe3;
-  opacity: 0.9;
+img.logo {
+  width: 40%;
+  margin-top: -150px;
 }
 
+nav {
+  float: right;
+  padding-right: 100px;
+}
+
+.nav li{
+  width: 120px;
+  float: left;
+  height: 67px;
+}
+
+.navbar-in{
+  width: 100%;
+  height: 45px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: -1px;
+  position: fixed;
+   //background-image: url('/assets/nav-bg.png');
+  background-image: url('/assets/header.png');
+  background-repeat: repeat-x;
+  z-index: 100;
+}
+
+li#nav-mypage {
+  margin-top: -10px;
+  float: left;
+  margin-right: 10px;
+}
+
+li#nav-mypage img {
+  float: left;
+  margin-right: 7px;
+}
+
+li#nav-mypage span a {
+  margin-top: 8px;
+  line-height: 20px;
+  float: left;
+  font-size: 14px;
+}
 
 header form{
   display: inline-block;
   margin: 0;
 }
+
+// ドロップダウンメニュー
+.menu ul{
+  margin-right: 10px;
+  padding:0;
+}
+
+.menu ul li {
+  list-style: none;
+  margin:0;
+  padding:0;
+  font-size:14px;
+  float: left;
+  position: relative;
+  width: 120px;/*親メニューの幅*/
+  height: 67px;/*親メニューの高さ*/
+  line-height: 67px;
+  // background:#FF818D;/*親メニューの背景色*/
+  // color: #4D4D4D;/*親メニューの文字色*/
+  text-align:center;
+  margin-top: -20px;
+}
+
+.menu ul li a {
+  // color: #4D4D4D;
+  display: block;
+  text-decoration: none;
+  padding-top: 20px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.menu ul li:hover, .menu ul li a:hover {
+  // background:#EA2839;/*ホバー時の親メニューの背景色*/
+  color:#fff;/*ホバー時の親メニューの文字色*/
+}
+
+.menu ul li ul {
+  position: absolute;
+  top: 67px;/*親メニューの高さと同じにする*/
+  width: 120px;
+  z-index: 100;
+}
+
+.menu ul li ul li {
+  visibility: hidden;
+  overflow: hidden;
+  width: 120px;/*サブメニューの幅*/
+  height: 0;
+  background:#FFDAD7;/*サブメニューの背景色*/
+}
+
+.menu ul li ul li:hover, .menu ul li ul li a:hover {
+  background:#FFAFA9;/*ホバー時のサブメニューの背景色*/
+}
+
+.menu ul li:hover ul li, .menu ul li a:hover ul li{
+  visibility: visible;
+  overflow: visible;
+  height:67px;/*サブメニューの高さ*/
+  z-index: 10;
+}
+
+.menu * {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+
 
 /* footer */
 
@@ -180,10 +287,7 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
+
 
 .stats {
   overflow: auto;
@@ -274,10 +378,7 @@ input {
 .timestamp {
   color: $grayLight;
 }
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
+
 aside {
   textarea {
     height: 100px;
@@ -289,12 +390,12 @@ aside {
   cursor: pointer;
 }
 
-.favorite-star{
-  color: yellow;
+.favorite-heart{
+  color: #ff196d;
 }
 
-.unfavorite-star{
-  color: gray;
+.unfavorite-heart{
+  color: lightgray;
 }
 
 
@@ -311,5 +412,11 @@ aside {
   display: none;
 }
 
+
+
+.product_image {
+  width: 150px;
+  height: 150px;
+}
 
 

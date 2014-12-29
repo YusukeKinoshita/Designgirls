@@ -71,6 +71,13 @@ class UsersController < ApplicationController
     render template: 'about/index'
   end
 
+  def like
+    @title = 'Like Tutorials'
+    @tutorial = current_user.tutorials.build
+    @feed_tutorials = current_user.like_tutorials.paginate(page: params[:page])
+    render template: 'about/index'
+  end
+
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
@@ -88,6 +95,14 @@ class UsersController < ApplicationController
 
     def signed_in_user
       redirect_to signin_url, notice: "Please sign in." unless signed_in?
+    end
+
+    def current_user=(user)
+      @current_user = user
+    end
+
+    def current_user?(user)
+      user == current_user
     end
 
     def correct_user

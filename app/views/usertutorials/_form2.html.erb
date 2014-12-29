@@ -1,0 +1,46 @@
+<%= form_for @usertutorial do |f| %>
+
+    <fieldset class="fieldset">
+        <div id="test">
+            <div class="form-title">
+                <label>タイトル</label>  
+                <%= f.text_field :title %>
+            </div>
+            <div class="form-sumnail">
+                <label>サムネイル画像</label>
+                <%= f.file_field :userfile %>
+            </div>
+            <div class="form-discription">
+                <label>説明</label>
+                <%= f.text_area :description, :size=>"60x10" %>
+            </div>
+        </div>
+        
+        <div class="radio-button">
+            <label><%= f.radio_button :level, "1" %>初級</label>
+            <label><%= f.radio_button :level, "2" %>中級</label>
+            <label><%= f.radio_button :level, "3" %>上級</label>
+        </div>
+
+        <label></label>
+
+        <div class="clear"></div>
+
+        <div id="slides">
+            <%= f.fields_for :userslides, @usertutorial.userslides do |f_userslide| %>
+                    <%= render 'fields_userslide', {:f => f_userslide} %>
+            <% end %>
+        </div>
+
+        <!-- 追加・削除ボタン -->
+        <div class="form-buttons">
+            <div class="btn-pink">
+                <%= link_to_add_fields "新しいスライドを追加", f, :userslides %>
+            </div>           
+        </div>
+        <!-- ここまで -->
+     
+        <input type="submit" value="完成", class="btn btn-pink">
+
+    </fieldset>
+<% end %>

@@ -1,40 +1,165 @@
 <div class="wrapper">
-  <h1>Welcome to Design Girls!</h1>
 
-
-  <!-- チュートリアル一覧 -->
-  <div class ="tutorials">
-
-    <% @categories.each do |category| %>
-      <div class="tutorials-list">
-        <%= link_to category_path(id: category) do %>
-            <div class="category-images">
-              <%= category_image_for category %>
-            </div>
+  <!-- サブナビ -->
+    <div class="subnav">
+      <div class="subnav-contents">
         
-        <div class="details">
-            <span><%= category.title %></span>
+        <div id="profile">
+          <%= profile_image_for(current_user, '15') %>
+          <span><%= link_to current_user.name, users_path %></span>
+        </div>
+
+        <ul id="nav2">
+          <li class="b1"><a href="#">HOME</a></li> 
+          <li class="b2">
+            <%= link_to "LESSONS", root_path %>
+          </li> 
+          <li class="b3">
+            <%= link_to "TUTORIALS", usertutorials_path %>
+          </li>                 
+          <li class="b4">
+            <%= link_to "PORTFOLIOS", products_path %>
+          </li>
+        </ul>
+
+
+        <%= link_to 'チュートリアルを作る', new_usertutorial_path, class: "btn btn-pink" %>
+
+        <%= link_to 'ポートフォリオを作る', new_product_path, class: "btn btn-pink" %>
+      </div>
+    </div>
+
+
+
+  <!-- 右メインコンテンツ -->
+    <div class="wrapper-left">
+      <div class="wrapper-recent">
+        <div class="white-bg2">
+          <h1>
+            Welcome to DESIGN GIRLS!
+            <!-- <img src="/assets/welcome_03.png" alt="Welcome to Palette!"> -->
+          </h1>
+          <br>
+          <%= render 'tutorials/recent_tutorial', tutorial: @current_tutorial %>
+        
+
+          <!-- チュートリアル一覧 -->
+          <div class="tabs">
+              <ul>
+                <li><a href="#lessons"><img src="/assets/lessons-tab_07.png" alt="lessons"></a></li>
+                <li><a href="#tutorials"><img src="/assets/lessons-tab_09.png" alt="tutorials"></a></li>
+                <li><a href="#portfolios"><img src="/assets/lessons-tab_11.png" alt="portfolios"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+      <div class ="wrapper-contents">
+        
+        <div class="white-bg">
+          <!-- レッスン -->
+          <div id="lessons">
+            <div class="details">
+              <h2><img src="/assets/lessons_17.png" alt="Lessons"><h2>
+              <h3>Webデザインの基本を学ぼう</h3>
+              <p>Photoshopの使い方から、HTMLやCSSのコーディングまで！
+                <br>Webデザインの基本を動画とスライドで楽しく学びます
+              </p>
+            </div>
+
+            <% @categories.each do |category| %>
+              <div class="tutorials-list">
+                <%= link_to category_path(id: category) do %>
+                    <div class="category-images">
+                      <%= category_image_for category %>
+                    </div>
+                
+                    <div class="details">
+                      <span><%= category.title %></span>
+                <% end %>
+                  
+                      <div class="progress-bar">
+                      </div>
+                      <p><%= category.short_description %></p>
+
+                      <td><%= link_to 'Edit', edit_category_path(category) %></td>
+                      <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    </div>
+              </div>
             <% end %>
-            
-            <div class="progress-bar"></div>
-            <p><%= category.description %></p>
+          </div>
+          <div class="dotted-line"></div>
+
+          <!-- チュートリアル -->
+          <div id="tutorials">
+            <div class="details">
+              <h2><img src="/assets/lessons_21.png" alt="Tutorials"><h2>
+              <h3>もっと引き出しを増やそう</h3>
+              <p>みんなから投稿された応用チュートリアルでデザインの引き出しを増やそう！
+                <br>自分で作り方を投稿してみよう！
+              </p>
+            </div>
+            <%= render @usertutorials %>
+            <div class="clear"></div>
+            <%= link_to "もっと見る", usertutorials_path, class: "btn btn-pink" %>
+          </div>              
+          <div class="dotted-line"></div>
+
+          <!-- ポートフォリオ -->
+          <div id="portfolios">
+            <div class="details">
+              <h2><img src="/assets/lessons_25.png" alt="Portfolios"><h2>
+              <h3>あなたの作った作品を投稿してみよう</h3>
+              <span>
+                せっかく作ったのに自分しか見ないんじゃもったいない！<br>
+                みんなで作ったものをシェアしよう！
+              </span>
+            </div>
+            <div class="listing-portfolios">
+              <%= render @products %>
+            </div>
+            <div class="clear"></div>
+            <%= link_to "もっと見る", products_path, class: "btn btn-pink" %>
+          </div> 
+          <div class="dotted-line"></div>
             
 
-            <div class="edit">
-              <%= link_to '編集', edit_category_path(category) %>
-              <%= link_to '削除', category, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div>
+          <div class="clear"></div>
+
+          <div class="buttons">
+            <%= link_to '自分のチュートリアルを作る', new_usertutorial_path, class: "btn btn-pink" %>
+            <br>
+            <%= link_to '新しいカテゴリーを作る', new_category_path, class: "btn btn-pink" %>
+          </div>
+
         </div>
       </div>
-    <% end %>
-
-    <div class="clear"></div>
-
-    <br>
-
-
-    <%= link_to '自分のチュートリアルを作る', new_tutorial_path, class: "btn btn-pink" %>
-
-  </div>
-
+    </div>
 </div>
+
+
+
+
+
+
+
+<!-- スムーズスクロール部分の記述 -->
+<script>
+$(function(){
+   // #で始まるアンカーをクリックした場合に処理
+   $('a[href^=#]').click(function() {
+      // スクロールの速度
+      var speed = 400; // ミリ秒
+      // アンカーの値取得
+      var href= $(this).attr("href");
+      // 移動先を取得
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      // 移動先を数値で取得
+      var position = target.offset().top - 100;
+      // スムーススクロール
+      $('body,html').animate({scrollTop:position}, speed, 'swing');
+      return false;
+   });
+});
+</script>

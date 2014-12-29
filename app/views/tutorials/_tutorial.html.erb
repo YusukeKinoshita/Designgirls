@@ -1,26 +1,23 @@
-<div class="tutorials">
-    <div class="tutorials-list">
-        <%= link_to tutorial_path(id: tutorial.id) do %>
-            <div class="category-images">
-              <%= tutorial_image_for tutorial %>
-            </div>
-        
-        	<div class="details">
-            <span><%= tutorial.title %></span>
-        <% end %>
-            
-        <div class="progress-bar"></div>
-        <p><%= tutorial.description %></p>
+<%= link_to tutorial_video_path(id: tutorial.id) do %>
+　<div class="box">
+    <ul>
+      <li class="self-tutorials">
+          <div class="text">      
+            <h2><%= tutorial.title %></h2>
+          </div>
+          <div class="overlay"></div>
+          <%= tutorial_image_for tutorial, class: "tutorial_img" 
+          %>
+      </li>
+    </ul>
+    <div class="clear"></div>
+    <% end %>
+    <p><%= tutorial.description %></p>
+  </div>
 
-        <% tutorial.user_id %>
-            
 
-            <div class="edit">
-              <%= link_to 'Edit', edit_tutorial_path(id: tutorial.id) %>
-              <%= link_to 'Destroy', tutorial_path(id: tutorial.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div>
-        </div>
-    </div>
-</div>
+
+
+
 
 

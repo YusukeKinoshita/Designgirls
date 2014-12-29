@@ -4,32 +4,9 @@
 
 
 
-.top-img{
-	width: 100%;
-	background-color: #00acd4;
-	min-height: 350px;
-}
-
-
-.titles {
-	padding: 100px;
-	float: left;
-	width: 400px;
-}
-
-.titles-img {	
-	margin: 0 auto;
-	text-align: center;
-	width: 15%;
-}
-
-.category-tutorials {
-	min-height: 500px;
-}
 
 .form-buttons {
-	float: left;
-	display: inline-block;
+
 }
 
 
@@ -40,7 +17,6 @@
 
 .fieldset {
 	text-align: center;
-	padding-left: 100px;
 }
 
 
@@ -52,7 +28,6 @@
 #test .form-title {
 	width: 80%; 
 	display: inline-block;
-
 }
 
 #test .form-sumnail {
@@ -72,12 +47,13 @@
 }
 
 .radio-button {
-	margin-left: 100px;
+	margin-left: 70px;
+	margin-bottom: 30px;
 }
 
 .radio-button label{
 	display: inline-block;
-	width: 100px;
+	width: 70px;
 }
 
 .radio-button input {
@@ -89,32 +65,240 @@
 
 
 
-// slides
 
-.slide-form {
-     width:100%;
-     float: left;
-     margin: 0 auto;
+//tutorials/show2
+
+
+// パンくずリスト
+
+#crumbs {
+	padding-top: 80px;
 }
 
-#test-2 {
-     margin: 10px;
+#crumbs ul li a {
+	display: block;
+	float: left;
+	height: 20px;
+	background: #64c2ea;
+	text-align: center;
+	padding: 10px 15px 0 10px;
+	position: relative;
+	margin: 0 10px 0 0; 
+	
+	font-size: 14px;
+	text-decoration: none;
+	color: #fff;
+	padding: 10px 15px 0 30px;
 }
 
-.slide-img {
-     float: left;
-     width: 50%;
+#crumbs ul li a:after {
+	content: "";  
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 10px solid #64c2ea;
+	position: absolute; right: -10px; top: 0;
 }
 
-.slide-title {
-     float: left;
-     width: 50%;
+#crumbs ul li a:before {
+	content: "";  
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 10px solid transparent;
+	position: absolute; left: 0; top: 0;
 }
 
-.slide-description {
-     float: left;
-     width: 50%;
+#crumbs ul li:first-child a {
+	border-top-left-radius: 10px; border-bottom-left-radius: 10px;
 }
+#crumbs ul li:first-child a:before {
+	display: none; 
+}
+
+#crumbs ul li:last-child a {
+	padding-right: 80px;
+	border-top-right-radius: 10px; border-bottom-right-radius: 10px;
+}
+#crumbs ul li:last-child a:after {
+	display: none; 
+}
+
+#crumbs ul li a:hover {
+	background: #fa5ba5;
+}
+
+#crumbs ul li a:hover:after {
+	border-left-color: #fa5ba5;
+}
+
+// パンくずリストここまで
+
+.tutorial-titles {
+	padding-top: 20px;
+	width: 100%;
+	float: left;
+	margin-left: 40px;
+}
+
+.tutorial-titles p{
+	float: left;
+}
+
+.tutorial-titles h1{
+	font-size: 14px;
+	float:left;
+	margin-bottom: 10px;
+	color: #00acd4;
+}
+
+.wrapper-original {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.titles2 {
+	float: left;
+	margin-left: 60px;
+	margin-bottom: 10px;
+}
+
+.titles2 h1 {
+	font-size: 20px;
+	margin-bottom: 7px;
+	margin-left: -130px;
+}
+
+.contents{
+	min-height: 520px;
+}
+
+.youtube {
+	float: left;
+	margin: 10px
+}
+
+.youtube-btn a{
+	// float: left;
+	margin: 10px;
+	margin-right: 1px;
+}
+
+.slideshare{
+	float: left;
+	margin: 10px;
+}
+
+
+
+
+
+//ボタン
+.btn-pink2 {
+	display: inline-block;
+	width: 100px;
+	height: 45px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 54px;
+	outline: none;
+
+	position: relative;
+	background-color: #fb50a0;
+	border-radius: 4px;
+	color: #fff;
+	line-height: 45px;
+	-webkit-transition: none;
+	transition: none;
+	box-shadow: 0 3px 0 #c4407e;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+
+	margin-bottom: 20px;
+}
+.btn-pink2::before,
+.btn-pink2::after {
+	position: absolute;
+	z-index: -1;
+	display: block;
+	content: '';
+}
+.btn-pink2,
+.btn-pink2::before,
+.btn-pink2::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+.btn-pink2:hover {
+	background-color: #31c8aa;
+	box-shadow: 0 3px 0 #23a188;
+}
+
+.btn-pink2:active {
+	top: 3px;
+	box-shadow: none;
+}
+
+
+//ボタンここまで
+
+
+
+
+
+
+// tutorials/index
+
+.listing-tutorials {
+	width: 80%;
+	margin: 0 auto;
+	min-height: 950px;
+}
+
+.listing-tutorials ul {
+	float: left;
+	margin: 50px 0px 20px 0px;
+	width: 200px;
+}
+
+.listing-tutorials ul li {
+	line-height: 20px;
+}
+
+.edit {
+	margin: 5px 0 5px 30px;
+}
+
+.edit li{
+	float: left;
+	padding: 10px 5px 10px 5px;
+}
+
+
+
+
+// tutorials/new
+.wrapper2 {
+	text-align: center;
+	background-image: url(/assets/congruent_pentagon.png);
+}
+
+.form-new {
+	padding-top: 100px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.form-title2 {
+	margin-bottom: 50px;
+}
+
+.form-contents {
+
+}
+
+
+//edit
 
 
 

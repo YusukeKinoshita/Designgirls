@@ -3,8 +3,8 @@ class Category < ActiveRecord::Base
   validates :image, presence: true
   validates :description, presence: true
 
-  has_many :tags
-  has_many :tutorials, through: :tags, dependent: :destroy
+  # has_many :tags
+  has_many :tutorials, dependent: :destroy
 
 
   def set_image(file)

@@ -1,0 +1,10 @@
+  <div class="titles2">
+    <h1><%= userslide.title %></h1>
+    <p><%= userslide.body %></p>
+  </div>
+
+  <div class="edit">
+    <%= link_to 'Show', usertutorial_userslide_path(usertutorial_id: params[:id], id: userslide.id) %>
+    <%= link_to 'Edit', edit_usertutorial_userslide_path(usertutorial_id: params[:id], id: userslide.id) %>
+    <%= link_to 'Destroy', usertutorial_userslide_path(usertutorial_id: params[:id], id: userslide.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>

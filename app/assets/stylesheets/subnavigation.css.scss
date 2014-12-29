@@ -1,0 +1,51 @@
+.subnav {
+	width: 18%;
+	//background-image: url("/assets/背景.png");
+	min-height: 600px;
+	float:left;
+	position: fixed;
+	opacity: 0.9;
+	margin-top: 80px;
+
+	// border-radius: 15px;
+
+	background-color: #fff;
+	box-shadow: 2px 2px 2px lightgray;
+}
+
+.subnav-contents {
+	padding: 30px 20px 0px 20px;
+	margin-top: -40px;
+}
+
+.subnav-contents span ul li {
+	line-height: 30px;
+	font-size: 18px;
+	font-family: 'IM Fell DW Pica SC', serif;
+}
+
+.subnav-contents span {
+	line-height: 80px;
+	font-size: 15px;
+}
+
+.subnav-contents ul{
+	padding-left: 30px;
+}
+
+.subnav-contents ul li{
+	padding-bottom: 20px;
+	font-size: 14px;
+	text-align: left;
+	font-family: 'Quicksand', sans-serif;
+	// font-family: 'IM Fell DW Pica SC', serif;
+}
+
+.fa-color {
+	color: #cafae6;
+}
+
+#profile {
+	float: left;
+	width: 100%;
+}
