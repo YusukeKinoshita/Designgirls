@@ -6,8 +6,8 @@
         <%= link_to root_path, id: "logo" do %>
           <!-- link_to リンク先　表示名 -->
           <!-- <img class="logo" src="/assets/lace1.png"> -->
-          <i class="fa fa-heart fa-spin"></i>
-            design girls
+          <h1><!-- <i class="fa fa-heart fa-spin"></i> -->
+            design girls</h1>
         <% end %>
 
       <!-- ナビバー -->
@@ -18,10 +18,9 @@
           <% if signed_in? %>
 
             <!-- マイページへ -->
-            <li id="nav-mypage" class="dropdown">
+            <li id="nav-mypage">             
               <div class="menu">
                 <%= profile_image_for(current_user, '10') %>
-
                 <span><%= link_to current_user.name, current_user %></span>
               </div>
             </li>
@@ -30,7 +29,8 @@
               <li id="fat-menu" class="dropdown">
                 <div class="menu">       
                   <ul>           
-                    <li><a href="#">LESSONS</a>
+                    <li>
+                      <%= link_to "LESSONS", root_path %>
                       <ul>                   
                         
                         <li>

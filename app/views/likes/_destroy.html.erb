@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-<%= link_to like_path(current_user.likes.find_by(usertutorial_id: usertutorial.id)), remote: true, method: :delete, class: 'like-link' do %>
-  <i class="fa fa-heart">いいね</i>
-<% end %>
-=======
+
 <span id="like-btn">
 	<%= link_to like_path(current_user.likes.find_by(usertutorial_id: usertutorial.id)), remote: true, method: :delete, class: 'like-link' do %>
   	<i class="fa fa-heart">いいねずみ</i>
 	<% end %>
 </span>
->>>>>>> 54d087a07ee2651ad0ffa5c382a71cc0d57b7055

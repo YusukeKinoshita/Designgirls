@@ -100,6 +100,7 @@ class TutorialsController < ApplicationController
       end
     end
 
+    # @category = Tutorial.category.find(params[:id])
   end
 
   def done
